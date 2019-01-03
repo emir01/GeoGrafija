@@ -1,0 +1,260 @@
+﻿@using GeoGrafija.ViewModels.LocationTypeViewModels
+@model IEnumerable<ExploreLocaitonTypeViewModel>
+
+    @{
+        ViewBag.Title = "Истражи";
+    }
+    <link rel="stylesheet" href="@Url.CssExploration()"/>
+
+    <div id="MapActions">
+        <a id="ExplorationHelp" class="button green mapOption" href="#">помош ?</a>
+        <a id="ResetMap" class="mapOption button blue" href="#">почеток</a>
+        <ul id="MapNav"></ul>
+        <div class="clear"></div>
+    </div>
+    <div id="MarkersDisplayLink">
+        <a href= "#">Легенда на Маркери</a>
+    </div>
+
+    <div id="MarkerDisplayWrapper">
+        <div id="HideMarkerLegend">
+            <a class="button red fixA" href="#">Затвори ме!</a>
+        </div>
+        <div class="clear"></div>
+
+        <div id="MarkersScrollbar">
+            <div class="scrollbar">
+                <div class="track">
+                    <div class="thumb">
+                        <div class="end"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="viewport">
+                <div id="MarkerLegendList" class="overview">
+                    <ul>
+                        @foreach (var type in Model)
+                        {
+                        <li>
+                            <span>@type.Name</span>
+                            <img alt ="@type.Name" src = "@Url.MarkerImages(type.Icon)"/>
+                        </li>
+                        }
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="clear"></div>
+    <div id="ExplorationMap"></div>
+    <div id="ExplorationCalloutWrapper" class="hidden">
+        <div id="ExplorationCallout">
+            <div class="padding">
+                <div id="LocationName"></div>
+                <div class="clear"></div>
+                <div id="LocationType"></div>
+                <div class="clear"></div>
+                <div id="ZoomLevel"></div>
+                <div class="clear"></div>
+                <div id="scrollbar1" class="scrollbarWrapper">
+                    <div class="scrollbar">
+                        <div class="track">
+                            <div class="thumb">
+                                <div class="end"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="viewport">
+                        <div id="LocationShortDescription" class="overview revetMe"></div>
+                    </div>
+                </div>
+                <div class="clear"></div>
+                <div id="CalloutOptions">
+                    <a id="Details" class="calloutOption detailsLink button blue" href="#">Детали</a>
+                    <a id="Zoom"
+                    class="zoomLink button blue calloutOption" href="#">Истражи</a>
+                    <a id="Zatvori" class="closeLink button blue calloutOption"
+                        href="#">Затвори</a>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="@Url.PageScript("Exploration.js")"></script>
+    <input type="hidden" id="SelectedPage" value="Истражи"/>
+
+    <div id="ExplorationHelpWrapper" class="pageHelpDialog hidden">
+        <h2>Како да ја користите мапата за истражување!</h2>
+
+        <h3 class="explanationSectionHeader">Содржина :</h3>
+        <ul class="dialogExplanationContentsList">
+            <li>
+                <a scroll="212" href="#introductionToMap">Вовед во интерактивната мапа</a>
+            </li>
+            <li>
+                <a scroll="676" href="#basicsOfMap">Основи на интерактивната мапа и маркери</a>
+            </li>
+            <li>
+                <a scroll="1545" href="#functionOfMarkers">Која е фунцијата на маркерите</a>
+            </li>
+            <li>
+                <a scroll="2409" href="#">Пребарување со истражување</a>
+            </li>
+            <li>
+                <a scroll="2857" href="#">Пребарување со навигација низ мапата</a>
+            </li>
+            <li>
+                <a scroll="3453" href="#">Напредни контроли на мапа</a>
+            </li>
+        </ul>
+
+        <div class="explanationBreak"></div>
+
+        <h3 Id="introductionToMap" class="explanationSectionHeader">Вовед во интерактивната мапа :</h3>
+
+        <p class="explanation">
+            Мапата овозможува интерактивен поглед врз сите локации внесени од корисниците и овозможува два начини за откривање на локациите.
+        </p>
+
+        <div class="dialogExplanationImage">
+            <img src= "/Content/ExplorationHelpImages/generalExploration.png" alt="Општо истражување"></div>
+
+        <p class="explanation">
+            Сепак треба да се спомне дека ако барате некоја конкретна локација тогаш многу побрзо би ја пронашле, ако постои, користеќи го пребарувањето, до кое може да се стигне преку линкот на главното мени.
+        </p>
+        <div class="dialogExplanationScrollTop">
+            <a href="#">Содржина!</a>
+        </div>
+        <div class="explanationBreak"></div>
+
+        <h3 Id="basicsOfMap" class="explanationSectionHeader">Основи на интерактивната мапа :</h3>
+
+        <p class="explanation">
+            Најважен елемент на интерактивната мапа се различните маркери ( сликички ) преку кои се представени локациите. Секој тип на локација има сопствена скликичка уникатна и симболична за тој тип.
+        </p>
+
+        <p class="explanation">
+            Маркерите ( сликичке ) се појавуваат на мапата и ги представуваат различните локации до кои може да пристапите и да дознаете нешто повеќе со кликнување на сликичката.
+        </p>
+
+        <p class="explanation">
+            Ако сакате да дознаете што означува секој од маркерите може да ја искористите легендата на сликички за сите типови на локации. До неа може да пристапите преку копчето над горниот десен агол на мапата.
+        </p>
+
+        <div class="dialogExplanationImage">
+            <img src= "/Content/ExplorationHelpImages/MarkerLegend.png" alt="Легенда на маркери"></div>
+
+        <p class="explanation">
+            На следната слика може да се видат само мал број од маркерите кои може да се појават на мапата. По ред од лево на десно тоа се маркери за : дражава, град, река, пустина, шума :
+        </p>
+
+        <div class="dialogExplanationImage">
+
+            <img src= "/Content/ExplorationHelpImages/someMarkers.png" alt="Некои маркери на локации"></div>
+        <div class="dialogExplanationScrollTop">
+            <a href="#">Содржина!</a>
+        </div>
+        <div class="explanationBreak"></div>
+
+        <h3 Id="functionOfMarkers" class="explanationSectionHeader">Која е фунцијата на маркерите :</h3>
+
+        <p class="explanation">
+            Вториот најважен елемент кај интерактивната мапа е тоа што секој од маркерите може да биде селектиран ( кликнат ), при што се добива мало прозорче со основните информации за локацијата представена преку тој маркер.
+        </p>
+
+        <div class="dialogExplanationImage">
+            <img src= "/Content/ExplorationHelpImages/clickOnMarker.png" alt="Клик  на маркер"></div>
+
+        <p class="explanation">
+            На сликата погоре може да се забележат основните прикажани информации за локацијата, името и типот. Покрај тоа во долниот дел може да се забележат основни команди кои може да се повикаат од ова прозорче
+        </p>
+
+        <div class="dialogExplanationImage">
+            <img src= "/Content/ExplorationHelpImages/options.png" alt="Операции на прозорец за локација"></div>
+
+        <p class="explanation">
+            Операцијата за преглед на детали ве носи на посебна страна каде може да се погледнат деталите за таа локација, кои вклучуваат и дополнителни информативни текстови, видеа и линкови.
+        </p>
+
+        <p class="explanation">
+            Она што може да варира е командата истражи за која станува збор во следниот дел.
+        </p>
+        <div class="dialogExplanationScrollTop">
+            <a href="#">Содржина!</a>
+        </div>
+        <div class="explanationBreak"></div>
+
+        <h3 Id="findWithExploration" class="explanationSectionHeader">Пребарување со истражување :</h3>
+
+        <p class="explanation">
+            Веќе споменавме дека постојат два начини на истражување на мапата. Едниот начин е со користење на командата Истражи во прозорчето кое се отвора кога ќе кликнете/изберете  некоја локација.
+        </p>
+
+        <div class="dialogExplanationImage">
+            <img src= "/Content/ExplorationHelpImages/exploreButton.png" alt="Копчето за истражување"></div>
+
+        <p class="explanation">
+            Ова копче го имаат само локациите кои под нив / во себе содржат други локации. Со кликање на ова копче ќе се прикажат сите локации кои се наоѓаат директно под избраната локација.
+        </p>
+
+        <p class="explanation">
+            Тука треба да споменеме дека при истражување на локациите, истите се додават како копчина во менито веднаш над мапата, и со нивно кликање може да се вратите на нивото на кликнатата локација.
+        </p>
+
+        <div class="dialogExplanationImage">
+            <img src= "/Content/ExplorationHelpImages/locationPath.png" alt="Пат на локации, Истражување"></div>
+        <div class="dialogExplanationScrollTop">
+            <a href="#">Содржина!</a>
+        </div>
+        <div class="explanationBreak"></div>
+
+        <h3 Id="explorationWithNavigation" class="explanationSectionHeader">Пребарување со навигација низ мапата :</h3>
+
+        <p class="explanation">
+            Вториот начин на пребарување е низ самата навигација на мапата. Како што се движите и го менувате вашиот поглед, така добивате нови локации.
+        </p>
+
+        <p class="explanation">
+            Битен фактор е нивото на зголемување на мапата. Големите локации како континентите, океаните и големите држави би се прикажуваат  кога би се наоѓале на поголема одалеченост, додека помалите локации како малите градови и езерата би се прикажување кога погледот би бил поблизок кон мапата.
+        </p>
+
+        <p class="explanation">
+            Погледот и нивото на одалеченост може да го менувате со користење на глувчето ( кликни и влечи на памата, и двиење на средното тркалце ) или со користење на навигациските контроли на самата мапа :
+        </p>
+
+        <div class="dialogExplanationImage">
+            <img src= "/Content/ExplorationHelpImages/navigations.png" alt="Навигациски можности на мапа."></div>
+
+        <div class="dialogExplanationScrollTop">
+            <a href="#">Содржина!</a>
+        </div>
+        <div class="explanationBreak"></div>
+
+        <h3 Id="advanceChangesMap" class="explanationSectionHeader">Напредни контроли на мапа :</h3>
+
+        <p class="explanation">
+            Во предходниот дел накратко беа споменати навигациските контроли. Мапата нуди дополнителни контроли, со што може да го менувате погледот кој ви се прикажува. Ова нема влијание на маркерите или начинот на кој мапата се пребарува.
+        </p>
+
+        <p class="explanation">
+            Промениуте на погледот може да ги направите користејќи ги опциите во горниот десен агол. Следуваат неколку од можните погледи.
+        </p>
+
+        <div class="dialogExplanationImage">
+            <img src= "/Content/ExplorationHelpImages/mapRoad.png" alt="Тип на поглед на мапа 1"></div>
+
+        <div class="dialogExplanationImage">
+            <img src= "/Content/ExplorationHelpImages/mapSat.png" alt="Тип на поглед на мапа 2"></div>
+
+        <div class="dialogExplanationImage">
+            <img src= "/Content/ExplorationHelpImages/mapSL.png" alt="Тип на поглед на мапа 3"></div>
+
+        <div class="dialogExplanationImage">
+            <img src= "/Content/ExplorationHelpImages/typeTerrain.png" alt="Тип на поглед на мапа 3"></div>
+
+        <div class="dialogExplanationScrollTop">
+            <a href="#">Содржина!</a>
+        </div>
+
+    </div>

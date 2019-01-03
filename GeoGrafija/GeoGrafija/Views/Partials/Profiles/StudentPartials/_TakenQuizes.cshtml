@@ -1,0 +1,38 @@
+﻿@using GeoGrafija.ViewModels.Profiles
+@model ProfileViewModel
+<h2 class="formHeader">
+    Решени Квизови :</h2>
+<div class="clear">
+</div>
+<div id="QuizResultWrapper">
+    <ul class="quizResultUList">
+        @foreach (var quizResult in Model.GeneralViewModel.StudentQuizResults)
+        {
+            <li class="quizResultListItem">
+                <div class="padding">
+                    <div class="clear">
+                    </div>
+                    <div class="globalInfoContainer">
+                        <div class="formFieldWrapper takenQuizName">
+                            <div class="label">
+                                Име на квиз :
+                            </div>
+                            <div class="value">@quizResult.Quiz.Name</div>
+                        </div>
+                        <div class="formFieldWrapper takenQuizScoredPoints">
+                            <div class="label">
+                                Освоени Поени :
+                            </div>
+                            <div class="value">@quizResult.PointsStudent / @quizResult.PointsTotal</div>
+                        </div>
+                    </div>
+                    <div class="clear">
+                    </div>
+                    <input data-resultid = "@quizResult.Id" type="submit" class="button blue getMoreQuizResult" value="Повеќе Информации!" />
+                </div>
+            </li>
+        }
+    </ul>
+    <div class="clear">
+    </div>
+</div>

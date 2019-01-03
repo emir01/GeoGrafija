@@ -1,0 +1,23 @@
+﻿@model System.Web.Mvc.HandleErrorInfo
+
+@{
+    ViewBag.Title = "Упс....!";
+}
+<div id="ExceptionWrapper" class="formBackground generalFormLayout">
+    <div id="errorCode">
+        Упс...!</div>
+    <div class="clear">
+    </div>
+    <img src="@Url.Image("stop.png")"  id="StopException" alt="Стоп!" />
+    <div class="clear">
+    </div>
+    <div class="lostMessage">
+        Настана грешка при извршување на последната наредба капетане!
+    </div>
+    <div class="lostMessage">
+        Можете повторно да се обидете :
+    </div>
+
+    @Html.ActionLink("Пробај Поново!",Model.ActionName,Model.ControllerName,null,new{@class="button red retryException"})
+    
+</div>

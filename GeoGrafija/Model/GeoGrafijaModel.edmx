@@ -1,0 +1,1400 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="GeoGrafijaModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="GeoGrafijaModelStoreContainer">
+    <EntitySet Name="LocationDisplaySettings" EntityType="GeoGrafijaModel.Store.LocationDisplaySettings" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="LocationTypes" EntityType="GeoGrafijaModel.Store.LocationTypes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Privileges" EntityType="GeoGrafijaModel.Store.Privileges" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ResourceTypes" EntityType="GeoGrafijaModel.Store.ResourceTypes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Roles" EntityType="GeoGrafijaModel.Store.Roles" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Locations" EntityType="GeoGrafijaModel.Store.Locations" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="StudentQuizResults" EntityType="GeoGrafijaModel.Store.StudentQuizResults" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Ranks" EntityType="GeoGrafijaModel.Store.Ranks" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Users" EntityType="GeoGrafijaModel.Store.Users" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Answers" EntityType="GeoGrafijaModel.Store.Answers" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Questions" EntityType="GeoGrafijaModel.Store.Questions" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Quizs" EntityType="GeoGrafijaModel.Store.Quizs" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Resources" EntityType="GeoGrafijaModel.Store.Resources" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="RolePrivileges" EntityType="GeoGrafijaModel.Store.RolePrivileges" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UserRoles" EntityType="GeoGrafijaModel.Store.UserRoles" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="QuizQuestions" EntityType="GeoGrafijaModel.Store.QuizQuestions" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_LocationTypes_LocationDisplaySettings" Association="GeoGrafijaModel.Store.FK_LocationTypes_LocationDisplaySettings">
+      <End Role="LocationDisplaySetting" EntitySet="LocationDisplaySettings" />
+      <End Role="LocationType" EntitySet="LocationTypes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RolePrivileges_Privilege" Association="GeoGrafijaModel.Store.FK_RolePrivileges_Privilege">
+      <End Role="Privilege" EntitySet="Privileges" />
+      <End Role="RolePrivileges" EntitySet="RolePrivileges" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RolePrivileges_Role" Association="GeoGrafijaModel.Store.FK_RolePrivileges_Role">
+      <End Role="Role" EntitySet="Roles" />
+      <End Role="RolePrivileges" EntitySet="RolePrivileges" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Locations_LocationDisplaySettings" Association="GeoGrafijaModel.Store.FK_Locations_LocationDisplaySettings">
+      <End Role="LocationDisplaySetting" EntitySet="LocationDisplaySettings" />
+      <End Role="Location" EntitySet="Locations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Locations_LocationTypes" Association="GeoGrafijaModel.Store.FK_Locations_LocationTypes">
+      <End Role="LocationType" EntitySet="LocationTypes" />
+      <End Role="Location" EntitySet="Locations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Locations_ParentLocation" Association="GeoGrafijaModel.Store.FK_Locations_ParentLocation">
+      <End Role="Location" EntitySet="Locations" />
+      <End Role="Location1" EntitySet="Locations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Rank_ParentRank" Association="GeoGrafijaModel.Store.FK_Rank_ParentRank">
+      <End Role="Rank" EntitySet="Ranks" />
+      <End Role="Rank1" EntitySet="Ranks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Locations_Users" Association="GeoGrafijaModel.Store.FK_Locations_Users">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Location" EntitySet="Locations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LocationTypes_Users" Association="GeoGrafijaModel.Store.FK_LocationTypes_Users">
+      <End Role="User" EntitySet="Users" />
+      <End Role="LocationType" EntitySet="LocationTypes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Users_Users1" Association="GeoGrafijaModel.Store.FK_User_Rank">
+      <End Role="Rank" EntitySet="Ranks" />
+      <End Role="User" EntitySet="Users" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StudentQuizResults_Student" Association="GeoGrafijaModel.Store.FK_StudentQuizResults_Student">
+      <End Role="User" EntitySet="Users" />
+      <End Role="StudentQuizResult" EntitySet="StudentQuizResults" />
+    </AssociationSet>
+    <AssociationSet Name="Student_TeacherParent" Association="GeoGrafijaModel.Store.Student_TeacherParent">
+      <End Role="User" EntitySet="Users" />
+      <End Role="User1" EntitySet="Users" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserRoles_Role" Association="GeoGrafijaModel.Store.FK_UserRoles_Role">
+      <End Role="Role" EntitySet="Roles" />
+      <End Role="UserRoles" EntitySet="UserRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserRoles_User" Association="GeoGrafijaModel.Store.FK_UserRoles_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="UserRoles" EntitySet="UserRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_QuestionAnswers_QuizQuestions" Association="GeoGrafijaModel.Store.FK_QuestionAnswers_QuizQuestions">
+      <End Role="Question" EntitySet="Questions" />
+      <End Role="Answer" EntitySet="Answers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_QuizQuestions_Locations" Association="GeoGrafijaModel.Store.FK_QuizQuestions_Locations">
+      <End Role="Location" EntitySet="Locations" />
+      <End Role="Question" EntitySet="Questions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Quizes_Teacher" Association="GeoGrafijaModel.Store.FK_Quizes_Teacher">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Quize" EntitySet="Quizs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StudentQuizResults_Quizes" Association="GeoGrafijaModel.Store.FK_StudentQuizResults_Quizes">
+      <End Role="Quize" EntitySet="Quizs" />
+      <End Role="StudentQuizResult" EntitySet="StudentQuizResults" />
+    </AssociationSet>
+    <AssociationSet Name="FK_QuizQuestions_Question" Association="GeoGrafijaModel.Store.FK_QuizQuestions_Question">
+      <End Role="Question" EntitySet="Questions" />
+      <End Role="QuizQuestions" EntitySet="QuizQuestions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_QuizQuestions_Quize" Association="GeoGrafijaModel.Store.FK_QuizQuestions_Quize">
+      <End Role="Quize" EntitySet="Quizs" />
+      <End Role="QuizQuestions" EntitySet="QuizQuestions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Resources_Locations" Association="GeoGrafijaModel.Store.FK_Resources_Locations">
+      <End Role="Location" EntitySet="Locations" />
+      <End Role="Resource" EntitySet="Resources" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Resources_LocationTypes" Association="GeoGrafijaModel.Store.FK_Resources_LocationTypes">
+      <End Role="LocationType" EntitySet="LocationTypes" />
+      <End Role="Resource" EntitySet="Resources" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Resources_ResourceTypes" Association="GeoGrafijaModel.Store.FK_Resources_ResourceTypes">
+      <End Role="ResourceType" EntitySet="ResourceTypes" />
+      <End Role="Resource" EntitySet="Resources" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="LocationDisplaySettings">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="MapType" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Zoom" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="RenderControls" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LocationTypes">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TypeName" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="TypeDescription" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="DisplaySettings" Type="int" Nullable="false" />
+    <Property Name="CreatedBy" Type="int" Nullable="false" />
+    <Property Name="Icon" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Color" Type="nvarchar" Nullable="true" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="Privileges">
+    <Key>
+      <PropertyRef Name="PrivilegeID" />
+    </Key>
+    <Property Name="PrivilegeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PrivilegeName" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="PrivilegeDescription" Type="nvarchar" Nullable="true" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="ResourceTypes">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Color" Type="nvarchar" Nullable="true" MaxLength="12" />
+  </EntityType>
+  <EntityType Name="Roles">
+    <Key>
+      <PropertyRef Name="RoleID" />
+    </Key>
+    <Property Name="RoleID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RoleName" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="RoleDescription" Type="nvarchar" Nullable="true" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="Locations">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Lat" Type="float" Nullable="false" />
+    <Property Name="Lng" Type="float" Nullable="false" />
+    <Property Name="CreatedBy" Type="int" Nullable="false" />
+    <Property Name="LocationType" Type="int" Nullable="false" />
+    <Property Name="DisplaySettings" Type="int" Nullable="true" />
+    <Property Name="ParentId" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="StudentQuizResults">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="QuizId" Type="int" Nullable="false" />
+    <Property Name="StudentId" Type="int" Nullable="false" />
+    <Property Name="DateOpen" Type="datetime" Nullable="false" />
+    <Property Name="DateUpdate" Type="datetime" Nullable="false" />
+    <Property Name="PointsTotal" Type="int" Nullable="false" />
+    <Property Name="PointsStudent" Type="int" Nullable="false" />
+    <Property Name="DetailResult" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="CorrectQuestions" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Ranks">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RankName" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="RankImage" Type="nvarchar" Nullable="false" MaxLength="400" />
+    <Property Name="RequiredPoints" Type="int" Nullable="false" />
+    <Property Name="ParentRankId" Type="int" Nullable="true" />
+    <Property Name="RankOrder" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="Password" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="Email" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="ParentUserId" Type="int" Nullable="true" />
+    <Property Name="HiddenLocationsFound" Type="int" Nullable="true" />
+    <Property Name="CurrentRank" Type="int" Nullable="true" />
+    <Property Name="OpenedResources" Type="int" Nullable="true" />
+    <Property Name="OpenedLocationDetails" Type="int" Nullable="true" />
+    <Property Name="TeacherClassroomDefinition" Type="nvarchar(max)" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Answers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="QuestionId" Type="int" Nullable="false" />
+    <Property Name="AnswertText" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="isCorrectAnswer" Type="bit" Nullable="false" />
+    <Property Name="uId" Type="int" Nullable="false" />
+    <Property Name="questionUId" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Questions">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="QuizId" Type="int" Nullable="false" />
+    <Property Name="LocationId" Type="int" Nullable="true" />
+    <Property Name="QuestionText" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Points" Type="int" Nullable="false" />
+    <Property Name="uId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Quizs">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="TypeId" Type="int" Nullable="false" />
+    <Property Name="TeacherId" Type="int" Nullable="false" />
+    <Property Name="IsRandom" Type="bit" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Resources">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TypeId" Type="int" Nullable="false" />
+    <Property Name="LocationId" Type="int" Nullable="true" />
+    <Property Name="Text" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="256" />
+    <Property Name="LocationTypeId" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="RolePrivileges">
+    <Key>
+      <PropertyRef Name="Privileges_PrivilegeID" />
+      <PropertyRef Name="Roles_RoleID" />
+    </Key>
+    <Property Name="Privileges_PrivilegeID" Type="int" Nullable="false" />
+    <Property Name="Roles_RoleID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UserRoles">
+    <Key>
+      <PropertyRef Name="Roles_RoleID" />
+      <PropertyRef Name="Users_UserID" />
+    </Key>
+    <Property Name="Roles_RoleID" Type="int" Nullable="false" />
+    <Property Name="Users_UserID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="QuizQuestions">
+    <Key>
+      <PropertyRef Name="Questions_Id" />
+      <PropertyRef Name="Quizes_Id" />
+    </Key>
+    <Property Name="Questions_Id" Type="int" Nullable="false" />
+    <Property Name="Quizes_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_LocationTypes_LocationDisplaySettings">
+    <End Role="LocationDisplaySetting" Type="GeoGrafijaModel.Store.LocationDisplaySettings" Multiplicity="1" />
+    <End Role="LocationType" Type="GeoGrafijaModel.Store.LocationTypes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LocationDisplaySetting">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="LocationType">
+        <PropertyRef Name="DisplaySettings" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Locations_LocationDisplaySettings">
+    <End Role="LocationDisplaySetting" Type="GeoGrafijaModel.Store.LocationDisplaySettings" Multiplicity="0..1" />
+    <End Role="Location" Type="GeoGrafijaModel.Store.Locations" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LocationDisplaySetting">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Location">
+        <PropertyRef Name="DisplaySettings" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Locations_LocationTypes">
+    <End Role="LocationType" Type="GeoGrafijaModel.Store.LocationTypes" Multiplicity="1" />
+    <End Role="Location" Type="GeoGrafijaModel.Store.Locations" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LocationType">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Location">
+        <PropertyRef Name="LocationType" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Locations_ParentLocation">
+    <End Role="Location" Type="GeoGrafijaModel.Store.Locations" Multiplicity="0..1" />
+    <End Role="Location1" Type="GeoGrafijaModel.Store.Locations" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Location">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Location1">
+        <PropertyRef Name="ParentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Rank_ParentRank">
+    <End Role="Rank" Type="GeoGrafijaModel.Store.Ranks" Multiplicity="0..1" />
+    <End Role="Rank1" Type="GeoGrafijaModel.Store.Ranks" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Rank">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Rank1">
+        <PropertyRef Name="ParentRankId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Locations_Users">
+    <End Role="User" Type="GeoGrafijaModel.Store.Users" Multiplicity="1" />
+    <End Role="Location" Type="GeoGrafijaModel.Store.Locations" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="Location">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LocationTypes_Users">
+    <End Role="User" Type="GeoGrafijaModel.Store.Users" Multiplicity="1" />
+    <End Role="LocationType" Type="GeoGrafijaModel.Store.LocationTypes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="LocationType">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_Rank">
+    <End Role="Rank" Type="GeoGrafijaModel.Store.Ranks" Multiplicity="0..1" />
+    <End Role="User" Type="GeoGrafijaModel.Store.Users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Rank">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="CurrentRank" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StudentQuizResults_Student">
+    <End Role="User" Type="GeoGrafijaModel.Store.Users" Multiplicity="1" />
+    <End Role="StudentQuizResult" Type="GeoGrafijaModel.Store.StudentQuizResults" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="StudentQuizResult">
+        <PropertyRef Name="StudentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Student_TeacherParent">
+    <End Role="User" Type="GeoGrafijaModel.Store.Users" Multiplicity="0..1" />
+    <End Role="User1" Type="GeoGrafijaModel.Store.Users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="User1">
+        <PropertyRef Name="ParentUserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_QuestionAnswers_QuizQuestions">
+    <End Role="Question" Type="GeoGrafijaModel.Store.Questions" Multiplicity="1" />
+    <End Role="Answer" Type="GeoGrafijaModel.Store.Answers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Question">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Answer">
+        <PropertyRef Name="QuestionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_QuizQuestions_Locations">
+    <End Role="Location" Type="GeoGrafijaModel.Store.Locations" Multiplicity="0..1" />
+    <End Role="Question" Type="GeoGrafijaModel.Store.Questions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Location">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Question">
+        <PropertyRef Name="LocationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Quizes_Teacher">
+    <End Role="User" Type="GeoGrafijaModel.Store.Users" Multiplicity="1" />
+    <End Role="Quize" Type="GeoGrafijaModel.Store.Quizs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="Quize">
+        <PropertyRef Name="TeacherId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StudentQuizResults_Quizes">
+    <End Role="Quize" Type="GeoGrafijaModel.Store.Quizs" Multiplicity="1" />
+    <End Role="StudentQuizResult" Type="GeoGrafijaModel.Store.StudentQuizResults" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Quize">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="StudentQuizResult">
+        <PropertyRef Name="QuizId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Resources_Locations">
+    <End Role="Location" Type="GeoGrafijaModel.Store.Locations" Multiplicity="0..1" />
+    <End Role="Resource" Type="GeoGrafijaModel.Store.Resources" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Location">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Resource">
+        <PropertyRef Name="LocationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Resources_LocationTypes">
+    <End Role="LocationType" Type="GeoGrafijaModel.Store.LocationTypes" Multiplicity="0..1" />
+    <End Role="Resource" Type="GeoGrafijaModel.Store.Resources" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LocationType">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Resource">
+        <PropertyRef Name="LocationTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Resources_ResourceTypes">
+    <End Role="ResourceType" Type="GeoGrafijaModel.Store.ResourceTypes" Multiplicity="1" />
+    <End Role="Resource" Type="GeoGrafijaModel.Store.Resources" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ResourceType">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Resource">
+        <PropertyRef Name="TypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RolePrivileges_Privilege">
+    <End Role="Privilege" Type="GeoGrafijaModel.Store.Privileges" Multiplicity="1" />
+    <End Role="RolePrivileges" Type="GeoGrafijaModel.Store.RolePrivileges" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Privilege">
+        <PropertyRef Name="PrivilegeID" />
+      </Principal>
+      <Dependent Role="RolePrivileges">
+        <PropertyRef Name="Privileges_PrivilegeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RolePrivileges_Role">
+    <End Role="RolePrivileges" Type="GeoGrafijaModel.Store.RolePrivileges" Multiplicity="*" />
+    <End Role="Role" Type="GeoGrafijaModel.Store.Roles" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Role">
+        <PropertyRef Name="RoleID" />
+      </Principal>
+      <Dependent Role="RolePrivileges">
+        <PropertyRef Name="Roles_RoleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserRoles_Role">
+    <End Role="Role" Type="GeoGrafijaModel.Store.Roles" Multiplicity="1" />
+    <End Role="UserRoles" Type="GeoGrafijaModel.Store.UserRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Role">
+        <PropertyRef Name="RoleID" />
+      </Principal>
+      <Dependent Role="UserRoles">
+        <PropertyRef Name="Roles_RoleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserRoles_User">
+    <End Role="UserRoles" Type="GeoGrafijaModel.Store.UserRoles" Multiplicity="*" />
+    <End Role="User" Type="GeoGrafijaModel.Store.Users" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="UserRoles">
+        <PropertyRef Name="Users_UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_QuizQuestions_Question">
+    <End Role="Question" Type="GeoGrafijaModel.Store.Questions" Multiplicity="1" />
+    <End Role="QuizQuestions" Type="GeoGrafijaModel.Store.QuizQuestions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Question">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="QuizQuestions">
+        <PropertyRef Name="Questions_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_QuizQuestions_Quize">
+    <End Role="QuizQuestions" Type="GeoGrafijaModel.Store.QuizQuestions" Multiplicity="*" />
+    <End Role="Quize" Type="GeoGrafijaModel.Store.Quizs" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Quize">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="QuizQuestions">
+        <PropertyRef Name="Quizes_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="GeoGrafijaModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="GeoGrafijaEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="LocationDisplaySettings" EntityType="GeoGrafijaModel.LocationDisplaySetting" />
+          <EntitySet Name="LocationTypes" EntityType="GeoGrafijaModel.LocationType" />
+          <EntitySet Name="Privileges" EntityType="GeoGrafijaModel.Privilege" />
+          <EntitySet Name="ResourceTypes" EntityType="GeoGrafijaModel.ResourceType" />
+          <EntitySet Name="Roles" EntityType="GeoGrafijaModel.Role" />
+          <AssociationSet Name="FK_LocationTypes_LocationDisplaySettings" Association="GeoGrafijaModel.FK_LocationTypes_LocationDisplaySettings">
+            <End Role="LocationDisplaySetting" EntitySet="LocationDisplaySettings" />
+            <End Role="LocationType" EntitySet="LocationTypes" />
+          </AssociationSet>
+          <AssociationSet Name="RolePrivileges" Association="GeoGrafijaModel.RolePrivileges">
+            <End Role="Privilege" EntitySet="Privileges" />
+            <End Role="Role" EntitySet="Roles" />
+          </AssociationSet>
+          <EntitySet Name="Locations" EntityType="GeoGrafijaModel.Location" />
+          <AssociationSet Name="FK_Locations_LocationDisplaySettings" Association="GeoGrafijaModel.FK_Locations_LocationDisplaySettings">
+            <End Role="LocationDisplaySetting" EntitySet="LocationDisplaySettings" />
+            <End Role="Location" EntitySet="Locations" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Locations_LocationTypes" Association="GeoGrafijaModel.FK_Locations_LocationTypes">
+            <End Role="LocationType" EntitySet="LocationTypes" />
+            <End Role="Location" EntitySet="Locations" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Locations_ParentLocation" Association="GeoGrafijaModel.FK_Locations_ParentLocation">
+            <End Role="Location" EntitySet="Locations" />
+            <End Role="Location1" EntitySet="Locations" />
+          </AssociationSet>
+          <EntitySet Name="StudentQuizResults" EntityType="GeoGrafijaModel.StudentQuizResult" />
+          <EntitySet Name="Ranks" EntityType="GeoGrafijaModel.Rank" />
+          <AssociationSet Name="FK_Rank_ParentRank" Association="GeoGrafijaModel.FK_Rank_ParentRank">
+            <End Role="Rank" EntitySet="Ranks" />
+            <End Role="Rank1" EntitySet="Ranks" />
+          </AssociationSet>
+          <EntitySet Name="Users" EntityType="GeoGrafijaModel.User" />
+          <AssociationSet Name="FK_Locations_Users" Association="GeoGrafijaModel.FK_Locations_Users">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Location" EntitySet="Locations" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LocationTypes_Users" Association="GeoGrafijaModel.FK_LocationTypes_Users">
+            <End Role="User" EntitySet="Users" />
+            <End Role="LocationType" EntitySet="LocationTypes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Users_Users1" Association="GeoGrafijaModel.FK_User_Rank">
+            <End Role="Rank" EntitySet="Ranks" />
+            <End Role="User" EntitySet="Users" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StudentQuizResults_Student" Association="GeoGrafijaModel.FK_StudentQuizResults_Student">
+            <End Role="User" EntitySet="Users" />
+            <End Role="StudentQuizResult" EntitySet="StudentQuizResults" />
+          </AssociationSet>
+          <AssociationSet Name="Student_TeacherParent" Association="GeoGrafijaModel.Student_TeacherParent">
+            <End Role="User" EntitySet="Users" />
+            <End Role="User1" EntitySet="Users" />
+          </AssociationSet>
+          <AssociationSet Name="UserRoles" Association="GeoGrafijaModel.UserRoles">
+            <End Role="Role" EntitySet="Roles" />
+            <End Role="User" EntitySet="Users" />
+          </AssociationSet>
+          <EntitySet Name="Answers" EntityType="GeoGrafijaModel.Answer" />
+          <EntitySet Name="Questions" EntityType="GeoGrafijaModel.Question" />
+          <EntitySet Name="Quizs" EntityType="GeoGrafijaModel.Quiz" />
+          <AssociationSet Name="FK_QuestionAnswers_QuizQuestions" Association="GeoGrafijaModel.FK_QuestionAnswers_QuizQuestions">
+            <End Role="Question" EntitySet="Questions" />
+            <End Role="Answer" EntitySet="Answers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_QuizQuestions_Locations" Association="GeoGrafijaModel.FK_QuizQuestions_Locations">
+            <End Role="Location" EntitySet="Locations" />
+            <End Role="Question" EntitySet="Questions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Quizes_Teacher" Association="GeoGrafijaModel.FK_Quizes_Teacher">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Quize" EntitySet="Quizs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StudentQuizResults_Quizes" Association="GeoGrafijaModel.FK_StudentQuizResults_Quizes">
+            <End Role="Quize" EntitySet="Quizs" />
+            <End Role="StudentQuizResult" EntitySet="StudentQuizResults" />
+          </AssociationSet>
+          <AssociationSet Name="QuizQuestions" Association="GeoGrafijaModel.QuizQuestions">
+            <End Role="Question" EntitySet="Questions" />
+            <End Role="Quize" EntitySet="Quizs" />
+          </AssociationSet>
+          <EntitySet Name="Resources" EntityType="GeoGrafijaModel.Resource" />
+          <AssociationSet Name="FK_Resources_Locations" Association="GeoGrafijaModel.FK_Resources_Locations">
+            <End Role="Location" EntitySet="Locations" />
+            <End Role="Resource" EntitySet="Resources" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Resources_LocationTypes" Association="GeoGrafijaModel.FK_Resources_LocationTypes">
+            <End Role="LocationType" EntitySet="LocationTypes" />
+            <End Role="Resource" EntitySet="Resources" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Resources_ResourceTypes" Association="GeoGrafijaModel.FK_Resources_ResourceTypes">
+            <End Role="ResourceType" EntitySet="ResourceTypes" />
+            <End Role="Resource" EntitySet="Resources" />
+          </AssociationSet>
+          </EntityContainer>
+        <EntityType Name="LocationDisplaySetting">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MapType" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Zoom" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="RenderControls" Nullable="false" />
+          <NavigationProperty Name="LocationTypes" Relationship="GeoGrafijaModel.FK_LocationTypes_LocationDisplaySettings" FromRole="LocationDisplaySetting" ToRole="LocationType" />
+          <NavigationProperty Name="Locations" Relationship="GeoGrafijaModel.FK_Locations_LocationDisplaySettings" FromRole="LocationDisplaySetting" ToRole="Location" />
+        </EntityType>
+        <EntityType Name="LocationType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="TypeName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="TypeDescription" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="DisplaySettings" Nullable="false" />
+          <Property Type="Int32" Name="CreatedBy" Nullable="false" />
+          <Property Type="String" Name="Icon" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="LocationDisplaySetting" Relationship="GeoGrafijaModel.FK_LocationTypes_LocationDisplaySettings" FromRole="LocationType" ToRole="LocationDisplaySetting" />
+          <Property Type="String" Name="Color" MaxLength="10" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Locations" Relationship="GeoGrafijaModel.FK_Locations_LocationTypes" FromRole="LocationType" ToRole="Location" />
+          <NavigationProperty Name="User" Relationship="GeoGrafijaModel.FK_LocationTypes_Users" FromRole="LocationType" ToRole="User" />
+          <NavigationProperty Name="Resources" Relationship="GeoGrafijaModel.FK_Resources_LocationTypes" FromRole="LocationType" ToRole="Resource" />
+        </EntityType>
+        <EntityType Name="Privilege">
+          <Key>
+            <PropertyRef Name="PrivilegeID" />
+          </Key>
+          <Property Type="Int32" Name="PrivilegeID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="PrivilegeName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="PrivilegeDescription" MaxLength="200" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Roles" Relationship="GeoGrafijaModel.RolePrivileges" FromRole="Privilege" ToRole="Role" />
+        </EntityType>
+        <EntityType Name="ResourceType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Description" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Color" MaxLength="12" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Resources" Relationship="GeoGrafijaModel.FK_Resources_ResourceTypes" FromRole="ResourceType" ToRole="Resource" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="RoleID" />
+          </Key>
+          <Property Type="Int32" Name="RoleID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="RoleName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="RoleDescription" MaxLength="200" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Privileges" Relationship="GeoGrafijaModel.RolePrivileges" FromRole="Role" ToRole="Privilege" />
+          <NavigationProperty Name="Users" Relationship="GeoGrafijaModel.UserRoles" FromRole="Role" ToRole="User" />
+        </EntityType>
+        <Association Name="FK_LocationTypes_LocationDisplaySettings">
+          <End Type="GeoGrafijaModel.LocationDisplaySetting" Role="LocationDisplaySetting" Multiplicity="1" />
+          <End Type="GeoGrafijaModel.LocationType" Role="LocationType" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LocationDisplaySetting">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="LocationType">
+              <PropertyRef Name="DisplaySettings" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="RolePrivileges">
+          <End Type="GeoGrafijaModel.Privilege" Role="Privilege" Multiplicity="*" />
+          <End Type="GeoGrafijaModel.Role" Role="Role" Multiplicity="*" />
+        </Association>
+        <EntityType Name="Location">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Description" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Double" Name="Lat" Nullable="false" />
+          <Property Type="Double" Name="Lng" Nullable="false" />
+          <Property Type="Int32" Name="CreatedBy" Nullable="false" />
+          <Property Type="Int32" Name="LocationType" Nullable="false" />
+          <Property Type="Int32" Name="DisplaySettings" />
+          <Property Type="Int32" Name="ParentId" />
+          <NavigationProperty Name="LocationDisplaySetting" Relationship="GeoGrafijaModel.FK_Locations_LocationDisplaySettings" FromRole="Location" ToRole="LocationDisplaySetting" />
+          <NavigationProperty Name="LocationTypeObject" Relationship="GeoGrafijaModel.FK_Locations_LocationTypes" FromRole="Location" ToRole="LocationType" />
+          <NavigationProperty Name="Children" Relationship="GeoGrafijaModel.FK_Locations_ParentLocation" FromRole="Location" ToRole="Location1" />
+          <NavigationProperty Name="Parent" Relationship="GeoGrafijaModel.FK_Locations_ParentLocation" FromRole="Location1" ToRole="Location" />
+          <NavigationProperty Name="User" Relationship="GeoGrafijaModel.FK_Locations_Users" FromRole="Location" ToRole="User" />
+          <NavigationProperty Name="Questions" Relationship="GeoGrafijaModel.FK_QuizQuestions_Locations" FromRole="Location" ToRole="Question" />
+          <NavigationProperty Name="Resources" Relationship="GeoGrafijaModel.FK_Resources_Locations" FromRole="Location" ToRole="Resource" />
+        </EntityType>
+        <Association Name="FK_Locations_LocationDisplaySettings">
+          <End Type="GeoGrafijaModel.LocationDisplaySetting" Role="LocationDisplaySetting" Multiplicity="0..1" />
+          <End Type="GeoGrafijaModel.Location" Role="Location" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LocationDisplaySetting">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Location">
+              <PropertyRef Name="DisplaySettings" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Locations_LocationTypes">
+          <End Type="GeoGrafijaModel.LocationType" Role="LocationType" Multiplicity="1" />
+          <End Type="GeoGrafijaModel.Location" Role="Location" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LocationType">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Location">
+              <PropertyRef Name="LocationType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Locations_ParentLocation">
+          <End Type="GeoGrafijaModel.Location" Role="Location" Multiplicity="0..1" />
+          <End Type="GeoGrafijaModel.Location" Role="Location1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Location">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Location1">
+              <PropertyRef Name="ParentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="StudentQuizResult">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="QuizId" Nullable="false" />
+          <Property Type="Int32" Name="StudentId" Nullable="false" />
+          <Property Type="DateTime" Name="DateOpen" Nullable="false" />
+          <Property Type="DateTime" Name="DateUpdate" Nullable="false" />
+          <Property Type="Int32" Name="PointsTotal" Nullable="false" />
+          <Property Type="Int32" Name="PointsStudent" Nullable="false" />
+          <Property Type="String" Name="DetailResult" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="CorrectQuestions" />
+          <NavigationProperty Name="User" Relationship="GeoGrafijaModel.FK_StudentQuizResults_Student" FromRole="StudentQuizResult" ToRole="User" />
+          <NavigationProperty Name="Quiz" Relationship="GeoGrafijaModel.FK_StudentQuizResults_Quizes" FromRole="StudentQuizResult" ToRole="Quize" />
+        </EntityType>
+        <EntityType Name="Rank">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="RankName" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="RankImage" Nullable="false" MaxLength="400" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="RequiredPoints" Nullable="false" />
+          <Property Type="Int32" Name="ParentRankId" />
+          <NavigationProperty Name="SubRanks" Relationship="GeoGrafijaModel.FK_Rank_ParentRank" FromRole="Rank" ToRole="Rank1" />
+          <NavigationProperty Name="ParentRank" Relationship="GeoGrafijaModel.FK_Rank_ParentRank" FromRole="Rank1" ToRole="Rank" />
+          <NavigationProperty Name="Users" Relationship="GeoGrafijaModel.FK_User_Rank" FromRole="Rank" ToRole="User" />
+          <Property Type="Int32" Name="RankOrder" />
+        </EntityType>
+        <Association Name="FK_Rank_ParentRank">
+          <End Type="GeoGrafijaModel.Rank" Role="Rank" Multiplicity="0..1" />
+          <End Type="GeoGrafijaModel.Rank" Role="Rank1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rank">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Rank1">
+              <PropertyRef Name="ParentRankId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Type="Int32" Name="UserID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="UserName" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Password" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Email" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="ParentUserId" Nullable="true" />
+          <Property Type="Int32" Name="HiddenLocationsFound" />
+          <Property Type="Int32" Name="CurrentRank" Nullable="true" />
+          <NavigationProperty Name="Locations" Relationship="GeoGrafijaModel.FK_Locations_Users" FromRole="User" ToRole="Location" />
+          <NavigationProperty Name="LocationTypes" Relationship="GeoGrafijaModel.FK_LocationTypes_Users" FromRole="User" ToRole="LocationType" />
+          <NavigationProperty Name="Rank" Relationship="GeoGrafijaModel.FK_User_Rank" FromRole="User" ToRole="Rank" />
+          <NavigationProperty Name="StudentQuizResults" Relationship="GeoGrafijaModel.FK_StudentQuizResults_Student" FromRole="User" ToRole="StudentQuizResult" />
+          <NavigationProperty Name="Students" Relationship="GeoGrafijaModel.Student_TeacherParent" FromRole="User" ToRole="User1" />
+          <NavigationProperty Name="Teacher" Relationship="GeoGrafijaModel.Student_TeacherParent" FromRole="User1" ToRole="User" />
+          <NavigationProperty Name="Roles" Relationship="GeoGrafijaModel.UserRoles" FromRole="User" ToRole="Role" />
+          <NavigationProperty Name="Quizes" Relationship="GeoGrafijaModel.FK_Quizes_Teacher" FromRole="User" ToRole="Quize" />
+          <Property Type="Int32" Name="OpenedResources" />
+          <Property Type="Int32" Name="OpenedLocationDetails" />
+          <Property Type="String" Name="TeacherClassroomDefinition" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <Association Name="FK_Locations_Users">
+          <End Type="GeoGrafijaModel.User" Role="User" Multiplicity="1" />
+          <End Type="GeoGrafijaModel.Location" Role="Location" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Location">
+              <PropertyRef Name="CreatedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LocationTypes_Users">
+          <End Type="GeoGrafijaModel.User" Role="User" Multiplicity="1" />
+          <End Type="GeoGrafijaModel.LocationType" Role="LocationType" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="LocationType">
+              <PropertyRef Name="CreatedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User_Rank">
+          <End Type="GeoGrafijaModel.Rank" Role="Rank" Multiplicity="0..1" />
+          <End Type="GeoGrafijaModel.User" Role="User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rank">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="CurrentRank" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StudentQuizResults_Student">
+          <End Type="GeoGrafijaModel.User" Role="User" Multiplicity="1" />
+          <End Type="GeoGrafijaModel.StudentQuizResult" Role="StudentQuizResult" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="StudentQuizResult">
+              <PropertyRef Name="StudentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Student_TeacherParent">
+          <End Type="GeoGrafijaModel.User" Role="User" Multiplicity="0..1" />
+          <End Type="GeoGrafijaModel.User" Role="User1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="User1">
+              <PropertyRef Name="ParentUserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="UserRoles">
+          <End Type="GeoGrafijaModel.Role" Role="Role" Multiplicity="*" />
+          <End Type="GeoGrafijaModel.User" Role="User" Multiplicity="*" />
+        </Association>
+        <EntityType Name="Answer">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="QuestionId" Nullable="false" />
+          <Property Type="String" Name="AnswertText" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="isCorrectAnswer" Nullable="false" />
+          <Property Type="Int32" Name="uId" Nullable="false" />
+          <Property Type="Int32" Name="questionUId" />
+          <NavigationProperty Name="Question" Relationship="GeoGrafijaModel.FK_QuestionAnswers_QuizQuestions" FromRole="Answer" ToRole="Question" />
+        </EntityType>
+        <EntityType Name="Question">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="QuizId" Nullable="false" />
+          <Property Type="Int32" Name="LocationId" />
+          <Property Type="String" Name="QuestionText" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Points" Nullable="false" />
+          <Property Type="Int32" Name="uId" Nullable="false" />
+          <NavigationProperty Name="Answers" Relationship="GeoGrafijaModel.FK_QuestionAnswers_QuizQuestions" FromRole="Question" ToRole="Answer" />
+          <NavigationProperty Name="Location" Relationship="GeoGrafijaModel.FK_QuizQuestions_Locations" FromRole="Question" ToRole="Location" />
+          <NavigationProperty Name="Quizes" Relationship="GeoGrafijaModel.QuizQuestions" FromRole="Question" ToRole="Quize" />
+        </EntityType>
+        <EntityType Name="Quiz">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Description" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="TypeId" Nullable="false" />
+          <Property Type="Int32" Name="TeacherId" Nullable="false" />
+          <Property Type="Boolean" Name="IsRandom" />
+          <NavigationProperty Name="User" Relationship="GeoGrafijaModel.FK_Quizes_Teacher" FromRole="Quize" ToRole="User" />
+          <NavigationProperty Name="StudentQuizResults" Relationship="GeoGrafijaModel.FK_StudentQuizResults_Quizes" FromRole="Quize" ToRole="StudentQuizResult" />
+          <NavigationProperty Name="Questions" Relationship="GeoGrafijaModel.QuizQuestions" FromRole="Quize" ToRole="Question" />
+        </EntityType>
+        <Association Name="FK_QuestionAnswers_QuizQuestions">
+          <End Type="GeoGrafijaModel.Question" Role="Question" Multiplicity="1" />
+          <End Type="GeoGrafijaModel.Answer" Role="Answer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Question">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Answer">
+              <PropertyRef Name="QuestionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_QuizQuestions_Locations">
+          <End Type="GeoGrafijaModel.Location" Role="Location" Multiplicity="0..1" />
+          <End Type="GeoGrafijaModel.Question" Role="Question" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Location">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Question">
+              <PropertyRef Name="LocationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Quizes_Teacher">
+          <End Type="GeoGrafijaModel.User" Role="User" Multiplicity="1" />
+          <End Type="GeoGrafijaModel.Quiz" Role="Quize" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Quize">
+              <PropertyRef Name="TeacherId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StudentQuizResults_Quizes">
+          <End Type="GeoGrafijaModel.Quiz" Role="Quize" Multiplicity="1" />
+          <End Type="GeoGrafijaModel.StudentQuizResult" Role="StudentQuizResult" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Quize">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="StudentQuizResult">
+              <PropertyRef Name="QuizId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="QuizQuestions">
+          <End Type="GeoGrafijaModel.Question" Role="Question" Multiplicity="*" />
+          <End Type="GeoGrafijaModel.Quiz" Role="Quize" Multiplicity="*" />
+        </Association>
+        <EntityType Name="Resource">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="TypeId" Nullable="false" />
+          <Property Type="Int32" Name="LocationId" />
+          <Property Type="String" Name="Text" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="LocationTypeId" />
+          <NavigationProperty Name="Location" Relationship="GeoGrafijaModel.FK_Resources_Locations" FromRole="Resource" ToRole="Location" />
+          <NavigationProperty Name="LocationType" Relationship="GeoGrafijaModel.FK_Resources_LocationTypes" FromRole="Resource" ToRole="LocationType" />
+          <NavigationProperty Name="ResourceType" Relationship="GeoGrafijaModel.FK_Resources_ResourceTypes" FromRole="Resource" ToRole="ResourceType" />
+        </EntityType>
+        <Association Name="FK_Resources_Locations">
+          <End Type="GeoGrafijaModel.Location" Role="Location" Multiplicity="0..1" />
+          <End Type="GeoGrafijaModel.Resource" Role="Resource" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Location">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Resource">
+              <PropertyRef Name="LocationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Resources_LocationTypes">
+          <End Type="GeoGrafijaModel.LocationType" Role="LocationType" Multiplicity="0..1" />
+          <End Type="GeoGrafijaModel.Resource" Role="Resource" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LocationType">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Resource">
+              <PropertyRef Name="LocationTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Resources_ResourceTypes">
+          <End Type="GeoGrafijaModel.ResourceType" Role="ResourceType" Multiplicity="1" />
+          <End Type="GeoGrafijaModel.Resource" Role="Resource" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ResourceType">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Resource">
+              <PropertyRef Name="TypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="GeoGrafijaModelStoreContainer" CdmEntityContainer="GeoGrafijaEntities">
+    <EntitySetMapping Name="LocationDisplaySettings">
+      <EntityTypeMapping TypeName="IsTypeOf(GeoGrafijaModel.LocationDisplaySetting)">
+        <MappingFragment StoreEntitySet="LocationDisplaySettings">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="MapType" ColumnName="MapType" />
+          <ScalarProperty Name="Zoom" ColumnName="Zoom" />
+          <ScalarProperty Name="RenderControls" ColumnName="RenderControls" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LocationTypes">
+      <EntityTypeMapping TypeName="IsTypeOf(GeoGrafijaModel.LocationType)">
+        <MappingFragment StoreEntitySet="LocationTypes">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="TypeName" ColumnName="TypeName" />
+          <ScalarProperty Name="TypeDescription" ColumnName="TypeDescription" />
+          <ScalarProperty Name="DisplaySettings" ColumnName="DisplaySettings" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Icon" ColumnName="Icon" />
+          <ScalarProperty Name="Color" ColumnName="Color" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Privileges">
+      <EntityTypeMapping TypeName="IsTypeOf(GeoGrafijaModel.Privilege)">
+        <MappingFragment StoreEntitySet="Privileges">
+          <ScalarProperty Name="PrivilegeID" ColumnName="PrivilegeID" />
+          <ScalarProperty Name="PrivilegeName" ColumnName="PrivilegeName" />
+          <ScalarProperty Name="PrivilegeDescription" ColumnName="PrivilegeDescription" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ResourceTypes">
+      <EntityTypeMapping TypeName="IsTypeOf(GeoGrafijaModel.ResourceType)">
+        <MappingFragment StoreEntitySet="ResourceTypes">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Color" ColumnName="Color" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Roles">
+      <EntityTypeMapping TypeName="IsTypeOf(GeoGrafijaModel.Role)">
+        <MappingFragment StoreEntitySet="Roles">
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+          <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+          <ScalarProperty Name="RoleDescription" ColumnName="RoleDescription" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Locations">
+      <EntityTypeMapping TypeName="IsTypeOf(GeoGrafijaModel.Location)">
+        <MappingFragment StoreEntitySet="Locations">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Lat" ColumnName="Lat" />
+          <ScalarProperty Name="Lng" ColumnName="Lng" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="LocationType" ColumnName="LocationType" />
+          <ScalarProperty Name="DisplaySettings" ColumnName="DisplaySettings" />
+          <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StudentQuizResults">
+      <EntityTypeMapping TypeName="IsTypeOf(GeoGrafijaModel.StudentQuizResult)">
+        <MappingFragment StoreEntitySet="StudentQuizResults">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="QuizId" ColumnName="QuizId" />
+          <ScalarProperty Name="StudentId" ColumnName="StudentId" />
+          <ScalarProperty Name="DateOpen" ColumnName="DateOpen" />
+          <ScalarProperty Name="DateUpdate" ColumnName="DateUpdate" />
+          <ScalarProperty Name="PointsTotal" ColumnName="PointsTotal" />
+          <ScalarProperty Name="PointsStudent" ColumnName="PointsStudent" />
+          <ScalarProperty Name="DetailResult" ColumnName="DetailResult" />
+          <ScalarProperty Name="CorrectQuestions" ColumnName="CorrectQuestions" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ranks">
+      <EntityTypeMapping TypeName="IsTypeOf(GeoGrafijaModel.Rank)">
+        <MappingFragment StoreEntitySet="Ranks">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="RankName" ColumnName="RankName" />
+          <ScalarProperty Name="RankImage" ColumnName="RankImage" />
+          <ScalarProperty Name="RequiredPoints" ColumnName="RequiredPoints" />
+          <ScalarProperty Name="ParentRankId" ColumnName="ParentRankId" />
+          <ScalarProperty Name="RankOrder" ColumnName="RankOrder" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="IsTypeOf(GeoGrafijaModel.User)">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="ParentUserId" ColumnName="ParentUserId" />
+          <ScalarProperty Name="HiddenLocationsFound" ColumnName="HiddenLocationsFound" />
+          <ScalarProperty Name="CurrentRank" ColumnName="CurrentRank" />
+          <ScalarProperty Name="OpenedResources" ColumnName="OpenedResources" />
+          <ScalarProperty Name="OpenedLocationDetails" ColumnName="OpenedLocationDetails" />
+          <ScalarProperty Name="TeacherClassroomDefinition" ColumnName="TeacherClassroomDefinition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Answers">
+      <EntityTypeMapping TypeName="IsTypeOf(GeoGrafijaModel.Answer)">
+        <MappingFragment StoreEntitySet="Answers">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="QuestionId" ColumnName="QuestionId" />
+          <ScalarProperty Name="AnswertText" ColumnName="AnswertText" />
+          <ScalarProperty Name="isCorrectAnswer" ColumnName="isCorrectAnswer" />
+          <ScalarProperty Name="uId" ColumnName="uId" />
+          <ScalarProperty Name="questionUId" ColumnName="questionUId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Questions">
+      <EntityTypeMapping TypeName="IsTypeOf(GeoGrafijaModel.Question)">
+        <MappingFragment StoreEntitySet="Questions">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="QuizId" ColumnName="QuizId" />
+          <ScalarProperty Name="LocationId" ColumnName="LocationId" />
+          <ScalarProperty Name="QuestionText" ColumnName="QuestionText" />
+          <ScalarProperty Name="Points" ColumnName="Points" />
+          <ScalarProperty Name="uId" ColumnName="uId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Quizs">
+      <EntityTypeMapping TypeName="IsTypeOf(GeoGrafijaModel.Quiz)">
+        <MappingFragment StoreEntitySet="Quizs">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="TypeId" ColumnName="TypeId" />
+          <ScalarProperty Name="TeacherId" ColumnName="TeacherId" />
+          <ScalarProperty Name="IsRandom" ColumnName="IsRandom" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Resources">
+      <EntityTypeMapping TypeName="IsTypeOf(GeoGrafijaModel.Resource)">
+        <MappingFragment StoreEntitySet="Resources">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="TypeId" ColumnName="TypeId" />
+          <ScalarProperty Name="LocationId" ColumnName="LocationId" />
+          <ScalarProperty Name="Text" ColumnName="Text" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="LocationTypeId" ColumnName="LocationTypeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="RolePrivileges" TypeName="GeoGrafijaModel.RolePrivileges" StoreEntitySet="RolePrivileges">
+      <EndProperty Name="Privilege">
+        <ScalarProperty Name="PrivilegeID" ColumnName="Privileges_PrivilegeID" />
+      </EndProperty>
+      <EndProperty Name="Role">
+        <ScalarProperty Name="RoleID" ColumnName="Roles_RoleID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="UserRoles" TypeName="GeoGrafijaModel.UserRoles" StoreEntitySet="UserRoles">
+      <EndProperty Name="Role">
+        <ScalarProperty Name="RoleID" ColumnName="Roles_RoleID" />
+      </EndProperty>
+      <EndProperty Name="User">
+        <ScalarProperty Name="UserID" ColumnName="Users_UserID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="QuizQuestions" TypeName="GeoGrafijaModel.QuizQuestions" StoreEntitySet="QuizQuestions">
+      <EndProperty Name="Question">
+        <ScalarProperty Name="Id" ColumnName="Questions_Id" />
+      </EndProperty>
+      <EndProperty Name="Quize">
+        <ScalarProperty Name="Id" ColumnName="Quizes_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="UseLegacyProvider" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="GeoGrafijaModel" ZoomLevel="101">
+        <EntityTypeShape EntityType="GeoGrafijaModel.LocationDisplaySetting" Width="1.5" PointX="5.25" PointY="2.875" Height="2.3648893229166674" />
+        <EntityTypeShape EntityType="GeoGrafijaModel.LocationType" Width="1.5" PointX="10.5" PointY="6.625" Height="2.9417936197916648" />
+        <EntityTypeShape EntityType="GeoGrafijaModel.Privilege" Width="1.5" PointX="0.75" PointY="7.25" Height="1.7879850260416745" />
+        <EntityTypeShape EntityType="GeoGrafijaModel.ResourceType" Width="1.5" PointX="10.5" PointY="3.125" Height="1.9802864583333317" />
+        <EntityTypeShape EntityType="GeoGrafijaModel.Role" Width="1.5" PointX="3" PointY="7.125" Height="1.9802864583333317" />
+        <AssociationConnector Association="GeoGrafijaModel.FK_LocationTypes_LocationDisplaySettings" >
+          <ConnectorPoint PointX="6.75" PointY="5.2398893229166674" />
+          <ConnectorPoint PointX="7.125" PointY="5.6148893229166674" />
+          <ConnectorPoint PointX="8.1666666666666661" PointY="5.6148893229166665" />
+          <ConnectorPoint PointX="8.3333333333333339" PointY="5.6148893229166674" />
+          <ConnectorPoint PointX="11.25" PointY="5.6148893229166674" />
+          <ConnectorPoint PointX="11.25" PointY="6.625" />
+        </AssociationConnector>
+        <AssociationConnector Association="GeoGrafijaModel.RolePrivileges" >
+          <ConnectorPoint PointX="2.25" PointY="8.1439925130208373" />
+          <ConnectorPoint PointX="3" PointY="8.1439925130208373" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="GeoGrafijaModel.Location" Width="1.5" PointX="7.5" PointY="6.125" Height="4.0956022135416648" />
+        <AssociationConnector Association="GeoGrafijaModel.FK_Locations_LocationDisplaySettings" >
+          <ConnectorPoint PointX="6.75" PointY="4.0261921614583338" />
+          <ConnectorPoint PointX="8.25" PointY="4.0261921614583338" />
+          <ConnectorPoint PointX="8.25" PointY="6.125" />
+        </AssociationConnector>
+        <AssociationConnector Association="GeoGrafijaModel.FK_Locations_LocationTypes" >
+          <ConnectorPoint PointX="10.5" PointY="8.7486385224202863" />
+          <ConnectorPoint PointX="9" PointY="8.7486385224202863" />
+        </AssociationConnector>
+        <AssociationConnector Association="GeoGrafijaModel.FK_Locations_ParentLocation" >
+          <ConnectorPoint PointX="8.0319230769230767" PointY="10.220602213541666" />
+          <ConnectorPoint PointX="8.0319230769230767" PointY="10.470602213541666" />
+          <ConnectorPoint PointX="8.47846153846154" PointY="10.470602213541666" />
+          <ConnectorPoint PointX="8.47846153846154" PointY="10.220602213541666" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="GeoGrafijaModel.StudentQuizResult" Width="1.5" PointX="9.75" PointY="10.5" Height="3.1340950520833317" />
+        <EntityTypeShape EntityType="GeoGrafijaModel.Rank" Width="1.5" PointX="3" PointY="2.875" Height="2.5571907552083335" />
+        <AssociationConnector Association="GeoGrafijaModel.FK_Rank_ParentRank" >
+          <ConnectorPoint PointX="3.5319230769230767" PointY="5.4321907552083335" />
+          <ConnectorPoint PointX="3.5319230769230767" PointY="5.6821907552083335" />
+          <ConnectorPoint PointX="3.9784615384615383" PointY="5.6821907552083335" />
+          <ConnectorPoint PointX="3.9784615384615383" PointY="5.4321907552083335" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="GeoGrafijaModel.User" Width="1.5" PointX="5.25" PointY="6.125" Height="3.903300781249996" />
+        <AssociationConnector Association="GeoGrafijaModel.FK_Locations_Users" >
+          <ConnectorPoint PointX="6.75" PointY="8.076650390624998" />
+          <ConnectorPoint PointX="7.5" PointY="8.076650390624998" />
+        </AssociationConnector>
+        <AssociationConnector Association="GeoGrafijaModel.FK_LocationTypes_Users" >
+          <ConnectorPoint PointX="6" PointY="6.125" />
+          <ConnectorPoint PointX="6" PointY="5.875" />
+          <ConnectorPoint PointX="8.1666666666666661" PointY="5.8749999999999991" />
+          <ConnectorPoint PointX="8.3333333333333339" PointY="5.875" />
+          <ConnectorPoint PointX="10.125" PointY="5.875" />
+          <ConnectorPoint PointX="10.125" PointY="7.6555672612101429" />
+          <ConnectorPoint PointX="10.5" PointY="7.6555672612101429" />
+        </AssociationConnector>
+        <AssociationConnector Association="GeoGrafijaModel.FK_User_Rank" >
+          <ConnectorPoint PointX="4.4999999999999991" PointY="5.4321907552083335" />
+          <ConnectorPoint PointX="5.25" PointY="6.125" />
+        </AssociationConnector>
+        <AssociationConnector Association="GeoGrafijaModel.FK_StudentQuizResults_Student" >
+          <ConnectorPoint PointX="6" PointY="10.028300781249996" />
+          <ConnectorPoint PointX="6" PointY="12.067047526041666" />
+          <ConnectorPoint PointX="7.6513757051282054" PointY="12.067047526041666" />
+          <ConnectorPoint PointX="7.8180423717948715" PointY="12.067047526041666" />
+          <ConnectorPoint PointX="9.75" PointY="12.067047526041666" />
+        </AssociationConnector>
+        <AssociationConnector Association="GeoGrafijaModel.Student_TeacherParent" >
+          <ConnectorPoint PointX="5.6676923076923078" PointY="10.02830078125" />
+          <ConnectorPoint PointX="5.6676923076923078" PointY="10.27830078125" />
+          <ConnectorPoint PointX="6" PointY="10.27830078125" />
+          <ConnectorPoint PointX="6" PointY="10.02830078125" />
+        </AssociationConnector>
+        <AssociationConnector Association="GeoGrafijaModel.UserRoles" >
+          <ConnectorPoint PointX="4.5" PointY="8.1151432291666659" />
+          <ConnectorPoint PointX="5.25" PointY="8.1151432291666659" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="GeoGrafijaModel.Answer" Width="1.5" PointX="12.875" PointY="15.125" Height="2.3648893229166674" />
+        <EntityTypeShape EntityType="GeoGrafijaModel.Question" Width="1.5" PointX="9.75" PointY="14.75" Height="2.7494921875000031" />
+        <EntityTypeShape EntityType="GeoGrafijaModel.Quiz" Width="1.5" PointX="12" PointY="10.5" Height="2.7494921875000031" />
+        <AssociationConnector Association="GeoGrafijaModel.FK_QuestionAnswers_QuizQuestions" >
+          <ConnectorPoint PointX="11.25" PointY="16.307444661458334" />
+          <ConnectorPoint PointX="12.875" PointY="16.307444661458334" />
+        </AssociationConnector>
+        <AssociationConnector Association="GeoGrafijaModel.FK_QuizQuestions_Locations" >
+          <ConnectorPoint PointX="7.7347090384615385" PointY="10.220602213541666" />
+          <ConnectorPoint PointX="7.7347090384615385" PointY="16.12474609375" />
+          <ConnectorPoint PointX="9.75" PointY="16.12474609375" />
+        </AssociationConnector>
+        <AssociationConnector Association="GeoGrafijaModel.FK_Quizes_Teacher" >
+          <ConnectorPoint PointX="6.406252" PointY="10.028300781249996" />
+          <ConnectorPoint PointX="6.406252" PointY="10.25" />
+          <ConnectorPoint PointX="11.625" PointY="10.25" />
+          <ConnectorPoint PointX="11.625" PointY="11.874746093750002" />
+          <ConnectorPoint PointX="12" PointY="11.874746093750002" />
+        </AssociationConnector>
+        <AssociationConnector Association="GeoGrafijaModel.FK_StudentQuizResults_Quizes" >
+          <ConnectorPoint PointX="12" PointY="11.124873046875" />
+          <ConnectorPoint PointX="11.708333333333334" PointY="11.124873046875" />
+          <ConnectorPoint PointX="11.541666666666666" PointY="11.124873046875" />
+          <ConnectorPoint PointX="11.25" PointY="11.124873046875" />
+        </AssociationConnector>
+        <AssociationConnector Association="GeoGrafijaModel.QuizQuestions" >
+          <ConnectorPoint PointX="11.25" PointY="14.812306692307692" />
+          <ConnectorPoint PointX="11.6875" PointY="14.374806692307693" />
+          <ConnectorPoint PointX="11.6875" PointY="12.593371140624996" />
+          <ConnectorPoint PointX="12" PointY="12.593371140624996" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="GeoGrafijaModel.Resource" Width="1.5" PointX="12.75" PointY="5.25" Height="2.749492187500004" />
+        <AssociationConnector Association="GeoGrafijaModel.FK_Resources_Locations" >
+          <ConnectorPoint PointX="9" PointY="6.3437500000000009" />
+          <ConnectorPoint PointX="10.041666666666666" PointY="6.34375" />
+          <ConnectorPoint PointX="10.208333333333334" PointY="6.3437500000000009" />
+          <ConnectorPoint PointX="11.166666666666666" PointY="6.34375" />
+          <ConnectorPoint PointX="11.333333333333334" PointY="6.3437500000000009" />
+          <ConnectorPoint PointX="12.75" PointY="6.3437500000000009" />
+        </AssociationConnector>
+        <AssociationConnector Association="GeoGrafijaModel.FK_Resources_LocationTypes" >
+          <ConnectorPoint PointX="12" PointY="7.3122460937500016" />
+          <ConnectorPoint PointX="12.75" PointY="7.3122460937500016" />
+        </AssociationConnector>
+        <AssociationConnector Association="GeoGrafijaModel.FK_Resources_ResourceTypes" >
+          <ConnectorPoint PointX="12" PointY="4.1151432291666667" />
+          <ConnectorPoint PointX="13.5" PointY="4.1151432291666667" />
+          <ConnectorPoint PointX="13.5" PointY="5.25" />
+        </AssociationConnector>
+        </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

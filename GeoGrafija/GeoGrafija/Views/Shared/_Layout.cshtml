@@ -1,0 +1,127 @@
+﻿@using SquishIt.Framework
+@using SquishIt.Mvc
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>@ViewBag.Title</title>
+        @(Bundle.Css()
+            .Add(Url.CsssMainSite())
+            .Add(Url.CssLocations())
+            .Add(Url.CssResources())
+            .Add(Url.CssUtility())
+            .Add(Url.CssQuizes())
+            .Add(Url.CssForms())
+            .Add(Url.CssClassroom())
+            .Add(Url.CssColorPicker())
+            .Add(Url.CssRichEditor())
+            .Add(Url.CssDataTablesJui())
+            .Add(Url.CssLoadMask())
+            .Add(Url.CssScrollbars())
+            .Add(Url.CssJqueryUi())
+            .MvcRender("~/Content/combined_#.css")
+     )
+     
+        <!-- first script is jquery 1.7 -->
+        <script src="@Url.GoogleMapsApi()" type="text/javascript"></script>
+
+        <link rel="SHORTCUT ICON" href="@Url.Image("favicon_2.ico")"/>
+
+        <script src="@Url.Scripts("jquery.min.js")" type="text/javascript"></script>
+        <script src="@Url.Scripts("modernizr-1.7.min.js")" type="text/javascript"></script>
+        <script src="@Url.Scripts("jquery-ui-1.8.11.min.js")" type="text/javascript"></script>
+        <script src="@Url.Scripts("jquery.validate.min.js")" type="text/javascript"></script>
+        <script src="@Url.Scripts("jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+
+        <script src="@Url.JSON()" type="text/javascript"></script>
+        <script src="@Url.DropKickScript()" type="text/javascript"></script>
+        <script src="@Url.DataTablesScript()" type="text/javascript"></script>
+        <script src="@Url.ColorPickerScript()" type="text/javascript"></script>
+<!--Bundle my scripts -->
+        @(Bundle.JavaScript()
+            .Add(Url.GeoUtility())
+            .Add(Url.GeoUi())
+            .Add(Url.GeoAjax())
+            .Add(Url.GeoMain())
+            .Add(Url.GeoJqueryUiWrappers())
+            .Add(Url.GeoDialogManager())
+            .Add(Url.GeoDialogFactory())
+            .Add(Url.GeoQuizesCreate())
+            .Add(Url.GeoDisplay())
+            .Add(Url.GeoSearch())
+            .Add(Url.GeoMarkup())
+            .Add(Url.GeoClassroom())
+            .Add(Url.GeoExploration())
+            .Add(Url.GeoLearning())
+            .Add(Url.GeoResources())
+            .Add(Url.GeoGeneralResourcesCreate())
+            .Add(Url.GeoResourcesCreate())
+            .Add(Url.GeoSingleDisplay())
+            .Add(Url.GeoQuizesTake())
+            .Add(Url.RichEditorScript())
+            .Add(Url.JqueryTools())
+            .Add(Url.LoadMaskScript())
+            .Add(Url.ScrollbarScript())
+            .Add(Url.MapScripts("BasicMapFunctions.js"))
+            .Add(Url.PageScript("AddLocation.js"))
+            .Add(Url.PageScript("EditLocation.js"))
+            .Add(Url.PageScript("CreateLocationType.js"))
+            .Add(Url.PageScript("EditLocationType.js"))
+            .MvcRender("~/Scripts/combined_#.js")
+    )
+    </head>
+    <body>
+        <div id="Wrapper">
+            <header id="pageHeader">
+                <div id="logindisplay">
+
+                    <div id="GeoName">
+                        <a href="@Url.Action("Index","Home")">
+                            <img alt="Лого на Географија" src ="/Content/images/GeoLogo.png" />
+                        </a>
+
+                        <span>алфа</span>
+                    </div>
+                    @Html.Partial("_LogOnPartial")
+                </div>
+                <nav>
+                    <ul id="menu">
+                        @Html.Navigation((string)ViewBag.NavigationType)
+                        <li>
+                            @Html.ActionLink("Дома", "Index", "Home")
+                            <div class="icon" data-image="house.png"></div>
+                        </li>
+                        <li>
+                            @Html.ActionLink("Пребарување", "Index", "Search")
+                            <div class="icon" data-image="search.png"></div>
+                        </li>
+                        <li>
+                            @Html.ActionLink("Истражи", "Index", "Exploration")
+                            <div class="icon" data-image="planet.png"></div>
+                        </li>
+                        <li>
+                            @Html.ActionLink("За ГеоГрафија", "About", "Home")
+                            <div class="icon" data-image="about.png"></div>
+                        </li>
+                    </ul>
+                </nav>
+                <div id="GeoLogo"></div>
+                <div class="clear"></div>
+            </header>
+            <div id="HeaderBorder"></div>
+            <div id="Content">
+                <div class="padding">
+                    <section id="Main">
+                        <div class="padding">
+                            @RenderBody()
+                            <div class="clear"></div>
+                        </div>
+                    </section>
+                    <div class="clear"></div>
+                </div>
+            </div>
+            <div id="toTop">^ Врати се Горе!</div>
+        </div>
+
+    </body>
+</html>

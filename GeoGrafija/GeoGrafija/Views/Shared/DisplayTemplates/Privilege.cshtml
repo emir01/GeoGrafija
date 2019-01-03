@@ -1,0 +1,11 @@
+﻿@model Privilege
+
+@using GeoGrafija.Extensions
+@using Model
+
+
+
+@Html.DisplayFor(m => m.PrivilegeName)<span style="margin-left:5px;margin-right:5px;"> - </span>
+
+@Html.LabelFor(m=>m.PrivilegeDescription,DisplayHelper.ShortenString(Model.PrivilegeDescription,40))
+

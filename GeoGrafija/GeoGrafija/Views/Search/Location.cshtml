@@ -1,0 +1,306 @@
+﻿@using GeoGrafija.ViewModels.LocationViewModels
+@model DisplayLocationViewModel
+
+@{
+    ViewBag.Title = "Детали за локација";
+}
+<div id="SearchLocationDetailsForm" class="formBackground generalFormLayout">
+    <div class="padding">
+        <div id="locationHirearchy">
+            <div class="padding"></div>
+        </div>
+        <div id="DetailsHelpButtonContainer">
+            <a href="#" class="button green fixA" id="locDetailsHelpButton">помош ?</a>
+            <div class="clear"></div>
+        </div>
+        @Html.HiddenFor(x => x.ID, new { Id = "HiddenLocationID" })
+        <div id="searchDetailsWrapper">
+            <div class="padding">
+                <div id="mapDetailsWrapper">
+                    <div class="padding">
+                        <div id="mapDetails"></div>
+                    </div>
+                    <div id="LocationTypeNameContainer">@Html.DisplayFor(x => x.TypeName)</div>
+                    <div id="RecenterDetailsMapButtonContainer">
+                        <a href="#" id="ResetDetailsMapButton" class="button fixA blue">ресетирај поглед</a>
+                    </div>
+                </div>
+                <div id="infoDetails">
+                    <div class="padding">
+                        <div id="locationNameBox">
+                            <a href="#">
+                                <div class="padding">@Model.Name</div>
+                            </a>
+                        </div>
+                        <div class="clear"></div>
+                        <div id="locaitonInfoContent" class="revetMe">
+                            <div class="padding">@Html.Raw(Model.Description)</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="clear"></div>
+                <div id="findOutMore">
+                    <a href="#" id="findoutMoreLink" class="button red fixA">
+                        <div class="padding">Дознај Повеќе!</div>
+                    </a>
+                    @Html.ActionLink("Најди на мапа!", "Index", "Exploration", new { lid = Model.ID }, new { @class = "button green fixA" })
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+        <div id="resourceContainer">
+            <div class="padding">
+                <a href="#" id="BackToLocaitonDetailsLink" class="button red fixA">Назад!</a>
+                <div id="ResourceUiLocationBox" class="nameBox">
+                    <a href="#">
+                        <div class="padding">@Model.Name</div>
+                    </a>
+                </div>
+                <div class="clear"></div>
+                <h3 class="formHeader pickExplanation">
+                    Искористите некој од ресурсите за
+                    <span>@Model.Name</span>
+                    :
+                </h3>
+                <div class="clear"></div>
+                @foreach (var resourceType in Model.AllResourceTypes)
+                {
+                <div class="resourceSeciton formBackground">
+                    <div class="padding">
+                        <div class="resourceSectionHeadingBox">
+                            <div class="padding" data-color ="@resourceType.Color">
+                                <div class="text objectTitle">@resourceType.Name</div>
+                                <div class="clear"></div>
+                            </div>
+                        </div>
+                        <div class="clear"></div>
+                        <div class="resourcesListWrapper">
+                            <div class="padding">
+                                <ul class="resourceList">
+                                    @foreach (var resource in resourceType.Resources)
+                                        {
+                                    <li data-id = "@resource.Id" data-type-id = "@resource.TypeId">@resource.Name</li>
+                                    }
+                                    <div class="clear"></div>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                }
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+            <div id="LearnMoreLocations">
+                <h3 class="formHeader pickExplanation">
+                    Или изберете некоја од локациите во
+                    <span>@Model.Name</span>
+                    за да дознаете повеќе
+                    :
+                </h3>
+                <div id="LocationsCanvas">
+                    <div id="LocationTypes">@Html.Partial("_LocationTypesUl", new { Links = false })</div>
+                    <div class="clear"></div>
+                    <div id="parent" class="locationParentWrapper"></div>
+                    <div id="searchBox" class="locationSearchBarWrapper"></div>
+                    <div id="canvas" class="locaitonCanvasWrapper"></div>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+</div>
+<div class="hidden" id="HiddenViewModelProperties">
+    @Html.HiddenFor(model => model.Name)
+    @Html.HiddenFor(model => model.ID)
+    @Html.HiddenFor(model => model.Lat)
+    @Html.HiddenFor(model => model.Lng)
+    @Html.HiddenFor(model => model.MapType)
+    @Html.HiddenFor(model => model.RenderControls)
+    @Html.HiddenFor(model => model.Zoom)
+    @Html.HiddenFor(model => model.Icon)
+    <input id="typeColor" type="hidden" value="@Model.TypeColor"/>
+</div>
+<div class="hidden" id="ResourceDisplayDialogsHiddenMarkup">
+    <div id="VideoResourceDisplay">
+        <div class="padding">
+            <div id="VideoFrameWrapper"></div>
+        </div>
+    </div>
+    <div id="LinkResourceDisplay">
+        <div class="padding">
+            <div id="OpenLinkMessage">Дали сигурно сакате да го отворите следниот линк :</div>
+            <div class="clear"></div>
+            <div id="LinkText"></div>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <div id="TextResourceDisplay">
+        <div class="padding">
+            <div id="TextResourceMainDisplay" class="revetMe"></div>
+        </div>
+    </div>
+    <div id="AnimationResourceDisplay">
+        <div class="padding"></div>
+    </div>
+</div>
+<input type="hidden" id="SelectedPage" value="Пребарување" />
+<script type="text/javascript" src="@Url.PageScript("SearchLocationDetails.js")"></script>
+<div id="LocationDetHelpWrapper" class="pageHelpDialog hidden">
+    <h2>Како функционаира деталниот поглед на локација!</h2>
+
+    <h3 class="explanationSectionHeader">Содржина :</h3>
+    <ul class="dialogExplanationContentsList">
+        <li>
+            <a scroll="181" href="#introductionToMap">Основен поглед</a>
+        </li>
+        <li>
+            <a scroll="2034" href="#basicsOfMap">Поглед на ресурси и подлокации</a>
+        </li>
+        <li>
+            <a scroll="2753" href="#functionOfMarkers">Ресурси</a>
+        </li>
+        <li>
+            <a scroll="4459" href="#">Пребарување на подлокации</a>
+        </li>
+    </ul>
+        <div class="explanationBreak"></div>
+
+        <h3 class="explanationSectionHeader">Основен поглед :</h3>
+        <p class="explanation">
+            Основниот детален поглед се состои од неколку делови . Еден од нив е интерактивна
+        мапа која се наоѓа на левата страна и на која е означена локацијата со соодветниот
+        маркер маркер.
+        </p>
+        <div class="dialogExplanationImage">
+            <img src="/Content/LocationDetailsHelpImages/overviewMap.png" alt="Преглед на Детали - Мапа"></div>
+        <p class="explanation">
+            Мапата може да ја менувата и да се движите низ неа за да можеби разгледате што друго
+        се наоѓа околу избраната локација. Тука нема да се прикажат останатите локации во
+        системот. За да се вратите назад на почетниот поглед искористете го копчето кое
+        се наоѓа под мапата. Над мапата може да се дознае типот на локацијата.
+        </p>
+        <div class="dialogExplanationImage">
+            <img src="/Content/LocationDetailsHelpImages/resetAndType.png" alt="Ресетирање на мапа и тип на локација"></div>
+        <p class="explanation">
+            Во десниот дел на основниот поглед се наоѓа дел кој го содржи името на локацијата
+        и краткиот опис за таа локација.
+        </p>
+        <div class="dialogExplanationImage">
+            <img src="/Content/LocationDetailsHelpImages/detailsDescriptionNameOverview.png"
+            alt="Име на локација и краток опис"></div>
+        @*
+        <p class="explanation" class="hidden">
+            Со кликање на името на локацијата во основниот поглед може да се вратите на пребарувањето со таа локација поставена како контекст.
+        </p>
+        *@
+        <p class="explanation">
+            Конечно во под овие два дела се наоѓаат две копчина со доста важна фунционалност.
+        </p>
+        <div class="dialogExplanationImage">
+            <img src="/Content/LocationDetailsHelpImages/importantButtons.png" alt="Важни копчина"></div>
+        <p class="explanation">
+            "Погледни на мапа"" ќе го отвори погледот/маата за истражување и ќе се фокусира
+        на избраната локација.
+        </p>
+        <p class="explanation">
+            Дознај повеќе ќе го активира погледот на ресурсите и подлокациите на избраната локација.
+        Овој поглед е опишан во следниот дел од ова објаснување
+        </p>
+
+        <div class="dialogExplanationScrollTop">
+            <a href="#">Содржина!</a>
+        </div>
+            <div class="explanationBreak"></div>
+            <h3 class="explanationSectionHeader">Поглед на ресурси и подлокации:</h3>
+            <p class="explanation">
+                Деталниот поглед за дадена локација освен од делот со основните информации и мапата,
+        се состои и од дополнителен поглед каде може да се погледнат дополнителни ресурси
+        како и подлокации за вашата избрана локација.
+            </p>
+            <div class="dialogExplanationImage">
+                <img src="/Content/LocationDetailsHelpImages/resourcesOverView.png" alt="Преглед на ресурси и подлокации"></div>
+            <p class="explanation">
+                По пристапување на делот со ресурсите и под-локациите назад може да се вратите со
+        кликање на копчето назад, во горниот лев агол на погледот, или со кликање на името
+        на локацијата во горниот десен агол.
+            </p>
+            <div class="dialogExplanationImage">
+                <img src="/Content/LocationDetailsHelpImages/goBackToDetails.png" alt="Враќање назад"></div>
+            <p class="explanation">
+                Двата под-погледи од кои се состои погледот на ресурси и подлокации се објаснати
+        во последните два дела од овој текст
+            </p>
+            <div class="dialogExplanationScrollTop">
+                <a href="#">Содржина!</a>
+            </div>
+                <div class="explanationBreak"></div>
+                <h3 class="explanationSectionHeader">Ресурси :</h3>
+                <p class="explanation">
+                    Дополнителните ресурси се дадени во 3 колони, и се поделени по типот и начинот на
+        кој што се прикажуваат.
+                </p>
+                <div class="dialogExplanationImage">
+                    <img src="/Content/LocationDetailsHelpImages/resourceColumns.png" alt="Колони на ресурси"></div>
+                <p class="explanation">
+                    Моментално Постојат 3 типови на ресурси за секоја локација. Доплонителни текстови,
+        видео ресурси и надворешни линкови.
+                </p>
+                <p class="explanation">
+                    Ресурсите се дадени со нивното име, на кое може да кликнете со што би се прикажал
+        тој ресурс.
+                </p>
+                <p class="explanation">
+                    При прикажување на текстуални ресурси се покажува прозорец со текстот, кој по читањето
+        на текстот може да го затворите со кликање на копчето затвори.
+                </p>
+                <div class="dialogExplanationImage">
+                    <img src="/Content/LocationDetailsHelpImages/textREsources.png" alt="Текстуални ресурси"></div>
+                <p class="explanation">
+                    Видео ресурсите исто така се прикажуваат во посебно прозорче. За да го започнете
+        видеото кликнете на копчето кое се наоѓа во средниот дел од прозорецот.
+                </p>
+                <div class="dialogExplanationImage">
+                    <img src="/Content/LocationDetailsHelpImages/videos.png" alt="Видео Ресурси"></div>
+                <p class="explanation">
+                    При кликање на некој од линк ресурсите, ќе ви се појави порака, која од вас бара
+        одобрување за да го отвори линкот. Изберете некоја од дадените опции со кликање
+        на соодветните копчина.
+                </p>
+                <div class="dialogExplanationImage">
+                    <img src="/Content/LocationDetailsHelpImages/links.png" alt="Линк Ресурси "></div>
+
+                <div class="dialogExplanationScrollTop">
+                    <a href="#">Содржина!</a>
+                </div>
+                    <div class="explanationBreak"></div>
+                    <h3 class="explanationSectionHeader">Пребарување на подлокации:</h3>
+                    <p class="explanation">
+                        Во долниот дел на погледот за ресурси и подлокации може да го најдете делот за преглед
+        и пребарување низ подлокациите на моменталната локација, за која прегледувате ресурси
+        и подлокации.
+                    </p>
+                    <div class="dialogExplanationImage">
+                        <img src="/Content/LocationDetailsHelpImages/searchSubLocations.png" alt="Преглед на пребарување"></div>
+                    <p class="explanation">
+                        Со внесување на текст во полето за пребарување може да ги филтрирате подлокациите
+        за дадената избрана локација.
+                    </p>
+                    <div class="dialogExplanationImage">
+                        <img src="/Content/LocationDetailsHelpImages/filterSearchSubLocs.png" alt="Филтрирање на подлокации"></div>
+                    <p class="explanation">
+                        Во горниот дел на овој под-поглед се наоѓа легендата според која може да препознаете
+        за каков тип на под-локација станува збор.
+                    </p>
+                    <div class="dialogExplanationImage">
+                        <img src="/Content/LocationDetailsHelpImages/top.png" alt="Легенда на типови на подлокации"></div>
+                    <p class="explanation">
+                        Конечно со кликање на било која од под-локациите ја отворате страната за детали
+        за таа под-локација.
+                    </p>
+                    <div class="dialogExplanationImage">
+                        <img src="/Content/LocationDetailsHelpImages/showSubDetails.png" alt="Детали за подлокација"></div>
+
+                    <div class="dialogExplanationScrollTop">
+                        <a href="#">Содржина!</a>
+                    </div>

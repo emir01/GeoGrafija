@@ -1,0 +1,58 @@
+﻿@using GeoGrafija.ViewModels
+@using GeoGrafija.ViewModels.UserViewModels
+@model RegisterViewModel
+@{
+    ViewBag.Title = "Регистрација";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="formBackground" id="RegisterForm">
+    <div class="padding">
+        <h2 class="formHeader">
+            Регистрација
+        </h2>
+        <div class="formHeaderQuote">
+            Внесете ги вашите податоци за да се регистрирате во системот.</div>
+        @using (Html.BeginForm())
+        {
+            @Html.ValidationSummary(true)
+    
+            <div class="editor-label">
+                @Html.LabelFor(model => model.UserName)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.UserName)
+                @Html.ValidationMessageFor(model => model.UserName)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Password)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Password)
+                @Html.ValidationMessageFor(model => model.Password)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.PasswordAgain)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.PasswordAgain)
+                @Html.ValidationMessageFor(model => model.PasswordAgain)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Email)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Email)
+                @Html.ValidationMessageFor(model => model.Email)
+            </div>
+
+            <p class="formButtonContainer">
+                <input type="submit" class="button green" value="Регистрирај се!" />
+            </p>
+    
+        }
+    </div>
+</div>
+

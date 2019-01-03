@@ -1,0 +1,330 @@
+﻿@using GeoGrafija.ViewModels.Profiles
+@model ProfileViewModel
+<div class="profileCanvasElement" data-uid="2">@Html.Partial(Url.PartialTeacherMyStudents(), Model)</div>
+
+<div class="profileCanvasElement" data-uid="1">@Html.Partial(Url.PartialTeacherMyClassroom(), Model)</div>
+
+<div id="TeacherProfileHelpWrapper" class="pageHelpDialog hidden">
+	<h2>Како да го користите вашиот профил!</h2>
+
+	<h3 class="explanationSectionHeader">Содржина :</h3>
+	<ul class="dialogExplanationContentsList">
+		<li>
+			<a scroll="288" href="#introductionToMap">Училница - Преглед</a>
+			<li>
+				<a scroll="1056" href="#introductionToMap">Поделеност на локации и дискусии</a>
+			</li>
+
+			<li>
+				<a scroll="1315" href="#introductionToMap">Дефинирање наслов на училница</a>
+			</li>
+			<li>
+				<a scroll="1987" href="#introductionToMap">Промена на главна локација</a>
+			</li>
+			<li>
+				<a scroll="4915" href="#introductionToMap">Промена на главна дискусија</a>
+			</li>
+			<li>
+				<a scroll="6036" href="#introductionToMap">Додавање секундарни локации</a>
+			</li>
+			<li>
+				<a scroll="6536" href="#introductionToMap">Додавање секундарни дискусии и теми</a>
+			</li>
+			<li>
+				<a scroll="7090" href="#introductionToMap">Одстранување секундарни елементи</a>
+			</li>
+			<li>
+				<a scroll="7498" href="#introductionToMap">Зачувување на промени на училница</a>
+			</li>
+			<li>
+				<a scroll="7930" href="#introductionToMap">Преглед на студенти</a>
+			</li>
+			<li>
+				<a scroll="8346" href="#introductionToMap">Резултати  на студенти</a>
+			</li>
+		</ul>
+
+		<div class="explanationBreak"></div>
+
+		<h3 Id="#" class="explanationSectionHeader">Училница - преглед :</h3>
+		<p class="explanation">
+			Првиот поглед во Вашиот поглед е дефиницијата на вашата училница. Тука може да избирата локации и теми за дискусија за вашите ученици.
+		</p>
+
+		<p class="explanation">
+			Вашите ученици ќе го имаат истиот поглед во вашата училница, секако без можностза менување и избирање на локациите и темите за дискусија.
+		</p>
+
+		<p class="explanation">
+			Училницата е подлена во два дела. Дел за дефинирање на локации и дел за дефинирање на дискусии кои може но не мора да се поврзани со локациите.
+		</p>
+
+		<div class="dialogExplanationImage">
+			<img src= "/Content/teacherProfileHelpImages/classroomBuilderGeneral.png" alt="Поглед на градител на училница."></div>
+
+		<div class="dialogExplanationScrollTop">
+			<a href="#">Содржина!</a>
+		</div>
+		<div class="explanationBreak"></div>
+
+		<h3 Id="#" class="explanationSectionHeader">Поделеност на локациите и дискусиите:</h3>
+
+		<p class="explanation">
+			Важно е да  се спомне дека деловите за локациите и дискуссиите е поделен на два дела.
+		</p>
+		<p class="explanation">
+			Постои една главна локација и една главна дискусија, кои треба да ги изберете соодветно со темата која сакате вашите ученици да ја дознаат/истражат.
+		</p>
+
+		<p class="explanation">
+			Покрај една главна локација и дискусија може да дефинирате и бесконечен број на секундарни/споредни локации и дискусии. Овие би требало на еден начин да се поврзани со главната дискусија и локација, но секако дозволено е да бидат поврзани со било која тема/локација.
+		</p>
+
+		<div class="dialogExplanationScrollTop">
+			<a href="#">Содржина!</a>
+		</div>
+		<div class="explanationBreak"></div>
+
+		<h3 Id="#" class="explanationSectionHeader">Дефинирање на наслов на училницата:</h3>
+
+		<p class="explanation">
+			Еден од основните делови кои може да ги менувате е насловот на тековната училница кој треба да биде соодветен со општата тема која сакате да ја опфатите преку дискусиите и локациите.
+		</p>
+
+		<div class="dialogExplanationImage">
+			<img src= "/Content/teacherProfileHelpImages/titleEdit.png" alt="Промена на наслов на училница."></div>
+
+		<p class="explanation">
+			За да го проемните насловот на училницата, го користите малото моливче кое се наоѓа на десната страна од полето на насловот, означено на сликата горе. Со кликање на ова моливче ќе ви се појави поле каде може да го промените насловот.
+		</p>
+
+		<div class="dialogExplanationImage">
+			<img src= "/Content/teacherProfileHelpImages/classTitleEditDialog.png" alt="Промена на наслов на училница - диалог."></div>
+
+		<p class="explanation">
+			Во новото прозорче може да го внесете  новиот наслов на улилницата и да ги искористите двете копчина за или да го зачувате вашиот нов наслов или да ја откажите промената.
+		</p>
+
+		<div class="dialogExplanationScrollTop">
+			<a href="#">Содржина!</a>
+		</div>
+		<div class="explanationBreak"></div>
+
+		<h3 Id="#" class="explanationSectionHeader">Промена на главна локација:</h3>
+
+		<p class="explanation">
+			На истиот принцип на кој што функционира промената на насловот на улилницата функционира и промената на сите останати делови.
+		</p>
+
+		<p class="explanation">
+			Главанта локација се состои од Наслов, Текст и покажувач/линк кон страната за детали на таа локација.
+		</p>
+
+		<p class="explanation">
+			На десната страна од горенаведените елементи моиже да се забележат копчина со кои може да се менува насловот, текстот и линкот кон локацијата.
+		</p>
+
+		<div class="dialogExplanationImage">
+			<img src= "/Content/teacherProfileHelpImages/teacherMainLocGeneral.png" alt="Главна локација - елементи и промена."></div>
+
+		<p class="explanation">
+			За да го промените насловот на главната локација може да кликнете на моливчето кое се  совпаѓа со насловот.
+		</p>
+
+		<div class="dialogExplanationImage">
+			<img src= "/Content/teacherProfileHelpImages/locTitleChange.png" alt="Главна локација - промена на наслов."></div>
+
+		<p class="explanation">
+			Ова ќе го отвори прозорецот каде може да го внесите новиот наслов на локацијата
+		</p>
+
+		<div class="dialogExplanationImage">
+			<img src= "/Content/teacherProfileHelpImages/locTitleChangedialog.png" alt="Главна локација - промена на наслов диалог."></div>
+
+		<p class="explanation">
+			За да го промените текстот на главната локација може да кликнете на моливчето кое се совпаѓа со полето каде се наоѓа текстот.
+		</p>
+
+		<div class="dialogExplanationImage">
+			<img src= "/Content/teacherProfileHelpImages/locTextChange.png" alt="Главна локација - промена на текст."></div>
+
+		<p class="explanation">
+			Ова ќе го отвори прозорецот каде може да го внесите новиот текст на локацијата
+		</p>
+
+		<div class="dialogExplanationImage">
+			<img src= "/Content/teacherProfileHelpImages/locTextChangeDialog.png" alt="Главна локација - промена на текст диалог."></div>
+
+		<p class="explanation">
+			Конечно за да промените каде покажува копчето поврзано со локацијата, може да кликнете на моливчето кое одговара на копчето.
+		</p>
+
+		<div class="dialogExplanationImage">
+			<img src= "/Content/teacherProfileHelpImages/LocationPickerEditPointerButton.png" alt="Главна локација - промена на покажувач на локација."></div>
+
+		<p class="explanation">
+			Ова ќе го отвори прозорецот каде може да го изберете нова локација кон која ќе покажува копчето. Во прозорецот се наоѓа тексутално поле во кое може да внесете име на локација и да го пребарате системот.
+		</p>
+
+		<p class="explanation">За да изберете локација кликнете на некој од резултатите.</p>
+
+		<div class="dialogExplanationImage">
+			<img src= "/Content/teacherProfileHelpImages/locationPick.png" alt="Главна локација - промена на локација - диалог."></div>
+
+		<div class="dialogExplanationScrollTop">
+			<a href="#">Содржина!</a>
+		</div>
+		<div class="explanationBreak"></div>
+
+		<h3 Id="#" class="explanationSectionHeader">Промена на главна дискусија:</h3>
+		<p class="explanation">
+			Главната дискусија има слична структура како и главната локација, без копчето. Со тоа и начинот на кој може да се  менуваат дискусиите е идентичен со начинот  на кој што се менуваа текстуалните елементи на главната локација.
+		</p>
+
+		<p class="explanation">
+			Може да ги забележите истите елементи, копчината на кои може да кликнете за да го смените насловот или тексот.
+		</p>
+
+		<div class="dialogExplanationImage">
+			<img src= "/Content/teacherProfileHelpImages/discussionGlobal.png" alt="Главна дискусија - промена на дискусија."></div>
+
+		<p class="explanation">
+			Насловот на дискусијата може да се промени со кликање на копчето представено преку моливот кое се наоѓа на иста линија со насловот.
+		</p>
+
+		<div class="dialogExplanationImage">
+			<img src= "/Content/teacherProfileHelpImages/discEditTitle.png" alt="Главна дискусија - промена на дискусија - наслов."></div>
+
+		<p class="explanation">
+			По активирањето на тоа копче ќе се добие ново прозорче каде може да се внесе новиот наслов, и да се зачува или откаже промената исто како прозорчината кое користат за менување на насловот на локации
+		</p>
+
+		<p class="explanation">
+			Исто така може да се менува текстот за дадена дискусија. Тоа може да се направи повторно со користењето на копчето, представено преку моливче на десната страна од крајот на текстот.
+		</p>
+
+		<div class="dialogExplanationImage">
+			<img src= "/Content/teacherProfileHelpImages/discEditText.png" alt="Главна дискусија - промена на дискусија - текст."></div>
+
+		<div class="dialogExplanationScrollTop">
+			<a href="#">Содржина!</a>
+		</div>
+		<div class="explanationBreak"></div>
+
+		<h3 Id="#" class="explanationSectionHeader">Додавање секундарни локации:</h3>
+
+		<p class="explanation">
+			Едитирањето и промената на секундарните локации е исто и слично како и кај главната локација. Единствената разлика е во тоа што може да додавате бесконечен број на секундарни локации.
+		</p>
+
+		<p class="explanation">
+			Секундарни локации може да додавате користејќи го копчето кое се наоѓа под главната локација или ако веќе сте додале секундарни локации, копчето би се наоѓало под последната секундарната локација :
+		</p>
+
+		<div class="dialogExplanationImage">
+			<img src= "/Content/teacherProfileHelpImages/secondaoryLocations.png" alt="Секундарни Локации ."></div>
+
+		<div class="dialogExplanationScrollTop">
+			<a href="#">Содржина!</a>
+		</div>
+
+		<div class="explanationBreak"></div>
+
+		<h3 Id="#" class="explanationSectionHeader">Додавање секундарни дискусии и теми:</h3>
+
+		<p class="explanation">
+			Секундарните локации ги имаат истите функционалности и променливи делови како и главната локација. Разликата е во тоа што може да немате на почеток дефинирани секундарни локации.
+		</p>
+
+		<p class="explanation">
+			Додавањето на секундарните дискусии е исто како и кај секундарните локации. Копчето за додавање може да се најде под главанта дискусија или ако веќе имате додаено секундарни дискусии, под последната дискусија.
+		</p>
+
+		<div class="dialogExplanationImage">
+			<img src= "/Content/teacherProfileHelpImages/secondaryTopics.png" alt="Секундарни Дискусии ."></div>
+
+		<div class="dialogExplanationScrollTop">
+			<a href="#">Содржина!</a>
+		</div>
+
+		<div class="explanationBreak"></div>
+
+		<h3 Id="#" class="explanationSectionHeader">Одстранување на секундарни елементи ( локации и дискусии ):</h3>
+
+		<p class="explanation">
+			За 	одстранувањето на секундарните елементи, локациите и дискусиите, може да го искористите копчето во горниот десен агол, кој може да се најде во секој секундарен елемент.
+		</p>
+
+		<div class="dialogExplanationImage">
+			<img src= "/Content/teacherProfileHelpImages/removeSecondayItem.png" alt="Одстранување секундарни елементи ."></div>
+
+		<div class="dialogExplanationScrollTop">
+			<a href="#">Содржина!</a>
+		</div>
+
+		<div class="explanationBreak"></div>
+
+		<h3 Id="#" class="explanationSectionHeader">Зачувување на промени на улилница:</h3>
+
+		<p class="explanation">
+			После направените промени на вашата училница би требало да ги зачувате промените за да тие бидат видливи на вашите студенти.
+		</p>
+
+		<p class="explanation">
+			Промените може да ги зачувате користејќи го копчето во долниот дел од погледот, после локациите и дискусиисте.
+		</p>
+
+		<div class="dialogExplanationImage">
+			<img src= "/Content/teacherProfileHelpImages/teacherSaveClassroom.png" alt="Зачувување на училница."></div>
+
+		<div class="dialogExplanationScrollTop">
+			<a href="#">Содржина!</a>
+		</div>
+
+		<div class="explanationBreak"></div>
+
+		<h3 Id="#" class="explanationSectionHeader">Преглед на студенти:</h3>
+
+		<p class="explanation">
+			Преку вашиот профил може да ги погледнете и вашите студенти со користење на копчето во навигациското мени, кое ќе го отвори погледот со табелата и вашите студенти.
+		</p>
+
+		<div class="dialogExplanationImage">
+			<img src= "/Content/teacherProfileHelpImages/teacherMyStudents.png" alt="Твои студенти - преглед."></div>
+
+		<div class="dialogExplanationScrollTop">
+			<a href="#">Содржина!</a>
+		</div>
+		<div class="explanationBreak"></div>
+
+		<h3 Id="#" class="explanationSectionHeader">Резултати на студенти:</h3>
+
+		<p class="explanation">
+			За секој ваш студент освен основните информации во табелата може да дознаете повеќе и за резултатите од неговите квизови.
+		</p>
+
+		<p class="explanation">
+			Тоа може да го направите со кликање на полето за резултати од квизови под колоната активности, во редот на студентот за кој сакате да дознаете резултати.
+		</p>
+
+		<div class="dialogExplanationImage">
+			<img src= "/Content/teacherProfileHelpImages/teacherStudentQRButton.png" alt="Твои студенти - резултати."></div>
+
+		<p class="explanation">
+			Добивате нов прозорец каде може да ги основните информации за секој решен квиз на студентот.
+		</p>
+
+		<div class="dialogExplanationImage">
+			<img src= "/Content/teacherProfileHelpImages/studentQuizResults.png" alt="Твои студенти - резултати - основен поглед."></div>
+
+		<p class="explanation">
+			За секој решен квиз може да ги погледнете и деталните резултати, односно, кои одговорил ги избрал студентот за секое од прашањата, како и точните одогови на прашањето.
+		</p>
+
+		<div class="dialogExplanationImage">
+			<img src= "/Content/teacherProfileHelpImages/detailedResults.png" alt="Твои студенти - резултати - детален поглед."></div>
+
+		<div class="dialogExplanationScrollTop">
+			<a href="#">Содржина!</a>
+		</div>
+	</div>

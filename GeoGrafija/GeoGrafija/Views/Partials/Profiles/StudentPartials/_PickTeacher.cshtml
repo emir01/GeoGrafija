@@ -1,0 +1,20 @@
+﻿@using GeoGrafija.ViewModels.Profiles
+@model ProfileViewModel
+
+<h2 class="formHeader">
+    Избор на Професор :
+</h2>
+<div id="PickTeacherWrapper">
+    <div id="CurrentTeacherInformation">
+        <div class="label">Вашиот Избран Професор : </div>
+        <div class="value">@Html.CheckObjectAndPrintProperty(Model.GeneralViewModel.Teacher,"UserName","Немате избрано професор!")</div>
+    </div>
+    <div id="AvailableTeachersInformation">
+        <div class="label">Изберете професор : </div>
+        <div class="value">@Html.DropDownList("ChosenProfessor",Model.StudentViewModel.GetTeacherDDViewModel(),"--Изберете Професор--", new{@class="dropKickEnabled"})</div>
+        <div class="clear"></div>
+        <input type="submit" id="SaveNewTeacherChoise" value="Промени Професор!" class="formButton pinkButton button blue"/>
+    </div>
+    <div class="clear"></div>
+</div>
+<link href="@Url.CssDropKick()" rel="stylesheet"/>

@@ -1,0 +1,24 @@
+﻿@using GeoGrafija.ViewModels.LocationTypeViewModels
+@model AddLocationTypeViewModel
+@{
+    ViewBag.Title = "Промени";
+    ViewBag.Parrent = "E";
+}
+<div class="formBackground goleft generalFormLayout">
+    <h2 class="formHeader">
+        Промени тип на локација!</h2>
+    @using (Html.BeginForm("Edit", "LocationTypes", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    { 
+        @Html.ValidationSummary(true)
+        @Html.Partial("LocationTypeCreateEditForm", Model)
+        @Html.Hidden("pickedMarker")
+    }
+    <div>
+        @Html.ActionLink("Назад кон Листа", "Index")
+    </div>
+</div>
+<input type="hidden" id="SelectedPage" value="Типови Локации!" />
+<script type="text/javascript">
+EditLocationType.Initialize();
+</script>
+<link href="@Url.CssDropKick()" rel="stylesheet"/>

@@ -1,0 +1,61 @@
+﻿@model GeoGrafija.ViewModels.QuizViewModels.CreateQuizViewModel
+@{
+    ViewBag.Title = "Креирај Квиз";
+    
+}
+<div id="CreateQuizWrapper">
+    <div id ="CreateQuizFormLeft" class="formBackground">
+        <div class="padding">
+            <h2 class="formHeader">
+                Креирај Квиз</h2>
+            <div class="formHeaderQuote">
+                Креирајте квиз со додаваше на прашања</div>
+            @using (Html.BeginForm())
+            {
+                @Html.ValidationSummary(true)
+        
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.Name)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.Name)
+                    @Html.ValidationMessageFor(model => model.Name)
+                </div>
+            
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.Questions)
+                </div>
+                <div class="editor-field questionContainer">
+                    <div class="padding">
+                    </div>
+                </div>
+            
+                <p id="CreateQuizParagraph">
+                    <input type="submit" id="CreateQuzizButton" value="Креирај" class="formButton button red" />
+                </p>
+        
+            }
+            <div>
+                @Html.ActionLink("Назад кон листа", "Index")
+            </div>
+        </div>
+    </div>
+    <div id="AnswersForm" class="formBackground">
+        <div class="padding">
+            <h2 class="formHeader">
+                Додади Одговори :
+            </h2>
+            <div class="formHeaderQuote">
+                Додадете одоговори за избрано прашање!</div>
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Questions.FirstOrDefault().Answers)
+            </div>
+            <div class="editor-field answersContainer">
+                <div class="padding">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="@Url.PageScript("CreateQuiz.js")"></script>
+<input type="hidden" id="SelectedPage" value="Тестови" />

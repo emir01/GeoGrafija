@@ -1,0 +1,44 @@
+﻿
+@using Model
+@model Privilege
+
+@{
+    ViewBag.Title = "Креирај Привилегија";
+}
+
+<h2>Креирај Привилегија </h2>
+@Html.Partial("_AdminNavigation")
+
+
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>Привилегија</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PrivilegeName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.PrivilegeName)
+            @Html.ValidationMessageFor(model => model.PrivilegeName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PrivilegeDescription)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.PrivilegeDescription)
+            @Html.ValidationMessageFor(model => model.PrivilegeDescription)
+        </div>
+
+        <p>
+            <input type="submit" value="Креирај" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Назад кон Листа", "Index")
+</div>
+<input type="hidden" id="SelectedPage" value="Улоги"/>

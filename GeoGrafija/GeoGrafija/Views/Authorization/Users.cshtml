@@ -1,0 +1,46 @@
+﻿@using Model
+@model IEnumerable<User>
+@{
+    ViewBag.Title = "Корисници";
+}
+<div class="formBackground generalFormLayout" id="AdminUsersForm">
+    <div class="padding">
+        <h2 class="formHeader">
+            Корисници</h2>
+        <table class="dataTablesEnabled display">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.LabelFor(model => model.FirstOrDefault().UserName)
+                    </th>
+                    <th>
+                        @Html.LabelFor(model => model.FirstOrDefault().Email)
+                    </th>
+                    <th>
+                        Операции
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.UserName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Email)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Промени Улоги ", "AddRolesToUser", new { id = item.UserID }) |
+                            @Html.ActionLink("Детали", "UserDetails", new { id = item.UserID })
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+<input type="hidden" id="SelectedPage" value="Корисници"/>

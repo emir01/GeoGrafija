@@ -1,0 +1,134 @@
+﻿@using GeoGrafija.ViewModels.Profiles
+@model ProfileViewModel
+<h2 class="formHeader">
+    Статистики :
+</h2>
+<div id="AdminStatisticsWrapper">
+    <div class="adminStatSection" id="UsersStats">
+        <div class="padding">
+            <div class="header">
+                Корисници :
+            </div>
+            <div class="adminStatBox">
+                <div class="statSectionIcon">
+                </div>
+                <div class="label">
+                    Вкупно Кориници :
+                </div>
+                <div class="value">
+                    @Model.AdminViewModel.TotalUsers
+                </div>
+            </div>
+            <div class="adminStatBox">
+                <div class="label">
+                    Професори :
+                </div>
+                <div class="value">
+                    @Model.AdminViewModel.TeacherNumber
+                </div>
+            </div>
+            <div class="adminStatBox">
+                <div class="label">
+                    Студенти :
+                </div>
+                <div class="value">
+                    @Model.AdminViewModel.StudentNumber
+                </div>
+            </div>
+            <div class="adminStatBox">
+                <div class="label">
+                    Администратори :
+                </div>
+                <div class="value">
+                    @Model.AdminViewModel.AdminNumber
+                </div>
+            </div>
+            <div class="clear">
+            </div>
+        </div>
+    </div>
+    <div class="clear">
+    </div>
+    <div class="adminStatSection" id="LocationStats">
+        <div class="padding">
+            <div class="header">
+                Локации :
+            </div>
+            <div class="adminStatBox">
+                <div class="statSectionIcon">
+                </div>
+                <div class="label">
+                    Вкупно Локации :
+                </div>
+                <div class="value">
+                    @Model.AdminViewModel.LocationsNumber
+                </div>
+            </div>
+            <div class="adminStatBox">
+                <div class="label">
+                    Вкупно Типови на локации :
+                </div>
+                <div class="value">
+                    @Model.AdminViewModel.LocationTypesNumber
+                </div>
+            </div>
+            <div class="adminStatBox">
+                <div class="label">
+                    Вкупно Ресурси за локации :
+                </div>
+                <div class="value">
+                    @Model.AdminViewModel.ResourcesNumber
+                </div>
+            </div>
+            <div class="adminStatBox">
+                <div class="label">
+                    Просечно Ресурси за локација :
+                </div>
+                <div class="value">
+                    @Model.AdminViewModel.AverageResourcePerLocation
+                </div>
+            </div>
+            <div class="clear">
+            </div>
+        </div>
+    </div>
+    <div class="clear">
+    </div>
+    <div class="adminStatSection" id="QuizStats">
+        <div class="padding">
+            <div class="header">
+                Квизови :
+            </div>
+            <div class="adminStatBox">
+                <div class="statSectionIcon">
+                </div>
+                <div class="label">
+                    Вкупен број на квизови :
+                </div>
+                <div class="value">
+                    @Model.AdminViewModel.QuizesNumber
+                </div>
+            </div>
+            <div class="adminStatBox">
+                <div class="label">
+                    Број на прашања :
+                </div>
+                <div class="value">
+                    @Model.AdminViewModel.QuestionsNumber
+                </div>
+            </div>
+            <div class="adminStatBox">
+                <div class="label">
+                    Број на одговорени квизови од студенти :
+                </div>
+                <div class="value">
+                    @Model.AdminViewModel.StudentTakenQuizesNumber
+                </div>
+            </div>
+            <div class="clear">
+            </div>
+        </div>
+    </div>
+    <div class="clear">
+    </div>
+</div>

@@ -1,0 +1,109 @@
+﻿@model GeoGrafija.ViewModels.Profiles.ProfileViewModel
+<div id="ClassroomContentTop">
+    <h2 class="formHeader editable" title="Промени наслов на училница" id="ClassroomTitle">
+        <span class="value"></span>
+        :
+    </h2>
+</div>
+<div id="ClassroomLastEdit" class="formHeaderQuote classroomLastEdit">
+    <span class="label">Последна промена на училница :</span>
+    <span class="value"></span>
+</div>
+
+<div id="TeacherClassroomWrapper">
+    <div class="classroom-locations-wrapper">
+        <h2>Избрани локации за разгледување :</h2>
+        <div class="classroom-main-location classroom-location">
+            <h2>Главна локација :</h2>
+            <div title="Промени наслов за локација" class="classroom-location-title editable">
+                <span class="value"></span>
+                :
+            </div>
+            <div title="Промени текст за локација" class="classroom-location-text editable edit-multi">
+                <span class="value"></span>
+            </div>
+            <div title="Промени покажувач кон локација" class="classroom-location-button editable edit-loc">
+                <a class="button gray fixA" title="Покажува кон : Нема локација" href="#">Оди на локација!</a>
+            </div>
+        </div>
+        <div class="classroom-secondary-locations">
+            <h2>Секундарни локации :</h2>
+            <div class="value"></div>
+            <a id="AddSecondaryLocation" class="green button fixA" href="#">Додади!</a>
+        </div>
+    </div>
+    <div class="classroom-topics-wrapper">
+        <h2>Избрани теми за дискусија :</h2>
+        <div class="classroom-main-topic classroom-topic">
+            <h2>Главна тема за дискусија :</h2>
+            <div title="Промени наслов за дискусија" class="classroom-topic-title editable">
+                <span class="value"></span>
+                :
+            </div>
+            <div title="Промени текст на дискусија" class="classroom-topic-text  editable edit-multi">
+                <span class="value"></span>
+            </div>
+        </div>
+        <div class="classroom-secondary-topics">
+            <h2>Секундарни теми за дискусија:</h2>
+            <div class="value"></div>
+            <a id="AddSecondaryTopic" class="green button fixA" href="#">Додади!</a>
+        </div>
+    </div>
+    <div class="clear"></div>
+    <p class="formButtonContainer">
+        <input type="button" id="SaveClassroomButton" class="button blue" value="Зачувај Училница" />
+    </p>
+</div>
+<div class="hidden" id="classroomItemTemplates">
+    <div id="TopicTemplate" class="classroom-topic template-item">
+        <div title="Промени наслов за дискусија" class="classroom-topic-title editable">
+            <span class="value">Пример наслов</span>
+            :
+            <a href="#" class="removeItemButton" title="Одстрани Дискусија"></a>
+        </div>
+        <div title="Промени текст на дискусија" class="classroom-topic-text  editable edit-multi">
+            <span class="value">Пример текст</span>
+        </div>
+    </div>
+    <div id="LocationTemplate" class="classroom-location template-item">
+        <div title="Промени наслов за локација" class="classroom-location-title editable">
+            <span class="value">Пример наслов</span>
+            :
+            <a href="#" class="removeItemButton" title="Одстрани Локација"></a>
+        </div>
+        <div title="Промени текст за локација" class="classroom-location-text editable edit-multi">
+            <span class="value">Пример Текст</span>
+        </div>
+        <div title="Промени покажувач кон локација" class="classroom-location-button editable edit-loc">
+            <a class="button gray fixA" title="Покажува кон : Нема локација" href="#">Оди на локација!</a>
+        </div>
+    </div>
+</div>
+<div class="hidden" id="EditForms">
+    <div id="EditText" class="editable-input">
+        <input type="text" id="EditValue" />
+        <div class="clear"></div>
+        <div class="formButtonContainer">
+            <input type="button" class="save button green" value="Зачувај!" />
+            <div class="clear"></div>
+            <input type="button" class="cancel button red" value="Откажи!" />
+        </div>
+    </div>
+    <div id="EditMultiText" class="editable-multi-input">
+        <textarea id="EditMultiValue"></textarea>
+        <div class="clear"></div>
+        <div class="formButtonContainer">
+            <input type="button" class="save button green" value="Зачувај!" />
+            <div class="clear"></div>
+            <input type="button" class="cancel button red" value="Откажи!" />
+        </div>
+    </div>
+    <div id="EditLocation" class="editable-location-pointer">
+        <input type="button" class="cancel button red" value="Откажи!" />
+        <div class="clear"></div>
+        <div class="globalLocationPointerPicker">
+            <div class="clear"></div>
+        </div>
+    </div>
+</div>

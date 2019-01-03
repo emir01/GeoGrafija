@@ -1,0 +1,57 @@
+﻿@{
+    ViewBag.Title = "Изберете Квиз";
+}
+<div class="formBackground" id="PickQuizTypeForm">
+    <div class="padding">
+        <h2 class="formHeader">
+            Изберете тип на квиз :</h2>
+        <div class="formHeaderQuote">
+            Изборот ќе влијае на прашањата кои ги добивате во квизот</div>
+        <div class="formButtonContainer">
+            <div class="padding">
+                <input type="submit" id="PredefinedQuizButton" value="Предефинирани квизови!" class="button red" />
+            </div>
+        </div>
+        <div class="formButtonContainer">
+            <div class="padding">
+                <input type="submit" id="RandomQuizButton" value="Генерирај случаен квиз!" class="button red" />
+            </div>
+        </div>
+    </div>
+</div>
+<div class="formBackground" id="AvailableDefinedQuizesForm">
+    <div class="padding">
+        <h2 class="formHeader">
+            Изберетe еден од предефинираните квизови :</h2>
+        <div class="formHeaderQuote">
+            По изборот кликнете на започни квиз!</div>
+        <div class="searchQuizesOptions hidden">
+            <h2 class="formHeader">
+                Барај Квизови :
+            </h2>
+            <div class="searchOption" id="SearchByQuizNameOption">
+                <input type="text" class="hintBox" id="searchByQuizName" value="Барај Квиз по Име!" />
+                <div class="clear">
+                </div>
+            </div>
+            <div class="searchOption" id="SearchByQuizTypeOption">
+                <input type="text" class="hintBox" id="searchByQuizType" value="Барај Квиз по Тип!" />
+                <div class="clear">
+                </div>
+            </div>
+
+            <div class="clear"></div>
+            <input value="Најди Квизови" type="submit" class="formButton pinkButton" id="btn_FilterQuizes" />
+        </div>
+        <div class="predefQuizesContainer">
+        </div>
+        <div class="formButtonContainer">
+            <div class="padding">
+                <input type="submit" id="StartPredefQuiz" value="Започни квиз!" class="button red" />
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="@Url.PageScript("PickQuiz.js")"></script>
+<input type="hidden" id="SelectedPage" value="Тестови"/>

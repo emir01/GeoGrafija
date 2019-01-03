@@ -1,0 +1,120 @@
+﻿@using GeoGrafija.ViewModels.Learning
+@model LearningGeneralViewModel
+@{
+    ViewBag.Title = "Учи!";
+}
+<div class="formBackground generalFormLayout" id="LearnMoreForm">
+    <h2 class="formHeader">
+        Избери за што би сакалае да дознаете нешто повеќе :</h2>
+    <div class="clear">
+    </div>
+    <div class="editor-label">
+        Сакам да дознаам повеќе за :
+    </div>
+    <div class="editor-field">
+        @Html.DropDownListFor(x => x.LocationTypes, Model.LocationTypesSelectList, "--Типови на Локации--", new { @class = "pretty2 dk", name = "pretty2", @id = "LocationTypeDropdown" })
+        @Html.Hidden("HiddenSelectedTypeId")
+    </div>
+    <div class="clear">
+    </div>
+    <div id="LearnMoreResourceContainer">
+        <div class="padding">
+            <h3 class="formHeader pickExplanation">
+                Искористете некој од следниве ресурси :</h3>
+            @foreach (var locationType in Model.LocationTypes)
+            { 
+                <div class="resourcePerLocationTypeWrapper" data-location-type-id = "@locationType.Id" >
+                    @foreach (var resourceType in Model.AllResourceTypes)
+                    {
+                        <div class="resourceSeciton formBackground">
+                            <div class="padding">
+                                <div class="resourceSectionHeadingBox">
+                                    <div class="padding" data-color ="@resourceType.Color">
+                                        <div class="text objectTitle">
+                                            @resourceType.Name
+                                        </div>
+                                        <div class="clear">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="clear">
+                                </div>
+                                <div class="resourcesListWrapper">
+                                    <div class="padding">
+                                        <ul class="resourceList">
+                                            @foreach (var resource in resourceType.Resources.Where(x => x.LocationTypeId == locationType.Id))
+                                            {
+                                                <li data-id = "@resource.Id" data-type-id = "@resource.TypeId">@resource.Name</li>
+                                            }
+                                            <div class="clear">
+                                            </div>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                    <div class="clear">
+                    </div>
+                </div>
+            }
+            <div class="clear">
+            </div>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+    <div class="clear">
+    </div>
+    <div id="LearnMoreLocations">
+        <h3 class="formHeader pickExplanation">
+            Или изберете некоја од следните локации за подетални информации за таа локација
+            :</h3>
+        <div id="LocationsCanvas">
+            <div id="parent" class="locationParentWrapper">
+            </div>
+            <div id="searchBox" class="locationSearchBarWrapper">
+            </div>
+            <div id="canvas" class="locaitonCanvasWrapper">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="hidden" id="ResourceDisplayDialogsHiddenMarkup">
+    <div id="VideoResourceDisplay">
+        <div class="padding">
+            <div id="VideoFrameWrapper">
+            </div>
+        </div>
+    </div>
+    <div id="LinkResourceDisplay">
+        <div class="padding">
+            <div id="OpenLinkMessage">
+                Дали сигурно сакате да го отворите следниот линк :
+            </div>
+            <div class="clear">
+            </div>
+            <div id="LinkText">
+            </div>
+            <div class="clear">
+            </div>
+        </div>
+    </div>
+    <div id="TextResourceDisplay">
+        <div class="padding">
+            <div id="TextResourceMainDisplay" class="revetMe"></div>
+        </div>
+    </div>
+    <div id="AnimationResourceDisplay">
+        <div class="padding">
+        </div>
+    </div>
+</div>
+<!-- CSS -->
+<link rel="stylesheet" href="@Url.CssLearning()"/>
+<link href="@Url.CssLearning()" rel="stylesheet"/>
+<link href="@Url.CssResources()" rel="stylesheet"/>
+<link href="@Url.CssDropKick()" rel="stylesheet"/>
+<!-- Javascript -->
+<script type="text/javascript" src="@Url.PageScript("Learning.js")"></script>
+<input type="hidden" id="SelectedPage" value="Учи!"/>

@@ -1,0 +1,40 @@
+﻿@using GeoGrafija.Helpers
+@using GeoGrafija.ViewModels.LocationViewModels
+@model LocationFormViewModel
+@{
+    ViewBag.Title = "Креирај Локација";
+}
+<div class="formBackground goleft">
+    <div class="padding">
+        <h2 class="formHeader">
+            Зачувај нова Локација :</h2>
+        <div class="formHeaderQuote">
+            Внесете информации за новата локација</div>
+        <div id="addForm">
+            <div>
+                @using (Html.BeginForm("Create", "Locations", FormMethod.Post, new { id = "form" }))
+                {
+                    @Html.ValidationSummary(true)
+                    @Html.Partial("LocationCreateEditForm", Model)
+                    <p class="formButtonContainer">
+                        @Html.ActionLink("Назад кон Листа", "Index", null, new { @class = "button green fixA" })
+                    </p>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+<div class="formBackground generalFormLayout goleft">
+    @Html.Partial("MapLocationPicker")
+</div>
+<div class="clear">
+</div>
+<div class="global">
+</div>
+
+<script type="text/javascript">
+    AddLocationScript.Initialize();
+</script>
+
+<link href="@Url.CssDropKick()" rel="stylesheet"/>
+<input type="hidden" id="SelectedPage" value="Локации!"/>

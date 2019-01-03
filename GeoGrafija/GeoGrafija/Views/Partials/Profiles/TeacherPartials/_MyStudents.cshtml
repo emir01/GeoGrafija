@@ -1,0 +1,89 @@
+﻿@using GeoGrafija.ViewModels.Profiles
+@model ProfileViewModel
+<h2 class="formHeader">
+    Мои Студенти :
+</h2>
+<div id="Teacher_PickStudentsWrapper">
+    <table id="MyStudentsTable" class="dataTablesEnabled display">
+        <thead>
+            <tr>
+                <th>
+                    @Html.LabelFor(x => x.TeacherViewModel.MyStudents.FirstOrDefault().UserName)
+                </th>
+                <th>
+                    @Html.LabelFor(x => x.TeacherViewModel.MyStudents.FirstOrDefault().Rank)
+                </th>
+                <th>
+                    @Html.LabelFor(x => x.TeacherViewModel.MyStudents.FirstOrDefault().StudentPoints)
+                </th>
+                <th>
+                    Активности
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var studentInfo in Model.TeacherViewModel.MyStudents)
+            {
+                <tr>
+                    <td>@studentInfo.UserName
+                        <input type = "hidden"  class="hiddenValidInput" value="@studentInfo.UserName"/>
+                    </td>
+                    <td>@studentInfo.Rank
+                    </td>
+                    <td>@studentInfo.StudentPoints / @studentInfo.TotalPoints
+                    </td>
+                    <td>
+                        <a href="#" class="studentResultsActions">Резултати од Квизвови</a>
+                    </td>
+                </tr>            
+            }
+        </tbody>
+    </table>
+</div>
+<div id="StudentQuizResults">
+    @foreach (var student in Model.GeneralViewModel.Students)
+    {
+        <div class="studentResultsDialog" data-student-name ="@student.UserName">
+            <ul class="quizResultUList">
+                @if (student.StudentQuizResults.Count > 0)
+                {
+                    foreach (var quizResult in student.StudentQuizResults)
+                    {
+                    <li class="quizResultListItem">
+                        <div class="padding">
+                            <div class="clear">
+                            </div>
+                            <div class="globalInfoContainer">
+                                <div class="formFieldWrapper takenQuizName">
+                                    <div class="label">
+                                        Име на квиз :
+                                    </div>
+                                    <div class="value">@quizResult.Quiz.Name</div>
+                                </div>
+                                <div class="formFieldWrapper takenQuizScoredPoints">
+                                    <div class="label">
+                                        Освоени Поени :
+                                    </div>
+                                    <div class="value">@quizResult.PointsStudent / @quizResult.PointsTotal</div>
+                                </div>
+                            </div>
+                            <div class="clear">
+                            </div>
+                            <input data-resultid = "@quizResult.Id" type="submit" class="button blue getMoreQuizResult" value="Повеќе Информации!" />
+                        </div>
+                    </li>
+                    }
+                }
+                else
+                {
+                    <div class="teacherNoResultForStudent">
+                        <span>@student.UserName</span> нема завршено ниту еден тест!</div>
+                }
+                <div class="clear">
+                </div>
+            </ul>
+            <div class="clear">
+            </div>
+        </div>
+    }
+</div>

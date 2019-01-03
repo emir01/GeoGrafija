@@ -1,0 +1,54 @@
+﻿@using GeoGrafija.ViewModels.QuizViewModels
+@model DisplayQuizesViewModel
+@{
+    ViewBag.Title = "Тестови";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div id="YourQuizesForm" class="formBackground generalFormLayout">
+    <h2 class="formHeader">
+        Вашите квизови :
+    </h2>
+    <p>
+        @Html.ActionLink("Креирај Ново", "Create", null, new { @class = "button green fixA" })
+    </p>
+    <table class="dataTablesEnabled display">
+        <thead>
+            <tr>
+                <th>@Html.LabelFor(model => model.Quizes.FirstOrDefault().QuizName)
+                </th>
+                <th>@Html.LabelFor(model => model.Quizes.FirstOrDefault().NumberOfQuestions)
+                </th>
+                <th>@Html.LabelFor(model => model.Quizes.FirstOrDefault().TotalPoints)
+                </th>
+                <th>@Html.LabelFor(model => model.Quizes.FirstOrDefault().TotalStudents)
+                </th>
+                <th>
+                    Операции
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Quizes)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(x => item.QuizName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(x => item.NumberOfQuestions)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(x => item.TotalPoints)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(x => item.TotalStudents)
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+<input type="hidden" id="SelectedPage" value="Тестови"/>

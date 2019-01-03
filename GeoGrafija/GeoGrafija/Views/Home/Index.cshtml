@@ -1,0 +1,67 @@
+﻿@{
+    ViewBag.Title = "Почетна!";
+}
+<input type="hidden" id="SelectedPage" value="Дома"/>
+<div class="formBackground generalFormLayout" id="MainPageForm">
+    <h2 class="formHeader" align="center">@ViewBag.Message</h2>
+    <div class="mainMessageSection">
+        <div class="padding">
+            <div class="message">
+                Може да започнете со <span class="frontPageAccent searchAccent">пребарување </span> на сите креирани локации користејќи го брзиот и едноставен поглед и да ги погледнете <span class="frontPageAccent searchAccent">материјалите за учење </span> поврзани со некоја од локациите. </div>
+            <div class="action button orange" id="SearchAction">
+                <a href="@Url.Action("Index","Search")">
+                    <div class="padding">
+                        Пребарај!</div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="clear">
+    </div>
+    <div class="mainMessageSection">
+        <div class="padding">
+            <div class="message">
+                Може да започнете со истражување на <span class="frontPageAccent exploreAccent">интерактивната мапа</span>, на која можете на неколку начини да ги <span class="frontPageAccent exploreAccent">истражувате локациите</span> кои се креирани во системот. 
+                </div>
+            <div  class="action button blue" id="ExploreAction">
+                <a href="@Url.Action("Index","Exploration")">
+                    <div class="padding">
+                        Истражи!</div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="clear">
+    </div>
+    <div class="mainMessageSection">
+        <div class="padding">
+            <div class="message">
+                Ако сте регистриран  корисник може да се најавите и да добиете пристап кон <span class="frontPageAccent registerAccent">дополнителни материјали, погледи и активности</span>. Ако сте студент може да <span class="frontPageAccent registerAccent">изберете професор</span>, да <span class="frontPageAccent registerAccent">решавате квизови</span> и добивате поени и да се <span class="frontPageAccent registerAccent">натпреварувате со другите студенти</span>.
+                Ако сте професор може да <span class="frontPageAccent registerAccent">креирате</span> квизови, тестови и локации да додавате материјали за локации, како и да го <span class="frontPageAccent registerAccent">прегледате напредокот</span> на Вашите ученици.
+            </div>
+            <div class="action button green" id="RegisterAction">
+                <a href="@Url.Action("Register","User")">
+                    <div class="padding">
+                        Регистрирај се!</div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="clear">
+    </div>
+    <div class="mainMessageSection">
+        <div class="padding">
+            <div class="message">
+                Ако сте регистриран корисник, може да се најавите за да добиете пристап кон <span class="frontPageAccent loginAccent">вашиот профил</span>, како и сите дополнителни активности и материјали, во зависност од <span class="frontPageAccent loginAccent">вашата улога.</span>
+            </div>
+            <div class="action button red" id="LoginAction">
+                <a href="@Url.Action("LogOn","User")">
+                    <div class="padding">
+                        Најави се!</div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="clear">
+    </div>
+</div>

@@ -1,0 +1,39 @@
+﻿@using GeoGrafija.ViewModels.LocationViewModels
+@model DisplayLocationViewModel
+@{
+    ViewBag.Title = "Дали сте сигурни?";
+}
+<div class="formBackground generalFormLayout" id="DeleteLocationForm">
+    <h2 class="formHeader">
+        Бриши Локација :
+    </h2>
+    @using (Html.BeginForm())
+    {
+        @Html.ValidationSummary(false, "Грешка во бришење на локација : ")
+        @Html.HiddenFor(x => x.ID)
+        <div class="display-label">
+            <b>@Html.LabelFor(model => model.Name) : </b>
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Name)
+        </div>
+        
+        <div class="display-label">
+            <b>@Html.LabelFor(model => model.TypeName) : </b>
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.TypeName)
+        </div>
+        <div class="clear">
+        </div>
+        <div class="display-label">
+            Дали сте сигурни ?
+        </div>
+        <div class="clear">
+        </div>
+        <p class="formButtonContainer">
+            <input type="submit" value="Да!" class="button  red" />
+            @Html.ActionLink("Не, врати ме на листа!", "Index", "Locations", null, new { @class = "button fixA green" })
+        </p>
+    }
+</div>

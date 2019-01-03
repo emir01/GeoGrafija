@@ -1,0 +1,380 @@
+﻿/*  ===
+    === Styles Connected to the resources ui of the location details  for viewing resources ==  RESOURCE DISPLAY
+    ===
+*/
+
+#resourceContainer 
+{
+    width: 100%;
+    margin-top: 10px;
+    display: none;
+}
+ 
+    #resourceContainer > .padding 
+    {
+    
+    }
+
+ .resourceUiWrapper {}
+ 
+ .pickExplanation {
+        text-align: center;
+        padding-top: 10px !important;
+        border-top: 2px solid #CCC;
+    }
+    
+    h3.formHeader {
+        font-size: 18px !important;
+    }
+ 
+ .resourceUiWrapper > .padding {
+    padding: 15px;
+    
+ }
+      .resourceSeciton 
+    {
+        height: 250px;
+        background-color: #eeeeee;
+        border: 1px solid #d8d8d8;
+        
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+
+        float: left;
+
+        box-shadow: none !important;
+        -moz-box-shadow:none  !important;
+        -webkit-box-shadow: none !important;
+    }
+    
+        .resourceSeciton > .padding {
+            padding: 0px !important
+        }
+    
+            .resourceSectionHeadingBox 
+            {
+                height: 35px;
+                width: 80%;
+                margin: 5px auto;
+        
+                -webkit-border-radius: 5px;
+                -moz-border-radius: 5px;
+                border-radius: 5px;
+                position: relative;
+
+            }
+    
+                .resourceSectionHeadingBox > .padding 
+                {
+                    text-align: center;
+             
+                    padding-top: 5px;
+             
+                    position: absolute;
+                    top: 0px;
+                    left: 0px;
+                    right: 0px;
+                    bottom: 0px;
+                }
+      
+                .resourceSectionHeadingBox .text.objectTitle 
+                {
+                    color: #FFFFFF;
+                }
+                
+            .resourcesListWrapper {
+                position: relative;
+            }
+            
+                .resourcesListWrapper .padding {
+                    
+                }
+                
+                .resourceList {
+                    margin: 0px auto;
+                    padding: 0px !important;
+                    list-style: none;
+                    text-align: center;
+                    
+                    display: inline-block;
+                }
+                
+                .resourceList li 
+                {
+                    text-align: center;
+                    display: inline-block;
+
+                    margin: 5px;
+                    width: 180px;
+
+                    border-bottom: 1px solid #CCCCCC;
+
+                    padding-top:4px;
+                    padding-bottom:4px;
+                    padding-left: 4px;
+                    padding-right: 4px;
+                    
+                    overflow: hidden;
+                }
+                
+                .resourceList li:hover {
+                    background-color: #dbdbdb;
+                    cursor: pointer;
+                }
+                
+                
+     /* VIDEO RESOURCES DISPLAY */
+    #VideoResourceDisplay {
+        
+    }
+    
+    #VideoResourceDisplay > .padding {
+        
+    }
+    
+        #VideoFrameWrapper {
+            text-align: center;     
+        }
+    
+    
+    /*    TEXT RESOURCES DISPLAY */
+    #TextResourceDisplay {
+        padding: 0px !important;
+        position: relative;
+    }
+    
+     #TextResourceDisplay div.wysiwyg {
+         padding: 0px !important;
+         border: none !important;
+         width: 590px !important;
+     }
+    
+    #TextResourceDisplay div.wysiwyg ul.toolbar 
+    {
+        display: none !important;   
+    }
+    
+    #TextResourceDisplay div.wysiwyg iframe
+    {
+        width: 100% !important;
+    }
+    
+        #TextResourceDisplay > .padding {
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            right: 0px;
+            bottom: 0px;
+            padding-top: 5px;
+            padding-left: 6px;
+        }   
+        
+        #TextResourceMainDisplay 
+        {
+            width: 100%;
+            height: 470px;
+            margin: auto;
+        }
+    
+    
+    /*  LINK  RESOURCES DISPLAY */
+    #LinkResourceDisplay {
+        
+    }
+    
+    #LinkResourceDisplay > .padding {
+        
+    }
+           #OpenLinkMessage {
+            margin-top: 5px;
+            margin-bottom: 5px;
+            text-align: center;
+        }
+        
+      #LinkText {
+            margin-top: 15px;
+            padding: 10px;
+            text-align: center;
+            border: 1px solid #CCCCCC;
+
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            border-radius: 5px;
+
+            font-size: 12px;
+        }
+    
+    /*  ANIMATION RESOURCES DISPLAY */
+    #AnimationResourceDisplay {
+        
+    }
+    
+/*  ===
+    === Styles Connected to the resources ui of the location details  for creating resources == CREATION
+    ===
+*/
+    .resourceDialog {
+        display: none;
+    }
+
+    #ResourceCreateDialog {
+        display: none;
+    }
+    
+        #ResourceCreateDialog > .padding {
+        
+        }
+    
+        #CreateResourceTypeName {
+            
+        }
+        
+        #CreateResourceName {
+            margin-top: 5px;
+            margin-bottom: 5px;
+            border-bottom: 1px solid #CCC;
+            padding-bottom: 5px;
+        }
+        
+            #CreateResourceName .label {
+                float: left;
+            }
+            
+            #CreateResourceName .value {
+                float: left;
+                margin-left: 10px;
+            }
+
+                #CreateResourceName .value input 
+                {
+                    font-size: 12px !important;
+                    height: 15px;
+                }
+        
+        #CreateResourceText {
+            width: 100%;
+            margin: 0px;
+            padding: 0px;
+            margin-top: 10px;
+            
+        }
+
+    #ResourceDetailsDialog {
+        display: none;
+    }
+    
+        #ResourceDetailsDialog > .padding {
+        
+        }
+          
+        #DetailsResourceName {
+            
+        }
+        
+        #DetailsResourceNameWrapper {
+            margin-top: 5px;
+            margin-bottom: 5px;
+            border-bottom: 1px solid #CCC;
+            padding-bottom: 5px;
+        }
+        
+            #DetailsResourceNameWrapper .label {
+                float: left;
+            }
+            
+            #DetailsResourceNameWrapper .value {
+                float: left;
+                margin-left: 10px;
+            }
+            
+                #DetailsResourceNameWrapper .value input 
+                {
+                    font-size: 12px !important;
+                    height: 15px;
+                }
+                
+        #DetailsResourceText {
+            width: 100%;
+            margin: 0px;
+            padding: 0px;
+            margin-top: 10px;
+        }
+    
+
+
+/* GENERAL RESROUCE CREATION */
+
+.resourceLocationTypeWrapper {
+    display: none;
+}
+
+    .resourceTypeWrapper{
+        margin: 10px;
+        min-height: 200px;
+        border: 1px solid #CCC;
+        display: none;
+    }  
+        .resourceTypeWrapper .formHeader {
+            font-size: 18px !important;
+            margin-bottom: 4px !important;
+        }
+        
+        .resourceTypeWrapper .formButton {
+            margin-top:0px !important;
+            font-size: 12px;
+            background-color: #396148;
+            color: #FFFFFF;
+            border: 1px solid #CCC;
+            padding: 2px;
+            width: auto !important;
+        }
+        
+        .resourceCreateButton {
+            margin-left: 20px;
+            font-size: 12px !important;
+        }
+        
+             .resourceTypeWrapper .formButton:hover {
+                 cursor: pointer;
+                 background-color: #487c5b;
+                 
+             }
+             
+        .resourceTypeWrapper .resourcesDisplay {
+            
+        }
+    
+    .resourceTableWrapper {
+        
+    }
+    
+        .resourceTableWrapper .padding {
+            padding: 10px;
+        }
+        
+            .resourceTableWrapper select {
+                top: 0px !important;
+                visibility: visible !important;
+            }
+    
+            .resourcesDisplayTable {
+                margin: 10px;
+                width: 100% !important;
+            }
+    
+            .resourcesDisplayTable thead {
+        
+            }
+   
+            .resourcesDisplayTable tbody {
+             
+            }
+            
+            .resourceDetails {
+                
+            }
+            
+            .resourceDelete {
+                
+            }

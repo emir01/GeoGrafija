@@ -1,0 +1,714 @@
+﻿/*=============================================================================
+  Global Wrapper and classes for general global look defined to be used by the script for
+  generationg default markup
+*/
+  
+.global
+{
+    margin-top: 30px;
+    width: 99%;
+    border-width: 1px !important;
+}
+
+    .global h3 
+    {
+        margin: 0px;
+        padding: 0px; 
+    }
+
+.globalStrip 
+{
+    background-color: #FFFFFF;
+    border-top: 1px solid #729baa;
+    border-bottom: 1px solid #729baa;
+}
+
+.globalLocaitonCanvas {}
+
+.globalParent {}
+
+.globalLocationSearchBar {}
+
+
+/*=============================================================================
+  The default classess used in both cases, for creating the either global or specialized markup.
+  These are as general as posible and the more specialized styles need be defined in the speicalized classes.
+*/
+
+
+/* empty class asigned to the element in the markup that will hold
+   the parent id for search functionality to access when searchin under conetxt */
+.searchParentIdContainerElement {}
+
+.locationSearchBar
+{
+    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.locationSearchHelpLink 
+{
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: #FFF !important;
+    margin-right:10px;
+
+    font-size:9px !important;
+}
+
+.locatinSearchBarBox 
+{
+    height: 30px;
+}
+
+.locatinSearchBarButton 
+{
+    margin-left: 20px;
+    width:150px;
+    padding-top:3px;
+    padding-bottom:3px;
+}
+
+.locationSearchContextBox 
+{
+    margin-top: 20px;
+}
+
+    .locationSearchContextBox input[type='checkbox']
+    {
+        margin-right: 20px;   
+    }
+
+    /* The element that holds the text for the context box */
+    .locationSearchContextBox span {
+    
+    }
+
+.strip
+{
+    height: 35px;
+}
+
+    .strip > .padding {}    
+
+    .stripBreadcrumbs
+    {
+        list-style:none;
+        margin: 0px;
+        padding: 0px;
+        -moz-box-shadow: 10px 10px 5px #888;
+        -webkit-box-shadow: 10px 10px 5px #888;
+        box-shadow: 10px 10px 5px #888;
+    }
+
+        .stripBreadcrumbsElement
+        {
+            list-style:none;
+            margin-left:15px;
+            margin-top: 5px;
+            float:left;
+            color: #000000;
+            cursor: pointer;
+            padding-right: 30px;
+            background-image: url('/Content/images/Breadcrumb2.png');
+            background-position: right;
+            background-repeat: no-repeat;
+        }
+
+        .stripBreadcrumbsElement:hover
+        {
+            color: rgb(118, 27, 27);
+        }
+
+.locationCanvas
+{
+    margin:10px;
+    padding-top:1px;
+    min-height: 200px;
+    
+    min-width: 500px;
+}
+
+    .noLocationsDivMessage{
+        font-size: 19px;
+        text-align:center;
+        padding:10px;
+        margin:10px;
+        border:1px solid #CCC;
+        color:#000;
+        
+        
+        -webkit-border-radius:10px;
+        -moz-border-radius:10px;
+        border-radius:10px;
+    }
+
+    .canvasElementContainer
+    {
+        list-style:none;
+        margin: 0px auto;
+        width: auto;
+    }
+
+        .listChild
+        {
+            list-style: none;
+            float: left;
+            height: 120px;
+            opacity: 0;
+            position: relative;
+        }
+
+            .element
+            {
+                width:200px;
+                min-height:40px;
+                border:1px solid #000000;
+                
+                -webkit-border-radius: 15px;
+                -moz-border-radius: 15px;
+                border-radius: 15px;
+    
+                background: #b5b5b5;
+	            background: -webkit-gradient(linear, left top, left bottom, from(#d0d0d0), to(#c2c2c2));
+	            background: -moz-linear-gradient(top,  #d0d0d0,  #c2c2c2);
+	            filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#d0d0d0', endColorstr='#c2c2c2');
+                
+                margin:10px;
+                z-index:100;
+                position:relative;
+                text-overflow:ellipsis;  
+                word-wrap:break-word;
+                cursor: pointer;
+                
+                box-shadow: 2px 5px 15px rgba(0, 0, 0, 0.80);
+                -moz-box-shadow: 2px 5px 15px rgba(0, 0, 0, 0.80);
+                -webkit-box-shadow: 2px 5px 15px rgba(0, 0, 0, 0.80);
+            }
+            
+            .element .detailsLink{}
+
+            .element:hover {
+                background: #af7d7d;
+	            background: -webkit-gradient(linear, left top, left bottom, from(#af7d7d), to(#8f6969));
+	            background: -moz-linear-gradient(top,  #af7d7d,  #8f6969);
+	            filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#af7d7d', endColorstr='#8f6969');
+            }
+            
+                .element:hover .searchedNameBox {
+                    color: #FFFFFF !important;   
+                }
+            
+               .element > .padding {}
+                
+                .searchedTypeBox {
+                    width: 16px;
+                    height: 16px;
+                    border: 1px solid #2b2821;
+                        
+                    position: absolute;
+                    top: 50%;
+                    left: 5px;
+                    margin-top: -8px;
+                }
+                
+                .element .content 
+                {
+                    position: relative;
+                    width: 140px;
+                    
+                    margin-left: 23px;
+                    min-height: 100%;
+                }
+                
+                    .element .content > .padding {}
+                    
+                    .searchedNameBox {
+                        width: 100%;
+                        display: block;
+                        font-size: 12px;
+                        text-align: center;
+                        font-family: "Trebuchet MS" , Arial;
+                        text-overflow:ellipsis;  
+                        word-wrap:break-word;
+                    }
+                
+                    .element  a 
+                    {
+                        text-decoration: none;
+                        color: #373737 !important;    
+                        position: absolute;
+                        top:0px;
+                        bottom:0px;
+                    }
+                
+                .element  a:hover 
+                {
+                    color: #151515;
+                }
+
+                .element .expand 
+                {
+                    top: 50%;
+                    position: absolute;
+                    width: 28px;
+                    height: 28px;
+                    right: 5px;
+                    background-color: #FFFFFF;
+                    border: 1px solid #8e8e8e;
+                    margin-top: -14px;
+                    
+                    -webkit-border-radius: 5px;
+                    -moz-border-radius: 5px;
+                    border-radius: 5px;
+                    
+                    box-shadow: 2px 3px 11px rgba(0, 0, 0, 0.40);
+                    -moz-box-shadow: 2px 3px 11px rgba(0, 0, 0, 0.40);
+                    -webkit-box-shadow: 2px 3px 11px rgba(0, 0, 0, 0.40);
+                }
+                
+                    .element .expand:hover {
+                        background-color: #73c3e1;
+                    }
+
+                    .element .expand > .padding 
+                    {
+                        padding-top: 2px;
+                    }
+
+                .expand .exploreLink 
+                {
+                    width: 28px;
+                    height: 28px;
+                    background-image: url('/Content/images/search.png');
+                    background-position: center;
+                    background-repeat: no-repeat;
+                }
+
+            .selectedLocation 
+            {
+                background: #9ebec7;
+	            background: -webkit-gradient(linear, left top, left bottom, from(#9ebec7), to(#87a3ab));
+	            background: -moz-linear-gradient(top,  #9ebec7,  #87a3ab);
+	            filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#9ebec7', endColorstr='#87a3ab');
+            }
+
+.parent
+{
+    width: 200px;
+    height: 50px;
+    margin: 10px auto;
+    border: 1px dashed black;
+}
+    .parent .content 
+    {
+        color: white;
+        text-align: center;
+        height: 100%;
+        width: 100%;
+    }
+    
+        .parent .content > .padding 
+        {
+            padding-top: 5px;
+        }
+
+    .parent  a 
+    {
+        color: #FFFFFF;
+        text-decoration: none;   
+        height: 100%;
+        width: 100%;
+    }
+
+    .parent  a:hover 
+    {
+        color: #009aeb;
+        text-decoration: underline;
+    }
+
+/*=============================================================================
+  Sidebar location type misc, inucluding template organization  */
+  
+.locationTypeSearchWrapper {}
+
+.locationTypeList 
+{
+    padding: 0px;
+    margin: 0px;
+    margin-bottom: 5px;
+    float: left;
+}
+
+.locTypeLiTemplate
+{
+    display: none;
+    color: #BBBBBB;
+    float: left;
+    height: 25px;
+    font-size: 11px;
+    border: 1px solid #CCCCCC;
+    margin-left: 10px;
+    margin-top: 5px;
+    position: relative;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.locTypeLiTemplate:hover {
+    background-color: #CCCCCC;
+}
+
+    .locTypeLiTemplate .color 
+    {
+        float: left;
+        width: 12px;
+        height: 12px;
+        border: 1px solid #CCCCCC;
+        position: absolute;
+        top: 6px;
+        
+    }
+
+    .locTypeLiTemplate .content 
+    {
+        float: left;
+        margin-left: 20px;
+        margin-top: 3px;
+    }
+
+    .locTypeLiTemplate a.content 
+    {
+        color: #5d5d5d;
+        text-decoration: none;
+    }
+
+    .locTypeLiTemplate .content:hover {
+    }
+
+/*=============================================================================
+  Strip , Parent and Canvas General  Styles on the serach page 
+  These could be counted as the specialized classes for the seach functionality */
+  
+.locaitonStripWrapper
+{
+    height: 35px;
+    background-color: #0075a0;
+    background-image: url("/Content/images/searchStripGradient.png");
+    border: 1px solid #CCCCCC;
+    
+}
+  
+    /* Here we reset the color for the breadcrumbs to be white. The default setting is overriden */
+    .locaitonStripWrapper ul li 
+    {
+        color: #FFFFFF !important;
+    }
+  
+.locaitonCanvasWrapper
+{
+    width: 100%;
+    margin: 0px auto;
+    min-height: 250px;
+}
+  
+.locationParentWrapper {}
+  
+.locationSearchBarWrapper 
+{
+    width: 100%;
+    text-align: center;
+}
+  
+    .locationSearchBarWrapper input[type='text']
+    {
+        width: 400px !important;
+    }
+  
+
+/*=============================================================================
+  New Location details styles. DETAILS
+  Styles are defined for the new location details page that has nothing to do with the 
+  location details page used by admins and teachers that has the more adminy look to it  */
+  
+#locationHirearchy 
+{
+    height: 35px;
+    background-color: #0075a0;
+    background-image: url("/Content/images/searchStripGradient.png");
+    border: 1px solid #CCCCCC;
+    color: #FFFFFF;
+}
+
+    #locationHirearchy > .padding 
+    {
+        padding-left: 10px;
+    }
+
+#DetailsHelpButtonContainer{
+    margin-top:5px;
+    margin-bottom:5px;
+    text-align:center;
+}
+
+#searchDetailsWrapper 
+{
+    margin-top: 50px;
+}
+
+    #searchDetailsWrapper > .padding 
+    {
+        padding: 10px;
+        padding-left: 20px;
+    }
+  
+#mapDetailsWrapper
+{
+    float: left;
+    width: 40%;
+    position: relative;
+}
+
+#LocationTypeNameContainer{
+    position: absolute;
+    text-align:center;
+
+    top:-40px;
+    left:0px;
+    right:0px;
+
+    font-size:22px !important;
+    text-decoration:underline;
+}
+
+#RecenterDetailsMapButtonContainer{
+    position: absolute;   
+    text-align:center;
+    
+    bottom: -25px;
+    left:0px;
+    right:0px;
+}
+
+#RecenterDetailsMapButtonContainer a {
+    font-size: 9px !important;
+    padding: 4px !important;
+}
+
+    #mapDetailsWrapper > .padding 
+    {
+        padding: 2px;
+        border: 3px solid rgb(87, 87, 87);
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        border-radius: 4px;
+        background-color: #FFFFFF;
+    }
+  
+#mapDetails 
+{
+    min-width: 100%;
+    min-height: 400px;
+} 
+
+#SearchDetailsMap 
+{
+    height: 100%;
+    width:  100%;
+}
+
+#infoDetails 
+{
+    overflow: hidden;
+    min-height: 400px;
+    
+    font-family: "Arial";
+    letter-spacing: 1px;
+    line-height: 20px;    
+}
+
+    #infoDetails > .padding {
+        padding-left: 25px;
+    }
+
+#locationNameBox 
+{
+    float: right;
+    width: 200px;
+    min-height: 50px;
+    color: #FFFFFF;
+    text-align: center;
+    position: relative;
+
+    border:2px solid #000000
+}
+
+    #locationNameBox a 
+    {
+        position: absolute;
+        top:0px;
+        bottom:0px;
+        left:0px;
+        right:0px;
+        color: #FFFFFF;
+    }
+
+        #locationNameBox a > .padding 
+        {
+            padding-top: 5px;
+        }
+
+    #locationNameBox a:hover 
+    {
+        cursor: default;
+    }
+    
+.nameBox 
+{
+    float: right;
+    width: 200px;
+    min-height: 50px;
+    color: #FFFFFF !important;
+    text-align: center;
+    position: relative;
+}
+
+    .nameBox  a 
+    {
+        position: absolute;
+        min-height: 50px;
+        color: #FFFFFF !important;
+        text-decoration: none;
+        
+        text-decoration: none;
+        top: 0px;
+        bottom: 0px;
+        left: 0px;
+        right: 0px;
+    }
+        .nameBox  a > .padding 
+        {
+            padding: 5px;    
+            position: absolute;
+            top: 0px;
+            bottom: 0px;
+            left: 0px;
+            right: 0px
+        }
+
+    .nameBox  a:hover 
+    {
+        cursor: pointer;
+    }
+
+#locaitonInfoContent 
+{
+    margin-top: 25px;
+    border: 1px solid #CCCCCC;
+    padding: 0px !important;
+    position: relative;
+
+
+    font-size:12px !important;
+    text-align: justify;
+}
+
+    #locaitonInfoContent > .padding {
+        padding: 5px;
+    }
+
+    #locaitonInfoContent textarea {
+        width: 100%;
+        height: 400px;
+        margin-bottom: 0px;
+        background-color: #CC0;
+    }
+    
+#findOutMore 
+{
+    overflow: hidden;
+    margin: 0px auto;
+    margin-top: 40px;
+    position: relative;
+    text-align:center;
+}
+  
+.metroButton 
+{
+    width: 200px;
+    height: 50px;
+    color: #FFFFFF !important;
+    background-color: #a81029;
+    text-align: center;
+    position: relative;
+}
+
+    .metroButton a 
+    {
+        color: #FFFFFF !important;
+        text-decoration: none;
+        display: block;
+        width: 100%;
+        height: 100%;
+        vertical-align: central;
+    }
+
+        .metroButton a > .padding 
+        {
+            position: relative;
+            padding-top: 15px;   
+        }
+
+        .metroButton a:hover 
+        {
+            cursor: pointer;
+            background-color: #76081a !important;
+        }
+
+.plainLink 
+{
+    color: #FFFFFF !important;
+    text-decoration: none !important;
+}
+
+/* Clasess and styles that work with marker icons and location type creation */
+.markerIconList 
+{
+    list-style: none;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 400px;
+}
+
+    .markerIconList li 
+    {
+        position: relative;
+        float: left;
+        margin-left: 10px;
+        margin-top: 10px;
+        border: 1px solid #898989;
+        width: 36px;
+        height: 47px;
+    }
+         
+        .markerIconList li > .padding
+        {
+            padding: 2px;   
+        }
+
+    .markerIconList li:hover 
+    {
+        background-color: #b7b7b7;
+        cursor: pointer;
+    }
+
+    .markerIconList li.selectedMarker 
+    {
+        background-color: #cb9595;
+    }
+
+    .markerIconList li img {}

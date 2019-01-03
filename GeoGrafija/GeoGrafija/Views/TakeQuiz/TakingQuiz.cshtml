@@ -1,0 +1,204 @@
+﻿@{
+    ViewBag.Title = "Започнат Квиз";
+}
+<input type="hidden" id="RandomQuizId" val ="@ViewBag.RandomQuizId"/>
+<div id = "TakeQuizWrapper" class="formBackground">
+    <div class="padding">
+        <h2 class="formHeader takeQuizName"></h2>
+        
+        <a id ="TakingQuizHelpDialogStudent" href="#" class="button green fixA">Помош!</a>
+
+        <div class="clear"></div>
+        <div id="QuizShortHelp">
+            <div class="explanation">
+                Одговорете на прашањата со кликање врз полината кои мислите дека се точни!
+            </div>
+            <div id="Images">
+                <div id="Correct">
+                    <img class="explanationImage" src="@Url.QuizImages("true.png")" alt="Точно!"/>
+                    Точно !
+                </div>
+                <div id="False">
+                    <img class="explanationImage" src="@Url.QuizImages("false.png")" alt="Неточно!"/>
+                    Неточно !
+                </div>
+            </div>
+        </div>
+        <div class="clear"></div>
+        <div class="questionBoxesWrapper">
+            <div class="padding">
+                <ul class="questionBoxesList"></ul>
+            </div>
+        </div>
+        <div class="clear"></div>
+        <div id="questionsButtons">
+            <input type="submit" class="questionNavButton" id="PreviousQiestion" value="<< Предходно Прашање" />
+            <input type="submit" class="questionNavButton" id="NextQiestion" value="Следно Прашање >>" /></div>
+        <div class="clear"></div>
+        <div id="QuestionFormsWrapper"></div>
+        <div class="clear"></div>
+        <input type="submit" class="button green" value="Зачувај Одговори!" id="SubmitTestAnswers" />
+    </div>
+</div>
+<input type="hidden" id="SelectedPage" value="Тестови" />
+<script type="text/javascript" src="@Url.PageScript("TakeQuiz.js")"></script>
+
+<div id="StudentTakingQuizHelpWrapper" class="pageHelpDialog hidden">
+    <h2>Решавање на квизови/тестови!</h2>
+
+    <h3 class="explanationSectionHeader">Содржина :</h3>
+    <ul class="dialogExplanationContentsList">
+        <li>
+            <a scroll="192" href="#introductionToMap">Вовед во квизови/тестови</a>
+        </li>
+
+        <li>
+            <a scroll="960" href="#introductionToMap">Основен поглед на тест</a>
+        </li>
+
+        <li>
+            <a scroll="1264" href="#introductionToMap">Навигација низ прашањата </a>
+        </li>
+
+        <li>
+            <a scroll="2485" href="#introductionToMap">Одговарање на прашањата </a>
+        </li>
+
+
+        <li>
+            <a scroll="4177" href="#introductionToMap">Зачувување на одговорите и резултати </a>
+        </li>
+    </ul>
+
+    <div class="explanationBreak"></div>
+
+    <h3 Id="introductionToMap" class="explanationSectionHeader">Вовед во квизови/тестови :</h3>
+
+    <p class="explanation">
+        Со решавање на тестовиве можеш да се натпреваруваш со другите ученици и  да добиеш поени кои ќе го зголемат твојот ранк.
+    </p>
+
+    <p class="explanation">
+        Решавањето на квизовите се одвива преку погледот даден на следната слика :
+    </p>
+
+    <div class="dialogExplanationImage">
+        <img src= "/Content/studentTakeQuizHelpImages/generalTakingQuiz.png" alt="Општо истражување"></div>
+
+    <p class="explanation">
+        Следува кратко објаснување на основните фунцкионалности на тестовите, како се менуваат прашањата, како се одговара на прашањат и како може да ги зачувате вашите одговори.
+    </p>
+
+    <div class="dialogExplanationScrollTop">
+        <a href="#">Содржина!</a>
+    </div>
+    <div class="explanationBreak"></div>
+
+    <h3 Id="introductionToMap" class="explanationSectionHeader">Основен поглед на тест  :</h3>
+
+    <p class="explanation">
+        Во најгорниот дел од погледот може да го забележите името на квизот кој моментално го решавате, како и мал потсетник за начинот на одговарање на прашањата и разликата помеѓу визуелното представување на  точни и неточни одговори.
+    </p>
+
+    <div class="dialogExplanationImage">
+        <img src= "/Content/studentTakeQuizHelpImages/takingQuizTopContent.png" alt="Општо истражување"></div>
+
+    <div class="dialogExplanationScrollTop">
+        <a href="#">Содржина!</a>
+    </div>
+    <div class="explanationBreak"></div>
+
+    <h3 Id="introductionToMap" class="explanationSectionHeader">Навигација низ прашања:</h3>
+
+    <p class="explanation">
+        Низ прашањаѕа може да се движите користејќи ги контролите кои се наоѓаат веднаш под делот со насловот.
+    </p>
+
+    <div class="dialogExplanationImage">
+        <img src= "/Content/studentTakeQuizHelpImages/takingQuizQuiestionNavigation.png" alt="Општо истражување"></div>
+
+    <p class="explanation">
+        Тука може да видите листа со броеви кои соодветно се повзани со прашањата во квизот. На сликата може да се види дека квизот земен како пример има две прашања.
+    </p>
+
+    <p class="explanation">
+        Користејќи ги копчината со бројчина може директно да отидете до прашањето означено со тој број.
+    </p>
+
+    <p class="explanation">
+        Исто така може да ги користите и двете копчина кои се наоѓаат 
+         на крајната лева и крајната десна страна во делот за навигација и се означени со "Предходно Прашање и "Следно Прашање". Овие копчина ќе ве движат низ листата од прашања во соодветната насока.
+    </p>
+
+    <p class="explanation">
+        Посебно е копчето кое ги прикажува сите прашања. Него може да го активирате со кликање или користејќи го “Следно Прашање“  ако се наоѓате на последното означено прашање. Активирањето ви ги прикажува сите прашања во квизов во исто време.
+    </p>
+
+    <div class="dialogExplanationImage">
+        <img src= "/Content/studentTakeQuizHelpImages/takeQuizAllAnswers.png" alt="Општо истражување"></div>
+
+    <div class="dialogExplanationScrollTop">
+        <a href="#">Содржина!</a>
+    </div>
+    <div class="explanationBreak"></div>
+    
+    <h3 Id="introductionToMap" class="explanationSectionHeader">Одговарање на прашањата:</h3>
+
+    <p class="explanation">
+        Секое прашање се состои од текстот на прашањето и листа од можни одговори. Сите прашања моментално дозволуваат избирање на повеќе точни одговори, но треба да внимавате, најчесто само еден од одговорите  е точен.
+    </p>
+
+    <div class="dialogExplanationImage">
+        <img src= "/Content/studentTakeQuizHelpImages/takeQuizAllAnswers.png" alt="Општо истражување"></div>
+
+    <p class="explanation">
+        На горната слика може да се види изгледот на едно прашање. Посебно внимание обрнете на двата црвени x - знаци на десната  страна на одговорите. Тука двата одговори се означени како неточни го представува почетниот одговор на сите прашања. Следниот дел објаснува како може да го промените тоа.
+    </p>
+
+    <p class="explanation">
+        За да го означите некој од одговорите како точен може да кликнете било каде во областа околу текстот на одговорот.
+    </p>
+    
+    <div class="dialogExplanationImage">
+        <img src= "/Content/studentTakeQuizHelpImages/clickToChangeAnswer.png" alt="Општо истражување"></div>
+
+    <p class="explanation">
+        Со тоа точноста на одговорот на даденото прашање ќе се промени. Го означувате тој одговор како точен одговор на тоа прашање.
+    </p>
+
+    <div class="dialogExplanationImage">
+        <img src= "/Content/studentTakeQuizHelpImages/correctQuestion.png" alt="Општо истражување"></div>
+
+   <p class="explanation">
+        Оваа иста постапка  би требало да ја повторите за сите прашања во квизот. По одговарање  на прашањата може да ги зачувате вашите одговори и да ги дознаете точните одговори.
+    </p> 
+
+    <div class="dialogExplanationScrollTop">
+        <a href="#">Содржина!</a>
+    </div>
+    <div class="explanationBreak"></div>
+
+    <h3 Id="introductionToMap" class="explanationSectionHeader">Зачувување на одговорите и резултати : </h3>
+
+    <p class="explanation">
+        За да ги зачувате вашите одговори, може да го искорисите копчето кое се наоѓа под секое прашање или ако го имате активирано погледот со сите прашања, се наоѓа под последното прашање.
+    </p> 
+    
+    <div class="dialogExplanationImage">
+        <img src= "/Content/studentTakeQuizHelpImages/submitAnswers.png" alt="Општо истражување"></div>
+
+    <p class="explanation">
+            По зачувувањето на одговорите ќе добиете прозорче со вашите одговори Тука може да ги погледнете точните одговори и вашите освоени поени.
+    </p> 
+
+    <div class="dialogExplanationImage">
+        <img src= "/Content/studentTakeQuizHelpImages/quizResultAfterSubmit.png" alt="Општо истражување"></div>
+
+    <p class="explanation">
+            Во резултатите може да го видите бројот на освоени поени, и бројот на точни одговори. Во долниот дел исто така може да ги прегледате детално вашите одговори за секое прашање како и точниот одговор на тоа прашање.
+    </p> 
+
+    <div class="dialogExplanationScrollTop">
+        <a href="#">Содржина!</a>
+    </div>
+</div>

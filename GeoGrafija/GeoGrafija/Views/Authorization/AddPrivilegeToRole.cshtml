@@ -1,0 +1,36 @@
+﻿@using GeoGrafija.ViewModels
+
+@using GeoGrafija.ViewModels.UserViewModels
+
+@model AddPrivilegesToRoleViewModel
+@{
+    ViewBag.Title = "Додади Привилегија кон Улога";
+}
+<h2>
+    Додади Привилегија кон Улога</h2>
+    @Html.Partial("_AdminNavigation")
+    @using (Html.BeginForm())
+    {
+    
+        <br />
+        @Html.ValidationSummary(false, "Грешки при додавање на привилегии на улога :");
+        <br />
+        
+<div id="Role" style="width: 50%; float: left;">
+    @Html.DisplayFor(m => m.Role, new { Message = "Избрана Улога", DisplayPrivileges = false })
+</div>
+<div id="Privileges" style="width: 50%; float: left;">
+ 
+        <fieldset>
+            <legend>Избрани Привилегии:</legend>
+            
+                        @Html.EditorFor(m => m.AllPrivileges, "ItemCheckBoxList")
+        </fieldset>
+        
+        <input type="submit" value="Зачувај Промени" />
+    
+</div>
+    }
+<div style="clear: both;">
+</div>
+<input type="hidden" id="SelectedPage" value="Улоги"/>

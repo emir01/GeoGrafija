@@ -1,0 +1,35 @@
+﻿@using Model
+@model User
+
+<fieldset>
+    <legend>@ViewBag.Message</legend>
+
+    <div class="display-label">         
+        <b> @Html.LabelFor(model => model.UserName) : </b>
+	</div>
+    <div class="display-field">
+    	@Html.DisplayFor(model => model.UserName)
+    </div>
+
+    <div class="display-label">         
+        <b> @Html.LabelFor(model => model.Email) : </b>
+	</div>
+    <div class="display-field">
+    	@Html.DisplayFor(model => model.Email)
+    </div>
+  
+   @if (ViewBag.DisplayRoles)
+   {
+    <div class="display-label">         
+        <b> @Html.LabelFor(model => model.Roles,"Улоги") : </b>
+	</div>
+  
+    <div class="display-field">
+    	@foreach (var role in Model.Roles)
+     {
+            @role.RoleName <br />
+     }
+    </div>
+   }
+
+</fieldset>

@@ -1,0 +1,30 @@
+﻿@using GeoGrafija.ViewModels
+
+@using GeoGrafija.ViewModels.SharedViewModels
+
+@model  IEnumerable<CheckBoxModel>
+
+<table>
+    <tr>
+        <th>
+        </th>
+        <th>
+            @Model.FirstOrDefault().TableDisplayName
+        </th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                <input type="checkbox" name="@item.CheckBoxNames" value="@item.DisplayText" 
+                @if(item.CheckBoxChecked){
+                    @("Checked")
+                }
+                 />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DisplayText)
+            </td>
+        </tr>
+    }
+</table>

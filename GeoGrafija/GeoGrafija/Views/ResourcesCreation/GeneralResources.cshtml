@@ -1,0 +1,101 @@
+﻿@using GeoGrafija.ViewModels.ResourcesViewModels
+@model  CreateResourcesViewModel 
+@{
+    ViewBag.Title = "Креирање ресурси";
+}
+<div id="CreateGeneralResourceForm" class="formBackground generalFormLayout">
+    <h2 class="formHeader">
+    
+        Општи ресурси :</h2>
+    
+    @Html.HiddenFor(x=>x.LocationTypeId,new {value=0, id="HiddenLocationTypeIDValue"})
+    <div class="clear">
+    </div>
+    <div class="editor-label">
+        Изберете тип на локација за креирање/преглед на ресурси :
+    </div>
+    <div class="editor-field">
+        @Html.DropDownListFor(x => x.LocationTypes, Model.LocationTypesSelectList, "--Типови на Локации--", new { @class = "pretty2 dk", name = "pretty2", @id = "LocationTypeDropdown" })
+    </div>
+    <div class="clear">
+    </div>
+    <div class="editor-label">
+        Изберете тип на ресурс за преглед :
+    </div>
+    <div class="editor-field">
+        @Html.DropDownListFor(x => x.AvailableResourceTypes, Model.ResourceTypesSelectList, "--Ресурси за преглед--", new { @class = "pretty dk", name = "pretty", @id = "ResourceTypeDropdown" })
+    </div>
+    <div class="clear">
+    </div>
+    @foreach (var locationType in Model.LocationTypes)
+    { 
+        <div class="resourceLocationTypeWrapper" data-location-type-id = "@locationType.Id">
+            @foreach (var resourceType in Model.AvailableResourceTypes)
+            {
+                <div class="resourceTypeWrapper" data-id = "@resourceType.Id">
+                    <div class="padding">
+                        <h2  data-color = "@resourceType.Color" class="formHeader">
+                            <span>@resourceType.Name</span> за <span>@locationType.LocationTypeName</span></h2>
+                        <div class="clear">
+                        </div>
+                        <input type="submit" class="button green resourceCreateButton" value="Креирај нов!"  data-typename ="@resourceType.Name" data-typeid = "@resourceType.Id"/>
+                        <div class="resourcesDisplay">
+                            @Html.DisplayResourcesOfTypeForLocationType( resourceType, locationType.Id)
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+</div>
+<div id="ResourceCreateDialog" class="resourceDialog">
+    <div class="padding">
+        <input type="hidden" id="HiddenResourceDialogName" value="" />
+        <input type="hidden" id="HiddenResourceDialogId" value="" />
+        <h2>
+            Креирај <span id="CreateResourceTypeName"></span>:</h2>
+        <div class="clear">
+        </div>
+        <div id="CreateResourceName">
+            <div class="label">
+                Име на ресурс :
+            </div>
+            <div class="value">
+                <input type="text" id="ResourceNameValue" /></div>
+            <div class="clear">
+            </div>
+        </div>
+        <div class="clear">
+        </div>
+        <textarea id="CreateResourceText"></textarea>
+        <div class="clear">
+        </div>
+    </div>
+</div>
+<div id="ResourceDetailsDialog" class="resourceDialog">
+    <div class="padding">
+        <input type="hidden" id="HiddenDetailsResourceId" value="" />
+        <input type="hidden" id="HiddenDetailsText" value="" />
+        <h2>
+            Детали за <span id="DetailsResourceName"></span>:</h2>
+        <div class="clear">
+        </div>
+        <div id="DetailsResourceNameWrapper">
+            <div class="label">
+                Име на ресурс :
+            </div>
+            <div class="value">
+                <input type="text" id="DetailsResourceNameValue" /></div>
+            <div class="clear">
+            </div>
+        </div>
+        <div class="clear">
+        </div>
+        <textarea id="DetailsResourceText"></textarea>
+        <div class="clear">
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="@Url.PageScript("CreateGeneralResources.js")"></script>
+<link href="@Url.CssDropKick()" rel="stylesheet"/>
+<input type="hidden" id="SelectedPage" value="Општи Ресурси"/>

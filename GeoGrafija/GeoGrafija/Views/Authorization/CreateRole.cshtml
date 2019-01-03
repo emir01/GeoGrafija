@@ -1,0 +1,39 @@
+﻿@using Model
+@model Role
+@{
+    ViewBag.Title = "Креирај Улога";
+}
+<div class="formBackground generalFormLayout">
+    <div class="padding">
+        <h2 class="formHeader">
+            Креирај Улога</h2>
+        @using (Html.BeginForm())
+        {
+            @Html.ValidationSummary(true)
+            
+            
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.RoleName)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.RoleName)
+                    @Html.ValidationMessageFor(model => model.RoleName)
+                </div>
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.RoleDescription)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.RoleDescription)
+                    @Html.ValidationMessageFor(model => model.RoleDescription)
+                </div>
+                <p>
+                    <input type="submit" class="formButton pinkButton" value="Креирај" />
+                </p>
+        }
+    </div>
+    <div>
+        @Html.ActionLink("Назад кон Листа", "Roles")
+    </div>
+</div>
+
+<input type="hidden" id="SelectedPage" value="Улоги"/>

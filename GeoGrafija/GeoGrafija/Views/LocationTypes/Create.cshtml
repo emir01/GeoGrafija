@@ -1,0 +1,29 @@
+﻿@using GeoGrafija.ViewModels
+@using GeoGrafija.ViewModels.LocationTypeViewModels
+@model AddLocationTypeViewModel
+@{
+    ViewBag.Title = "Креирај";
+    ViewBag.Parrent = "C";
+}
+<div class="formBackground goleft">
+    <div class="padding">
+        <h2 class="formHeader">
+            Креирај тип на Локација</h2>
+        
+        @using (Html.BeginForm("Create", "LocationTypes", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            @Html.ValidationSummary(true)
+            @Html.Partial("LocationTypeCreateEditForm", Model)
+            <p class="formButtonContainer">
+                @Html.ActionLink("Назад кон Листа", "Index",null,new { @class = "button green fixA" })
+            </p>
+            @Html.Hidden("pickedMarker")
+        }
+        
+    </div>
+</div>
+<input type="hidden" id="SelectedPage" value="Типови Локации!"/>
+<script type="text/javascript">
+    CreateLocationTypeScript.Initialize();
+</script>
+<link href="@Url.CssDropKick()" rel="stylesheet"/>

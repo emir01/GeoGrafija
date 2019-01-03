@@ -1,0 +1,218 @@
+﻿/*  ==== ------------------------------------------------------------------------
+    ==== Styles specific to the page that handles location epxloration via the interactive map
+    ==== ------------------------------------------------------------------------
+*/        
+
+/*  ==== ------------------------------------------------------------------------
+    ==== General Exploration Styles 
+    ==== ------------------------------------------------------------------------
+*/          
+    #MapActions {}
+    
+    .mapOption {
+        margin: 10px;
+        margin-top: 0px;
+        display: inline-block;
+        
+        float: left;
+        
+        font-size:10px;
+        text-decoration: none !important;
+        color: #FFF !important;
+        
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+
+    #ExplorationHelp {}
+    
+    #ResetMap{}
+            
+    #MapNav{ 
+        list-style:none;
+        float:left;
+        margin:0px;
+        padding:0px;
+        line-height:17px; 
+    }    
+
+    #MapNav li {
+        display: inline;
+        margin: 0px;
+        padding: 0px;
+        
+    }
+    #MapNav li a
+    {
+        background-color: #6d967b;
+    }
+    
+    .navOption {}
+
+    #ExplorationMap 
+    {
+        border: 3px solid #dfc96b;
+        height: 95%;
+    }
+    
+    #ExplorationCallout {
+        width: 500px;
+    }
+    
+        #ExplorationCallout > .padding {
+        
+        }
+        
+        #LocationName {
+            text-align: center;
+            font-size: 20px;
+            border-bottom: 1px solid #CCCCCC;
+        }   
+        
+        #LocationType {
+            text-align: center;
+            font-size: 14px;
+        }     
+        
+        #ZoomLevel 
+        {
+            text-align: center;
+            font-size: 10px;
+        }     
+        
+        #LocationShortDescription 
+        {
+            font-size: 10px;
+            width: 100%;
+        }
+        
+        .scrollbarWrapper {}
+        
+        #CalloutOptions {
+            text-align: center;
+        }
+        
+            .calloutOption {
+                margin: 5px;
+                display: inline-block;
+
+                text-decoration: none !important;
+                border: 1px solid #CCCCCC;
+                background-color: #6795cd;
+                color: #FFF !important;
+                padding-left: 10px;
+                padding-right: 10px;
+                padding-top: 5px;
+                padding-bottom: 5px;
+            }
+            
+            .calloutOption:hover {
+                background-color: #4a75a9;
+            }
+            
+            .detailsLink {}
+        
+            .zoomLink {}
+            
+            .closeLink {}
+
+    #MarkersDisplayLink{
+        position: absolute;
+        right:0px;
+        top:5px;
+
+        width:120px;
+        
+        background-color:#007eae;
+        border:1px solid #000;
+        color: #FFF;
+        
+        text-align:center;
+        padding-top:5px;
+        padding-bottom:5px;
+        font-size:11px;
+
+        z-index: 30000;
+    }
+
+    #MarkersDisplayLink:hover{
+        background-color:#006287;
+    }
+
+        #MarkersDisplayLink a{
+            color:#FFF !important;
+            text-decoration:none;
+        }
+
+        #MarkersDisplayLink a:hover{
+            color:#cbad2c;
+        }
+
+    #MarkerDisplayWrapper{
+        width:300px;
+        height:350px;
+        position: absolute;
+        background-color: #ededed;
+        right:-350px;
+        top:50px;
+        border:1px solid #CCC;
+        -webkit-border-radius:10px;
+        -moz-border-radius:10px;
+        border-radius:10px;
+        z-index: 40000;
+        padding: 10px;
+    }
+
+        #MarkerDisplayWrapper #HideMarkerLegend{
+            float:right;
+            margin-right: 5px;
+        }
+
+        #MarkerDisplayWrapper #HideMarkerLegend a {
+            font-size:10px !important;
+            padding:7px !important;
+        }
+
+
+    #MarkersScrollbar{
+        padding-top: 10px;
+    }
+
+    #MarkerLegendList{
+        width: 285px;
+    }
+
+    #MarkerLegendList ul{
+        list-style:none;
+        margin: 0px;
+        padding: 0px;
+    }
+
+    #MarkerLegendList ul li{
+        margin: 0px;
+        padding: 0px;   
+        text-align:center;
+        padding-top:10px;
+        padding-bottom:10px;
+        border-bottom:1px solid #CCC;
+    }
+
+    #MarkerLegendList ul li:last-child{
+           border-bottom:none;
+    }
+
+    #MarkerLegendList ul li span{
+        padding-top:-10px;
+    }
+
+    #MarkerLegendList ul li img{
+        margin-left: 20px;
+        margin-top:10px;
+        position: relative;
+    }
+
+       
+        
+        

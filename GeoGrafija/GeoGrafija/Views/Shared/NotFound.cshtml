@@ -1,0 +1,20 @@
+﻿@{
+    ViewBag.Title = "Побараниот ресурс не постои!";
+}
+<div id="NotFoundWrapper" class="formBackground generalFormLayout">
+    <img id="NavPointer" src="@Url.Image("helpPointer.png")" />
+    <div id="statusCode">
+        404...!</div>
+    <div class="clear">
+    </div>
+    <img src="@Url.Image("warning.png")" id="warningImage" alt="Предупредување!" />
+    <div class="clear">
+    </div>
+    <div class="lostMessage">
+        Навигаторот не успеа да ја пронајде страната која ја барате.
+    </div>
+    <div class="lostMessage">
+        Искористете некој од линковите да се вратите на точниот правец :
+    </div>
+    <img src="@Url.Image("lostNavLinks.png")" id="LinkHelp" alt="Предупредување!" />
+</div>

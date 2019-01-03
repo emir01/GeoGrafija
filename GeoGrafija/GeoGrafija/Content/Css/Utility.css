@@ -1,0 +1,473 @@
+﻿/* Utility Stylesheet, for utlity markup including dialogs and help windows etc.etc.etc. */
+.searchHelpDialogContentWrapper {}
+
+    .searchHelpDialogContentWrapper h3 
+    {
+        margin: 0px;
+        padding: 0px;
+    }
+
+        .searchHelpDialogWrapper > .padding
+        {
+            padding-top: 0px;
+        }
+
+
+.searchOption {}
+
+.freeze
+{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+    z-index: 9999;
+}
+
+/*  GENERIC UI CLASSES */
+
+.genericDialog {}
+
+    .genericDialog .message {}
+
+/* Classes for the dialog information content depending on the dialog type */
+
+/* classes for the intformation dialog  displaying informaiton messages */
+.informationDialogContent 
+{
+    color: #008000;
+}
+
+    .informationDialogContent > .padding{}
+
+/* classes for the error dialog  displaying error messages */
+.errorDialogContent {
+    color: #FF8822;
+}
+
+    .errorDialogContent > .padding {}
+    
+/* classes for the tutorials dialog  displaying tutorials messages */
+.tutorialDialogContent {}
+
+    .tutorialDialogContent > .padding {}
+
+/*  COLOR PICKER  UI CLASSES */    
+
+.colorPickerPreview 
+{
+    height: 10px;
+    width: 10px;
+    border: 1px solid black;
+    position: relative;
+    margin-left: 5px;
+    margin-right: 5px;
+    float: left;
+}
+
+    .colorPickerTextBox 
+    {
+        width: 80px !important;
+    }
+
+    .colorPickerDisplayOnlyBox {}
+
+.colorPickerDisplayOnlyPreview 
+{
+    height: 20px;
+    width: 20px;
+    border: 1px solid black;
+    position: relative;
+    margin-left: 5px;
+    margin-right: 5px;
+    float: left;
+}
+
+/*
+    Classess that describe the QuizResult Message Dialog Box. Put here because it may be used in various windows.
+*/    
+        #QuizResultMessage {
+            width: 100%;
+            font-size: 13px;
+            color: #000;
+        }        
+        
+        #QuizResultMessage > .padding {
+            width: 100%;
+        }        
+        
+        #QuizResultMessage .formHeader {
+            font-size: 15px;
+            text-align: center;
+        }
+        
+        #QuizResultMessage .points {
+            margin-top: 10px;
+            margin: 0px auto;
+            position: relative;
+            font-size: 13px !important;
+            border-bottom: 1px solid #CCCCCC;
+            padding-bottom: 4px;
+        }
+        
+             #QuizResultMessage .points .label {
+                 float: left;
+            }
+            
+             #QuizResultMessage .points .value {
+                float: left;
+                margin-left: 20px;
+            }
+            
+       #QuizResultMessage .questions {
+            margin: 0px auto;
+            margin-top: 10px;
+            position: relative;
+            font-size: 13px !important;
+            border-bottom: 1px solid #CCCCCC;
+            padding-bottom: 4px;
+        }
+        
+             #QuizResultMessage .questions .label {
+                 float: left;
+            }
+            
+             #QuizResultMessage .questions .value {
+                float: left;
+                margin-left: 20px;
+            }
+        
+        /* ========       DETAILS FOR QUIZ INFO ==========    */
+        #QuizResultMessage .detailedWrapper {
+            margin-top: 15px;
+            border-top: 3px solid #CCC;
+        }            
+            #QuizResultMessage .detailedWrapper > .padding {
+            
+            }            
+            
+            .detailedWrapper .detailedHeader {
+                text-align: center;
+                font-size: 18px;
+                color: #1860A6;
+                padding: 5px;
+                text-decoration: underline;
+            }
+        
+            #QuizResultMessage .detailedWrapper .detailQiestionInfo {
+                margin: 5px;
+                border-bottom: 2px solid #b53939;
+                font-size: 13px;
+            }
+                .detailQiestionInfo  > .padding {
+                    padding-bottom: 5px;
+                }
+        
+                .detailQiestionInfo .questionTextHeader {
+                    text-align: center;
+                    background-position: right;
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                }
+                
+                    .detailQiestionInfo .questionAnsweredCorrect 
+                    {
+                        background-image: url("/Content/QuizImages/true.png");
+                    }
+                    
+                    .detailQiestionInfo .questionAnsweredWrong 
+                    {
+                        background-image: url("/Content/QuizImages/false.png");
+                    }
+                    
+            
+                .detailQiestionInfo .questionWonPoints {
+                    text-align: center;
+                }
+                    .questionWonPoints .label {
+                        float: left;
+                    }
+                
+                    .questionWonPoints .value {
+                        float: left;
+                    }
+
+            .detailQiestionInfo .answerBox {
+                
+            }
+            
+            .detailQiestionInfo .answerBoxHeader {
+                font-size: 14px;
+            }
+        
+            .detailQiestionInfo .answerBoxList {
+                margin: 0px;
+                padding: 0px;
+            }
+        
+            .detailQiestionInfo .answerBoxListItem {
+                margin: 0px;
+                padding: 0px;
+                font-size: 11px;
+            }
+            
+            .detailQiestionInfo .noAnswerListItem {
+                color: #811d2f;
+            }
+        
+            .detailQiestionInfo .correctAnswerBox {
+                float: left;
+                margin: 5px;
+                width: 45%;
+                border-right: 1px solid #CCC;
+            }
+                .correctAnswerBox .answerBoxHeader {
+                    color: #31811d;
+                }
+            
+                .correctAnswerBox .answerBoxList {
+                
+                }
+            
+                .correctAnswerBox .answerBoxListItem {
+                
+                }
+        
+            .detailQiestionInfo .userAnswerBox {
+                float: right;
+                margin: 5px;
+                width: 45%;
+            }
+        
+                .userAnswerBox .answerBoxHeader {
+                    color: #1d5a81;
+                }
+            
+                .userAnswerBox .answerBoxList {
+                
+                }
+            
+                .userAnswerBox .answerBoxListItem {
+                
+                }
+                
+#NotFoundWrapper {
+    min-height: 400px;
+    
+}   
+
+#warningImage {
+    width: 165px;
+    height: 164px;
+    display: block;
+    margin: 0px auto;
+}
+
+#LinkHelp {
+    width: 471px;
+    height: 94px;
+    display: block;
+    margin: 0px auto;
+}
+
+#NavPointer 
+{
+    width: 90px;
+    height: 131px;
+    position: absolute;
+    top: -30px;
+    left:40px;
+    z-index: 9999;
+}
+         
+#statusCode {
+    text-align: center;
+    font-size: 90px;
+    border-bottom: 1px solid #707070;
+}
+
+.lostMessage {
+    text-align: center !important;
+    margin: 20px;
+    font-size: 20px;
+    color: #696969;
+    font-family: Arial;
+}
+
+#ExceptionWrapper {
+    min-height: 400px;
+}
+
+#StopException {
+    width: 165px;
+    height: 164px;
+    display: block;
+    margin: 0px auto;
+}
+
+#errorCode {
+    text-align: center;
+    font-size: 90px;
+    border-bottom: 1px solid #892c2c;
+    color: #892c2c;
+}
+
+.retryException {
+    color: #FFF;
+    text-decoration: none;
+    padding: 10px;
+    width: 200px;
+    margin: 0px auto;
+    display: block;
+}
+
+.retryException:hover {
+    color: #FFF;
+}
+
+.retryException:link {
+    color: #FFF;
+}
+
+.retryException:active {
+    color: #FFF;
+}
+
+.retryException:visited {
+    color: #FFF;
+}
+
+/*======================================================== */
+/*======================================================== */
+/*GENERA SEARCH DIALOG CLASSESS*/
+/*======================================================== */
+/*======================================================== */
+
+/*The global class for all dialogs that contain help for the user*/
+.pageHelpDialog{ 
+    font-size:12px !important;     
+    position: relative;
+}
+
+.pageHelpDialog h2 { 
+    text-align:center;   
+}
+
+.pageHelpDialog .explanation{ 
+    font-size:11px !important;
+    text-align : justify;
+    color: #000;
+    clear: both;
+    margin: 0px;
+    padding:0px;
+
+    margin-top:20px;
+    margin-bottom:20px;
+}
+
+.pageHelpDialog .explanation .explanationAccent{
+    
+}
+
+.pageHelpDialog .dialogExplanationImage{
+    overflow: hidden;
+    font-size:12px !important;
+    text-align:center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-top:1px solid #CCC;
+    border-bottom:1px solid #CCC;
+}
+
+.pageHelpDialog .dialogExplanationImage img{
+    
+}
+
+.pageHelpDialog .dialogExplanationContentsList{
+    font-size:10px;
+    margin-left:30px;
+    margin-top:30px;
+}
+
+.pageHelpDialog .explanationBreak{
+    clear:both;
+    margin-top:5px;
+    margin-bottom: 15px;
+    height:1px;
+    border-top:2px solid #CCC;
+}
+
+.pageHelpDialog .explanationSectionHeader{
+    margin-bottom:10px;
+    position: relative;
+    color:#2D4682;
+    text-decoration:underline !important;
+    font-style:italic;
+}
+
+.pageHelpDialog .dialogExplanationScrollTop{
+    text-align :center;
+    margin-top:10px;
+    margin-bottom:10px;
+}
+
+/*======================================================== */
+/*======================================================== */
+/*SEARCH HELP CONAINER */
+/*======================================================== */
+/*======================================================== */
+
+#SearchHelpWrapper{}
+
+#SearchHelpWrapper h2{}
+
+#SearchHelpWrapper .explanation{}
+
+#SearchHelpWrapper .explanationSectionHeader {}
+
+#SearchHelpWrapper .dialogExplanationImage{}
+
+#SearchHelpWrapper .dialogExplanationImage img{}
+
+#SearchHelpWrapper .explanationBreak{}
+
+/*======================================================== */
+/*======================================================== */
+/* EXPLORATION HELP CONAINER */
+/*======================================================== */
+/*======================================================== */
+
+#ExplorationHelpWrapper{}
+
+#ExplorationHelpWrapper h2{}
+
+#ExplorationHelpWrapper .explanation{}
+
+#ExplorationHelpWrapper .explanationSectionHeader {}
+
+#ExplorationHelpWrapper .dialogExplanationImage{}
+
+#ExplorationHelpWrapper .dialogExplanationImage img{}
+
+#ExplorationHelpWrapper .explanationBreak{}
+
+/*======================================================== */
+/*======================================================== */
+/* LOCAITON DETAILS HELP CONAINER */
+/*======================================================== */
+/*======================================================== */
+#LocationDetHelpWrapper{}
+
+#LocationDetHelpWrapper h2{}
+
+#LocationDetHelpWrapper .explanation{}
+
+#LocationDetHelpWrapper .explanationSectionHeader {}
+
+#LocationDetHelpWrapper .dialogExplanationImage {}
+
+#LocationDetHelpWrapper .dialogExplanationImage img{}
+
+#LocationDetHelpWrapper .explanationBreak{}
+

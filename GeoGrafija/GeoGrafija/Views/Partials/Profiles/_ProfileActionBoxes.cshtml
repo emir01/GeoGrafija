@@ -1,0 +1,20 @@
+﻿@using GeoGrafija.ViewModels.Profiles
+@model ActionBoxesListViewModel
+<div class="profileActionBoxesWrapper">
+    <ul class="profileActionBoxList">
+        <div class="padding">
+            @foreach (var box in Model.ActionBoxes)
+            {
+                <div class="profileActionBoxItem button green" data-uid="@box.UId" data-actionid="@box.ActionId">
+                        <div class="profileActionBoxText @box.ExtraClasses">@box.Text</div>
+                        <div class="icon" data-image="@box.Image"></div>
+                </div>
+            }
+        <div class="clear"></div>
+        </div>
+        <div class="clear">
+        </div>
+    </ul>
+    <div class="clear">
+    </div>
+</div>

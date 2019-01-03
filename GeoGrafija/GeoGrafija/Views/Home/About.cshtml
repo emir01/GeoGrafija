@@ -1,0 +1,119 @@
+﻿@{
+    ViewBag.Title = "За ГеоГрафија!";
+}
+<input type="hidden" id="ResizeMain" />
+<input type="hidden" id="SelectedPage" value="За ГеоГрафија" />
+<div class="formBackground generalFormLayout" id="AboutForm">
+    <h2 class="formHeader">
+        За ГеоГрафија</h2>
+    <div class="fancyParagraph">
+        ГеоГрафија е веб апликација изработена како дипломска работа при Факултетот за Информатички
+        Науки и Компјутерско Инженерство. Аплиакцијата представува пример за интерактивни
+        веб аплкиации кои би можело да се користат како помош и придружник кон изучување
+        на различни теми, од математика и програмирање до географија и литература до сподеување
+        на материјали и дискусии.
+    </div>
+
+    <div class="fancyParagraph">
+        Апликацијата моментално се наоѓа во алфа (прва) верзија, и може да содржи одредени грешки и недозавршени компоненти.
+    </div>
+
+    <div class="fancyParagraph">
+        Конкретно оваа апликација е изработена како помошна алатка за учење на географија,
+        преку неколку основни подмодули :
+        <ul class="fancyUl">
+            <li>
+                <div class="liHeader">
+                    Пребарување на било каков географски поим</div>
+                <div class="content">
+                    Корисниците можат да пребаруваат локации со внесување на текст, или со раздробување
+                    на разни типови на локации.</div>
+            </li>
+            <li>
+                <div class="liHeader">
+                    Интерактивно истражување на локации, преку интерактивниот атлас.</div>
+                <div class="content">
+                    Корисниците можат да го искористат интерактивниот атлас за пребарување на локации
+                    на мапа изградена со помош на Google мапите.</div>
+            </li>
+            <li>
+                <div class="liHeader">
+                    Концепт на Наставници и Ученици.</div>
+                <div class="content">
+                    “Наставниците“ можат да креираат тестови, локации и ресурси за локациите додека
+                    “учениците“ ги консумираат овие локации и ги решаваат тестовите.</div>
+            </li>
+            <li>
+                <div class="liHeader">
+                    Тестови.</div>
+                <div class="content">
+                    Студентите може да ги решаваат тестовите креирани од професорите и добиваат поени
+                    со што се натпреваруваат со сите други студентии добиваат повисок ранк.</div>
+            </li>
+        </ul>
+        <div class="clear">
+        </div>
+    </div>
+    <div class="fancyParagraph">
+        Апликацијата е изработена користејќи повеќе различни технологии, алатки и екстензии
+        меѓу кои најважни се :
+        <ul class="fancyUl">
+            <li>
+                <div class="liHeader">
+                    ASP.NET MVC</div>
+                <div class="content">
+                    Веб технологијата на Микрософт базирана врз Model-View-Controller дизајн шаблонот</div>
+            </li>
+            <li>
+                <div class="liHeader">
+                    Google Maps</div>
+                <div class="content">
+                    Решението за мапи од Google, врз кое се изградени интерактивната мапа за истражување
+                    и врз кое се креираат локациите во системот.</div>
+            </li>
+            <li>
+                <div class="liHeader">
+                    jQuery и jQuery UI и голем број други javascript екстензии
+                </div>
+                <div class="content">
+                    Бидејќи голем дел од апликацијата функционира во прелистувачот на корисникот, користени
+                    се голем број на клиентски екстензии за зголемување на интерактивноста и презентабилноста
+                    на содржините.</div>
+            </li>
+        </ul>
+        <div class="clear">
+        </div>
+    </div>
+    <div class="clear">
+    </div>
+    <div id="AboutImages">
+        <ul>
+            <li><a href="http://www.finki.ukim.mk">
+                <img src="@Url.AboutImages("finki.png")" alt="Факултет за Информатички Науки и Компјутерско Инженерство"/>
+            </a></li>
+            <li><a href="http://www.asp.net/mvc">
+                <img src="@Url.AboutImages("MvcLogo.png")" alt="Microsoft ASP.NET MVC"/>
+            </a></li>
+            <li><a href="http://code.google.com/apis/maps/index.html">
+                <img src="@Url.AboutImages("googleMaps.png")" alt="Google Maps"/>
+            </a></li>
+            <li><a href="http://jquery.com/">
+                <img src="@Url.AboutImages("jqlogo.png")" alt="jQuery Javascript Plugin"/>
+            </a></li>
+            <li><a href="http://jqueryui.com/">
+                <img src="@Url.AboutImages("uilogo.png")" alt="jQuery UI Extension Plugin"/>
+            </a></li>
+            <div class="clear">
+            </div>
+        </ul>
+    </div>
+    <div class="clear">
+    </div>
+    <div id="AboutNotification">
+        <p>
+        Оваа апликација не е директно поврзана ниту официјално подржана од ниту една од
+        наведените компании кои стојат зад набројаните технологии.
+        </p>
+        <p>Изработено од Емир Османоски - @(DateTime.Now.Year)</p>
+    </div>
+</div>

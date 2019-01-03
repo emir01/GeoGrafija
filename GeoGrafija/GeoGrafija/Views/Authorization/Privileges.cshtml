@@ -1,0 +1,43 @@
+﻿@using Model
+@model IEnumerable<Privilege>
+
+@{
+    ViewBag.Title = "Привилегии";
+}
+
+<h2>Привилегии</h2>
+@Html.Partial("_AdminNavigation")
+
+<p>
+    @Html.ActionLink("Креирај Ново", "CreatePrivilege")
+</p>
+<table>
+    <tr>
+        <th>
+                        @Html.LabelFor(model => model.FirstOrDefault().PrivilegeName)
+        </th>
+        <th>
+                        @Html.LabelFor(model => model.FirstOrDefault().PrivilegeDescription)
+        </th>
+        <th>Операции</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.PrivilegeName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PrivilegeDescription)
+        </td>
+        <td>
+
+            @Html.ActionLink("Промени", "Edit", new { id=item.PrivilegeID }) |
+            @Html.ActionLink("Детали", "PrivilegeDetails", new { PrivilegeName=item.PrivilegeName}) |
+            @Html.ActionLink("Избриши", "Delete", new { id=item.PrivilegeID })
+        </td>
+    </tr>
+}
+
+</table>
+<input type="hidden" id="SelectedPage" value="Улоги"/>

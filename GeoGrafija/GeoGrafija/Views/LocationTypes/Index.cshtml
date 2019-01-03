@@ -1,0 +1,59 @@
+﻿@using Model
+@model IEnumerable<LocationType>
+@{
+    ViewBag.Title = "Типови на Локации";
+}
+<div class="formBackground generalFormLayout" id="LocationTypeForm">
+<h2 class="formHeader">
+    Вашите Креирани Типови на Локации :</h2>
+<p>
+    @Html.ActionLink("Креирај Ново", "Create", null, new { @class = "button green fixA" })
+</p>
+@if (Model != null)
+{ 
+    <table class="dataTablesEnabled display">
+        <thead>
+            <tr>
+                <th>
+                    @Html.LabelFor(model => model.FirstOrDefault().TypeName)
+                </th>
+                
+                <th>
+                    @Html.LabelFor(model => model.FirstOrDefault().LocationDisplaySetting.Name)
+                </th>
+                <th>
+                    Операции
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+    
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TypeName)
+                    </td>
+                    
+                    <td>
+                        @Html.DisplayFor(modelItem => item.LocationDisplaySetting.Name)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Промени", "Edit", new { id = item.ID }) |
+                        @Html.ActionLink("Детали", "Details", new { id = item.ID }) |
+                        @Html.ActionLink("Избриши", "Delete", new { id = item.ID })
+                    </td>
+                </tr>
+   
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <h2>
+        Вие немате креирано типови на локации!</h2>
+}
+</div>
+
+<input type="hidden" id="SelectedPage" value="Типови Локации!"/>

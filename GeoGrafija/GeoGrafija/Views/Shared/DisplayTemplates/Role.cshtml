@@ -1,0 +1,37 @@
+﻿@using Model
+@model Role
+
+<fieldset>
+
+    <legend>@ViewBag.Message</legend>
+
+
+    <div class="display-label">         
+        <b> @Html.LabelFor(model => model.RoleName) : </b>
+	</div>
+    <div class="display-field">
+    	@Html.DisplayFor(model => model.RoleName)
+    </div>
+
+    <div class="display-label">         
+        <b> @Html.LabelFor(model => model.RoleDescription) : </b>
+	</div>
+    <div class="display-field">
+    	@Html.DisplayFor(model => model.RoleDescription)
+    </div>
+     
+   @if (ViewBag.DisplayPrivileges)
+   {
+    <div class="display-label">         
+        <b> @Html.LabelFor(model => model.Privileges,"Привилегии") : </b>
+	</div>
+  
+    <div class="display-field">
+    	@foreach (var priv in Model.Privileges)
+     {
+            @priv.PrivilegeName <br />
+     }
+    </div>
+   }
+</fieldset>
+

@@ -1,0 +1,18 @@
+﻿@using GeoGrafija.ViewModels.Profiles
+@using Model
+@model ProfileViewModel
+@{
+    ViewBag.Title = "Дома";
+}
+
+<link rel="stylesheet" href="@Url.CssProfiles()"/>
+
+@Html.HiddenFor(x => x.GeneralViewModel.ParentUserId,new {id="UserParentId"})
+@Html.HiddenFor(x => x.GeneralViewModel.UserID, new { id = "CurrentUserId" })
+
+@Html.RenderUserProfile(Model)
+
+<script type="text/javascript" src="@Url.ProfileGeneralScript()"></script>
+<script type="text/javascript" src="@Url.PageScript("Profile.js")"></script>
+
+<input type="hidden" id="SelectedPage" value="Профил!"/>

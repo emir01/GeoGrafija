@@ -1,0 +1,180 @@
+﻿@using GeoGrafija.Extensions;
+@{
+    ViewBag.Title = "Пребарување";
+}
+<div id="SearchForm" class="formBackground generalFormLayout">
+    <div id="LocationTypes">@Html.Partial("_LocationTypesUl", new { Links = false })</div>
+    <div class="clear"></div>
+    <div id="strip" class="locaitonStripWrapper"></div>
+    <div id="parent" class="locationParentWrapper"></div>
+    <div id="searchBox" class="locationSearchBarWrapper"></div>
+    <div id="canvas" class="locaitonCanvasWrapper"></div>
+</div>
+
+<div id="SearchHelpWrapper" class="hidden pageHelpDialog">
+    <h2>Како да пребарувате :</h2>
+
+    <h3 class="explanationSectionHeader">Содржина :</h3>
+    <ul class="dialogExplanationContentsList">
+        <li>
+            <a scroll="212" href="#">Легенда на типови</a>
+        </li>
+        <li>
+            <a scroll="551" href="#">Резултати</a>
+        </li>
+        <li>
+            <a scroll="1137" href="#">Истражување на локации</a>
+        </li>
+        <li>
+            <a scroll="1895" href="#">Пребарување со текст</a>
+        </li>
+        <li>
+            <a scroll="2572" href="#">Контекстуално пребарување</a>
+        </li>
+
+        <li>
+            <a scroll="2780" href="#">Брзо прикажување на резултати</a>
+        </li>
+    </ul>
+
+    <div class="explanationBreak"></div>
+
+    <h3 class="explanationSectionHeader">Легенда на типови :</h3>
+    <p class="explanation">
+        Прво обратете внимание на горниот дел од екранот за пребарување :
+    </p>
+
+    <div class="dialogExplanationImage">
+        <img src="/Content/SearchHelpImages/top.png" alt="Легенда на типови на локации" />
+        <div class="clear"></div>
+    </div>
+
+    <p class="explanation">
+        Тука може да ги видите сите типови на локации со нивните бои во малите квадратчина.
+    </p>
+
+    <p class="explanation">
+        Овие бои ви слуѓат за препознавање на типовите на локации во главниот дел од екранот за пребарување.
+    </p>
+    <div class="dialogExplanationScrollTop">
+        <a href="#">Содржина!</a>
+    </div>
+    <div class="explanationBreak"></div>
+    <h3 class="explanationSectionHeader">Резултати:</h3>
+    <p class="explanation">
+        Главниот дел од екранот за пребарување е местото каде може да ги видите резултатите. Резултатите се прикажани во мали правоаголничина :
+    </p>
+
+    <div class="dialogExplanationImage">
+        <img src="/Content/SearchHelpImages/results.png" alt="Резултати" />
+        <div class="clear"></div>
+    </div>
+
+    <p class="explanation">
+        Во секое правоаголниче има мало квадратче според кое може да се одреди типот на локацијата, според легендата во најгорниот дел. Освен тоа секој правоаголник го содржи и името на локацијата.
+    </p>
+
+    <div class="dialogExplanationImage">
+        <img src="/Content/SearchHelpImages/nameAndType.png" alt="Име и тип на локација." />
+        <div class="clear"></div>
+    </div>
+
+    <p class="explanation">
+        Секој правоаголник, може да има и копче со кое можете да ја истражите таа локација и да ги прикажете сите локации кои се наоѓаат под неа.
+    </p>
+
+    <div class="dialogExplanationImage">
+        <img src="/Content/SearchHelpImages/resultsExplore.png" alt="Копче за истражување!" />
+
+        <div class="clear"></div>
+    </div>
+    <div class="dialogExplanationScrollTop">
+        <a href="#">Содржина!</a>
+    </div>
+    <div class="explanationBreak"></div>
+    <h3 class="explanationSectionHeader">Истражување на локации :</h3>
+
+    <p class="explanation">
+        При истражување на локација со кликање на соодветното копче локацијата ќе се постави како родител локација на соодветното место и како резултати ќе се прикажат сите локации кои се наоѓаат во избраната локација. Пример на сликата може да видите што би се случило ако кликнете на копчето до континентот африка.
+    </p>
+
+    <div class="dialogExplanationImage">
+        <img src="/Content/SearchHelpImages/exploredAfrica.png"  alt="Истражена локација" />
+
+        <div class="clear"></div>
+    </div>
+
+    <p class="explanation">
+        При тоа ќе настане промена и во горната лента каде е даден патот кој сте го изминале со кликање на копчето за истражување на локација. Со секое исражување, локацијата која ја истражувате се додава во патот. Така во секој момент може да се вратите на било која истражена локација, или да почнете од почеток.
+    </p>
+
+    <div class="dialogExplanationImage">
+        <img  src="/Content/SearchHelpImages/breadcrumbs.png" alt="Пат на истражени локации!" />
+        <div class="clear"></div>
+    </div>
+    <div class="dialogExplanationScrollTop">
+        <a href="#">Содржина!</a>
+    </div>
+    <div class="explanationBreak"></div>
+    <h3 class="explanationSectionHeader">Пребарување со текст :</h3>
+    <p class="explanation">
+        Конечно доаѓаме до делот каде може да пребарувате локации со внесување на текст. Може да внесете било каков текст и системот ќе побара локации со такво име или локации кои припаѓаат на тип со тоа име.
+    </p>
+
+    <div class="dialogExplanationImage">
+        <img  src="/Content/SearchHelpImages/searchByName.png" alt="Пребарување по име!" />
+        <div class="clear"></div>
+    </div>
+
+    <div class="dialogExplanationImage">
+        <img  src="/Content/SearchHelpImages/searchByType.png"  alt="Пребарување по тип!" />
+        <div class="clear"></div>
+    </div>
+
+    <div class="dialogExplanationScrollTop">
+        <a href="#">Содржина!</a>
+    </div>
+    <div class="explanationBreak"></div>
+    <h3 class="explanationSectionHeader">Контекстуално пребарување :</h3>
+    <p class="explanation">
+        Она што е важно тука да се знае е дека пребарувањето е контекстуално. Вие секогаш пребарувате под локацијата која е дадена како родител. Или ги пребарувате сите локации ако се наоѓате на почетокот и немате истражено ниту една локација.
+    </p>
+
+    <p class="explanation">
+        Ако на пример се наоѓате под Македонија и внесете град би ги добиле сите градови во Македонија додека ако истото го направите на почетокот би ги добиле сите градови во било која држава.
+    </p>
+
+    <div class="dialogExplanationScrollTop">
+        <a href="#">Содржина!</a>
+    </div>
+
+    <div class="explanationBreak"></div>
+
+    <h3 class="explanationSectionHeader">Брзо прикажување на резултатите :</h3>
+
+    <p class="explanation">
+        За да ги прикажете сите резултати без да чекате да се прикажат еден по еден, може да кликнете било каде на белата позадина. Ова ќе ја спречи анимацијата и бавното прикажување и ќе ги добиете сите резултати наеднаш.
+    </p>
+
+    <div class="dialogExplanationImage">
+        <img  src="/Content/SearchHelpImages/clickShowAll.png" alt="Клик за да се прикаже се!" />
+        <div class="clear"></div>
+    </div>
+
+    <p class="explanation">
+        По кликнување со глувчето било каде на површината на која се прикажуваат локациите веднаш ќе ги добиете сите локации :
+    </p>
+
+    <div class="dialogExplanationImage">
+        <img  src="/Content/SearchHelpImages/showAllLocationsAfterClick.png" alt="Клик за да се прикаже се!" />
+        <div class="clear"></div>
+    </div>
+
+    <div class="dialogExplanationScrollTop">
+        <a href="#">Содржина!</a>
+    </div>
+
+</div>
+
+<input type="hidden" id="SelectedPage" value="Пребарување" />
+<script type="text/javascript"  src="@Url.PageScript("Search.js")"></script>

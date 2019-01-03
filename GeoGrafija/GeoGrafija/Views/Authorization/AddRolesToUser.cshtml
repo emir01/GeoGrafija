@@ -1,0 +1,30 @@
+﻿@using GeoGrafija.ViewModels
+@using GeoGrafija.ViewModels.UserViewModels
+@model AddRolesToUserViewModel
+@{
+    ViewBag.Title = "Додади Улога кон Корисник";
+}
+<div class="formBackground generalFormLayout">
+    <div class="padding">
+        <h2 class="formHeader">
+            Додади Улога на Корисник</h2>
+        @using (Html.BeginForm())
+        {
+            @Html.ValidationSummary(false, "Грешки при додавање на улога кон корисник:");
+        
+            <div id="User" style="width: 40%; float: left;">
+                @Html.DisplayFor(m => m.User, new { Message = "Избран Корисник", DisplayRoles = false })
+            </div>
+            <div id="Privileges" style="width: 50%; float: left; margin-left:30px;">
+                <fieldset>
+                    <legend style="margin-bottom: 5px;">Избрани Улоги:</legend>
+                    @Html.EditorFor(m => m.UserRoles, "ItemCheckBoxList")
+                </fieldset>
+                <input type="submit" value="Зачувај Промени" class="button green" style="padding:5px;"/>
+            </div>
+        }
+        <div style="clear: both;">
+        </div>
+    </div>
+</div>
+<input type="hidden" id="SelectedPage" value="Корисници"/>

@@ -1,0 +1,99 @@
+﻿@using GeoGrafija.ViewModels.Profiles
+@model ProfileViewModel
+<div class="hidden">
+    <span>@Html.DisplayFor(x => x.StudentViewModel.StudentsAfterYou)</span>
+    <span>@Html.DisplayFor(x => x.StudentViewModel.StudentsBeforeYou)</span>
+    <span>@Html.HiddenFor(x => x.StudentViewModel.RankOrder, new { id = "RankOrder" })</span>
+</div>
+
+<h2 class="formHeader">Твојот ранк:</h2>
+<div id="QuizRankWrapper">
+    <div class="padding">
+        <div id="QuizRankGeneralInfoWrapper">
+            <div class="padding">
+                @if (Model.StudentViewModel.NextPointBorder != -1)
+                {
+                    <div id="RankLoadingBar">
+
+                        <div id="RankProgress">
+                            @Html.HiddenFor(x => x.StudentViewModel.ProgressPercent, new { @id = "StudentQuizProgressValue" })
+                        </div>
+                        <span>
+                            <div class="padding">
+                                Потребни поени до следно ниво: @Model.StudentViewModel.TotalStudentPoints / @Model.StudentViewModel.NextPointBorder (@Model.StudentViewModel.ProgressPercent)
+                            </div>
+                        </span>
+                    </div>
+                }
+                else
+                {
+                    <div id="RankLoadingBar">
+                        Вие го имате највисокиот ранк.
+                    </div>
+                }
+
+                <div id="GeneralInfoBars">
+                    <div class="padding">
+
+                        <div id="StudentRankStrip">
+                            <div id="RankStripWrapper">
+                                <div id="StarsLeft">
+
+                                    <div class="rankStar"></div>
+                                    <div class="rankStar"></div>
+                                    <div class="rankStar"></div>
+
+                                    <div class="rankStar"></div>
+                                    <div class="rankStar"></div>
+                                    <div class="rankStar"></div>
+
+
+                                </div>
+                                <div id="RankName">@Model.StudentViewModel.RankName</div>
+                                <div id="StarsRight">
+                                    <div class="rankStar"></div>
+                                    <div class="rankStar"></div>
+                                    <div class="rankStar"></div>
+                                    <div class="rankStar"></div>
+                                    <div class="rankStar"></div>
+                                    <div class="rankStar"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="StudentGlobalRank" class="infoRibbon">
+                            <div class="label">Глобален Ранк : </div>
+                            <div class="clear"></div>
+                            <div class="value">@Model.StudentViewModel.GlobalRank</div>
+                        </div>
+
+                        <div id="StudentPointsRibbon" class="infoRibbon">
+                            <div class="label">Освоени поени : </div>
+                            <div class="clear"></div>
+                            <div class="value">@Model.StudentViewModel.TotalStudentPoints / @Model.StudentViewModel.TotalQuizPoints</div>
+                        </div>
+
+                        <div id="StudentLocationsRibbon" class="infoRibbon">
+                            <div class="label">Отворени локации: </div>
+                            <div class="clear"></div>
+                            <div class="value">@Model.StudentViewModel.NumberOfLocationsDetailsOpened</div>
+                        </div>
+
+                        <div id="StudentQuizesRibbon" class="infoRibbon">
+                            <div class="label">Решени квизови: </div>
+                            <div class="clear"></div>
+                            <div class="value">@Model.GeneralViewModel.StudentQuizResults.Count</div>
+                        </div>
+
+                        <div id="StudentResourcesRibbon" class="infoRibbon">
+                            <div class="label">Отворени ресурси: </div>
+                            <div class="clear"></div>
+                            <div class="value">@Model.StudentViewModel.NumberOfResourcesOpened</div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

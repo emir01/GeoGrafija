@@ -1,0 +1,81 @@
+﻿@using GeoGrafija.Extensions
+@using GeoGrafija.ViewModels
+@using GeoGrafija.ViewModels.LocationTypeViewModels
+@model AddLocationTypeViewModel
+<div class="editor-label">
+    @Html.LabelFor(model => model.TypeName)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.TypeName)
+    @Html.ValidationMessageFor(model => model.TypeName)
+</div>
+<div class="editor-label">
+    @Html.LabelFor(model => model.TypeDescription)
+</div>
+<div class="editor-field richEditorField">
+    @Html.EditorFor(model => model.TypeDescription)
+    @Html.ValidationMessageFor(model => model.TypeDescription)
+</div>
+<div class="editor-label">
+    @Html.LabelFor(model => model.DefaultDisplaySetting)
+</div>
+<div class="editor-field">
+    @Html.DropDownListFor(model => model.DefaultDisplaySetting, Model.DisplaySettingsSelect, "--Изберете поглед--", new { @class = "dropKickEnabled" })
+    @Html.ValidationMessageFor(model => model.DefaultDisplaySetting)
+</div>
+<div class="clear">
+</div>
+<div class="editor-label">
+    @Html.LabelFor(model => model.Color)
+</div>
+<div class="editor-field">
+    @Html.TextBoxFor(model => model.Color, new { @class = "colorPickerTextBox" })
+    <div class="colorPickerPreview">
+    </div>
+    @Html.ValidationMessageFor(model => model.Color)
+</div>
+@Html.HiddenFor(model => model.IconString)
+@Html.HiddenFor(model => model.ID)
+@if ((ViewBag.Parrent as String).Equals("E"))
+{
+    ViewBag.PictureText = "Закачете нова Слика за Маркер :";
+            
+    <div class="editor-label">
+        Тековна Слика на Маркер :
+    </div>
+    <div class="editor-field">
+        <img src="@Url.MarkerImages(Model.IconString)" />
+    </div>
+            
+}
+else
+{
+    ViewBag.PictureText = "Закачете  Слика за Маркер :";
+}
+<div class="editor-label">
+    @ViewBag.PictureText
+</div>
+<div class="editor-field">
+    <input type="file" id="fileUpload" name="fileUpload" />
+</div>
+<div class="editor-label">
+    Или изберете една од понудените избори :
+</div>
+<div class="editor-field">
+    <ul class="markerIconList">
+        @foreach (var markerFile in Model.MarkerFileNames)
+        {
+            <li data-file = "@markerFile">
+                <div class="padding">
+                    <img src="@Url.MarkerImages(markerFile)"/></div>
+            </li>
+        }
+        <div class="clear">
+        </div>
+    </ul>
+</div>
+<div class="clear">
+</div>
+<p class="formButtonContainer">
+    <input type="submit" value="Зачувај!" class="blue button createButton" />
+</p>

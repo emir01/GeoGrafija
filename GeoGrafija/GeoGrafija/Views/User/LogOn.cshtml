@@ -1,0 +1,56 @@
+﻿@using Model
+@model User
+@{
+    ViewBag.Title = "Најава";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    <div id="LogOnForm" class="formBackground">
+
+    @Html.ValidationSummary(false, "Неуспешно најавување. Поправете ги грешките и обидете се повторно.")
+        <h2 class="formHeader">
+            Најави Се</h2>
+        <p class="formHeaderQuote">
+            Внесете го вашето корисничко име и лозинка за да се најавите
+        </p>
+        <div class="padding">
+            <div id="userName">
+                <div class="editor-label">
+                    @Html.Label("Корисничко Име")
+                </div>
+                <div class="editor-field">
+                    @Html.TextBoxFor(m => m.UserName)
+                    @Html.ValidationMessageFor(m => m.UserName)
+                </div>
+            </div>
+            <br />
+            <div id="password">
+                <div class="editor-label">
+                    @Html.Label("Лозинка")
+                </div>
+                <div class="editor-field">
+                    @Html.PasswordFor(m => m.Password)
+                    @Html.ValidationMessageFor(m => m.Password)
+                </div>
+            </div>
+            <div class="clear">
+            </div>
+            <div class="formButtonContainer">
+                <div class="padding">
+                    <input type="submit" id="LogInFormButton" class="button blue" value="Најави Се" />
+                    <div class="clear"></div>
+                    <p id="IfNotRegistered">Ако не си најавен :</p>
+                    @Html.ActionLink("Регистрирај се!","Register",null,new{@class="button green fixA"})
+                </div>
+            </div>
+            <div class="clear">
+            </div>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+    <div class="clear">
+    </div>
+}

@@ -1,0 +1,8 @@
+﻿@if(Request.IsAuthenticated) {
+    <text>Добредојде : <strong>@User.Identity.Name</strong>!
+   @Html.ActionLink("Одјави Се!", "LogOff", "User",null, new {@class="button blue"})</text>
+}
+else {
+	 @Html.ActionLink("Регистрирај Се!", "Register", "User",null, new {@class="button green fixA"})
+     @Html.ActionLink("Најави Се", "LogOn", "User",null, new {@class="button blue"})
+}

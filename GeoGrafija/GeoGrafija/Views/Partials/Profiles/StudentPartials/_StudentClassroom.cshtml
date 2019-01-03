@@ -1,0 +1,105 @@
+﻿@using GeoGrafija.ViewModels.Profiles
+@model ProfileViewModel
+@if (Model.StudentViewModel.Classroom != null)
+{ 
+    <h2 class="formHeader" title="Промени наслов на училница" id="ClassroomTitle">
+        @Model.StudentViewModel.Classroom.Title
+    </h2>
+    <div class="formHeaderQuote">
+    </div>
+    <div id="StudentClassroomWrapper">
+        <div class="classroom-locations-wrapper">
+            <h2>Локации за разгледување :</h2>
+            <div class="classroom-main-location classroom-location">
+                <h2>Главна локација :</h2>
+                <div class="classroom-location-title">
+                    <span class="value">@Model.StudentViewModel.Classroom.MainLocation.LocationTopic.Title</span>
+                    :
+                </div>
+                <div class="classroom-location-text">
+                    <span class="value">@Model.StudentViewModel.Classroom.MainLocation.LocationTopic.Text</span>
+                </div>
+                <div class="classroom-location-button">
+                    @Html.ActionLink("Оди на локација!", "Location", "Search", new { id = Model.StudentViewModel.Classroom.MainLocation.LocationId }, new { @class = "button gray fixA" })
+                </div>
+            </div>
+            <div class="classroom-secondary-locations">
+                <h2>Останати локации :</h2>
+                @foreach (var secondaryLocation in Model.StudentViewModel.Classroom.SecondaryLocations)
+                {
+                    <div class="classroom-location">
+                        <div class="classroom-location-title">
+                            <span class="value">@secondaryLocation.LocationTopic.Title</span> :
+                        </div>
+                        <div class="classroom-location-text">
+                            <span class="value">@secondaryLocation.LocationTopic.Text</span>
+                        </div>
+                        <div class="classroom-location-button">
+                            @Html.ActionLink("Оди на локација!", "Location", "Search", new { id = secondaryLocation.LocationId }, new { @class = "button gray fixA" })
+                        </div>
+                    </div>
+
+                }
+            </div>
+        </div>
+        <div class="classroom-topics-wrapper">
+            <h2>Избрани теми за размислување :</h2>
+            <div class="classroom-main-topic classroom-topic">
+                <h2>Главна тема :</h2>
+                <div class="classroom-topic-title">
+                    <span class="value">@Model.StudentViewModel.Classroom.MainDiscussionTopic.Title</span>
+                    :
+                </div>
+                <div class="classroom-topic-text">
+                    <span class="value">@Model.StudentViewModel.Classroom.MainDiscussionTopic.Text</span>
+                </div>
+            </div>
+            <div class="classroom-secondary-topics">
+                <h2>Секундарни теми за дискусија:</h2>
+                @foreach (var secondaryTopic in Model.StudentViewModel.Classroom.SecondaryDiscussionTopics)
+                {
+                    <div class="classroom-topic">
+                        <div class="classroom-topic-title">
+                            <span class="value">@secondaryTopic.Title</span> :
+                        </div>
+                        <div class="classroom-topic-text">
+                            <span class="value">@secondaryTopic.Text</span>
+                        </div>
+                    </div>
+
+                }
+            </div>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+    <div class="hidden" id="classroomItemTemplates">
+        <div id="TopicTemplate" class="classroom-topic">
+            <div class="classroom-topic-title">
+            </div>
+            <div class="classroom-topic-text">
+            </div>
+            <div class="classroom-topic-button">
+            </div>
+        </div>
+        <div id="LocationTemplate" class="classroom-location">
+            <div class="classroom-location-title">
+            </div>
+            <div class="classroom-location-text">
+            </div>
+        </div>
+    </div>
+}
+else
+{
+
+    if (Model.StudentViewModel.HasTeacher)
+    {
+    <h2 class="studentMissingClassroomMessage">Вашиот тековен професор нема дефинирано училница.</h2>
+    }
+    else
+    {
+    <h2 class="studentMissingClassroomMessage">Изберете професор за да ви се прикаже соодветна училница.</h2>
+    }
+
+}

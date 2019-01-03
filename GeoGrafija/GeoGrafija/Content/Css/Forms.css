@@ -1,0 +1,500 @@
+﻿/*=============================================================================
+  Styles that work with forms in all the pages.
+*/
+
+/*  ==== ------------------------------------------------------------------------
+    ==== General form styles 
+    ==== ------------------------------------------------------------------------
+*/
+.formBackground 
+{
+    background-color: #ffffff !important;
+    border: 1px solid #cccccc;
+    margin: 10px;
+    position: relative;
+
+    background-image:url("/Content/images/formBackground2.png");
+    background-position: top;
+    background-repeat: repeat;
+
+    border:1px solid #666;
+    
+    box-shadow: 2px 5px 15px rgba(0, 0, 0, 0.80);
+    -moz-box-shadow: 2px 5px 15px rgba(0, 0, 0, 0.80);
+    -webkit-box-shadow: 2px 5px 15px rgba(0, 0, 0, 0.80);
+}
+
+.noFormBackgroundImage{
+    background-image:none;
+}
+
+.generalFormLayout {
+    padding: 40px;
+    padding-top: 0px;
+}            
+
+.formBackground > .padding 
+{
+    padding: 20px;
+}
+
+    .formBackground input[type=text] 
+    {
+        width: 300px;   
+    }
+
+    .formBackground input[type=password] 
+    {
+        width: 300px;   
+    }
+    
+    .formBackground textarea 
+    {
+        width: 300px;
+    }
+
+    .formHeader 
+    {
+        font-size: 22px !important;
+        color: #1860a6;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        margin-left: 10px;
+        padding: 0px;
+    }
+    
+    .formHeader.central {
+        text-align: center;
+    }
+        .formHeader h1, .formHeader h2, .formHeader h3 
+        {
+            font-size: 25px !important;
+            color: #1860a6 !important;
+            margin-top: 20px;
+            margin-left: 10px;
+            padding: 0px;
+        }
+
+        .formHeaderQuote 
+        {
+            font-size: 10px;
+            font-style: italic;
+            margin: 5px;
+        }
+        
+.formButtonContainer
+{
+    width: 100%;
+    text-align: center;
+    margin: 20px 0px;
+}
+
+    .createButton 
+    {
+        width: 200px;
+    }
+
+.displayButtonContainer
+{
+    width: 100%;
+    text-align: left;
+    margin: 20px 10px;
+}
+
+.formButton 
+{
+    position: relative;
+    width: 200px;
+    border: none;
+    margin: 10px;
+}
+
+.pinkButton 
+{
+    background-color: #a81029;
+    color: #FFFFFF;
+    border: 1px solid #8b8b8b;
+}
+
+.pinkButton:hover 
+{
+    background-color: #8a0e22;  
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.formFieldWrapper {}
+
+.globalInfoContainer {}
+
+.smallHtmlWrapper {}
+
+/*  ==== ------------------------------------------------------------------------
+    ==== Validation helper  styles 
+    ==== ------------------------------------------------------------------------
+*/
+.field-validation-error 
+{
+    color: #ff0000;
+    clear: both !important;
+    display: block;
+}
+
+.field-validation-valid 
+{
+    display: none;
+}
+
+.input-validation-error 
+{
+    border: 1px solid #ff0000;
+    background-color: #ffeeee;
+    clear: both !important;
+    display: block;
+}
+
+.validation-summary-errors 
+{
+    font-weight: bold;
+    color: #ff0000;
+    clear: both !important;
+    margin: 20px;
+    display: block;
+    font-size: 10px !important;
+}
+
+.validation-summary-valid 
+{
+    display: none;
+}
+
+/*  ==== ------------------------------------------------------------------------
+    ==== Form input markup styles, MVC boilerplate
+    ==== ------------------------------------------------------------------------
+*/
+
+.display-label, 
+.editor-label 
+{
+    margin: 1em 0 0 0;
+    color: #1860a6;
+    font-size: 15px;
+}
+
+.display-field, 
+.editor-field 
+{
+    margin: 0.5em 0 0 0;
+}
+
+.richEditorField {}
+
+.richEditorField textarea {
+    width: 80%;
+    min-height: 300px;
+}
+
+.richEditorField input {
+    width: 80%;
+    min-height: 300px;
+}
+
+.richEditorField div.wysiwyg {
+    width: 80%;
+    min-height: 300px;
+}
+
+.richDisplayField {
+    max-height: 300px;
+    max-width: 300px;
+    overflow-y: auto;
+}
+
+.richDisplayField .padding {
+    padding: 5px;
+}
+
+.detailDescription
+{
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #EEE;
+}
+
+.text-box 
+{
+    width: 30em;
+}
+
+.text-box.multi-line 
+{
+    height: 6.5em;
+}
+
+.tri-state 
+{
+    width: 6em;
+}
+
+.iconSmallImage {}
+
+/*  ==== ------------------------------------------------------------------------
+    ==== Form Layout Element, MVC Boilerplate
+    ==== ------------------------------------------------------------------------
+*/
+fieldset 
+{
+    border: 1px solid #ddd;
+    padding: 0 1.4em 1.4em 1.4em;
+    margin: 20px 0 1.5em 0;
+}
+
+legend 
+{
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #1860a6 !important;
+}
+
+textarea 
+{
+    min-height: 75px;
+}
+
+input[type="text"], 
+input[type="password"] 
+{
+    border: 1px solid #ccc;
+    padding: 2px;
+    font-size: 1.2em;
+    color: #444;
+    width: 200px;
+}
+
+select 
+{
+    border: 1px solid #ccc;
+    padding: 2px;
+    font-size: 1.2em;
+    color: #444;
+}
+
+input[type="submit"] 
+{
+    font-size: 1.2em;
+    padding: 5px;
+}
+
+
+/*  ==== ------------------------------------------------------------------------
+    ==== Specific form styles 
+    ==== ------------------------------------------------------------------------
+*/
+        /*  ==== ------------------------------------------------------------------------
+            ==== Specific Log On Form styles 
+            ==== ------------------------------------------------------------------------
+        */        
+        #LogOnForm
+        {
+            margin: 0px auto !important;
+            position: relative !important;
+
+            width: 400px !important;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 10px;
+        }
+
+        #LogOnForm .formButtonContainer 
+        {
+            margin-top: 40px;
+            border-top: 1px solid rgb(135, 135, 135);
+        }
+
+        #LogOnForm .formButtonContainer .padding 
+        {
+            padding-top: 10px;
+        }
+        
+        /*  ==== ------------------------------------------------------------------------
+            ==== Specific Quiz Creation Form styles 
+            ==== ------------------------------------------------------------------------
+        */        
+        #CreateQuizWrapper {
+            width: 900px;
+            margin: 0px auto;
+        }
+        
+        #CreateQuizFormLeft 
+        {
+            width: 400px;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 10px;
+            float: left;
+        }
+            #CreateQuizFormLeft > .padding {
+                
+            }
+        
+        #AnswersForm {
+            width: 400px;
+            min-height: 500px;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 10px;
+            float: left;
+            display: none;
+        }
+        
+            #AnswersForm  > .padding {
+                padding: 20px;
+            }
+        
+        #PickQuizTypeForm 
+        {
+            float: left;
+            width: 350px;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 10px;
+        }
+            #PickQuizTypeForm   input[type=submit] {
+                font-size: 13px !important;
+            
+            }
+        
+            #PickQuizTypeForm  > .padding  {
+                padding: 5px;
+            }
+        
+        #AvailableDefinedQuizesForm {
+            display: none;
+            overflow: hidden;
+            width: 800px;
+        }
+        
+        #AvailableDefinedQuizesForm  .formHeader
+        {
+            text-align: center;
+        }
+        
+        #AvailableDefinedQuizesForm  .formHeaderQuote
+        {
+            text-align: center;
+        }
+                
+            #AvailableDefinedQuizesForm .padding 
+            {
+                padding: 5px;
+            }
+            
+        /* Form classes for the taking quiz form */
+        /* Classes for the question forms for each question when taking quizes */
+        .takeQuestionFormBackground {
+            margin-left: auto;
+            margin-right: auto;
+            width:550px;
+            background-color: #f7f7f7 !important;
+
+            box-shadow: none;
+            -moz-box-shadow: none;
+            -webkit-box-shadow: none;
+        }
+        
+            .takeQuestionFormBackground .formHeader {
+                font-size: 17px!important;
+                text-wrap: normal;
+                border-bottom: 1px solid #aeaeae;
+                padding-bottom: 5px;
+            }
+        
+            .takeQuestionFormBackground .padding {
+             
+            }
+
+#LocationsListForm {}
+    
+#LocationTypeForm{}
+
+#LocationDetailsForm
+{
+    width: 400px;
+}
+
+#LocationDetailsMapForm {
+    float: left;
+}
+
+#YourQuizesForm{}
+
+#MainPageForm {}
+
+#MainPageForm .formHeader  {
+    
+}
+
+#AboutForm {
+    min-height: 350px;
+}
+
+#CreateResourceForm {
+    min-height: 300px;
+}
+
+#CreateGeneralResourceForm{
+    min-height: 400px;
+}
+
+#LearnMoreForm {
+    min-height: 400px;
+}
+
+#RegisterForm {
+    width: 400px;
+    margin: 0px auto;
+    padding-bottom: 10px !important;
+}
+
+#MissingProfileForm {
+    min-height: 300px;
+    width:700px;
+    margin:0px auto;
+}
+
+#AdminUsersForm {}
+
+#SearchForm {
+    padding-top: 20px; 
+}
+
+#searchLocationForm 
+{
+    text-align: center;
+}
+
+#searchLocationForm #tbox_address 
+{
+    width: 400px;
+    height: 40px;
+}
+
+#searchLocationForm #btn_search 
+{
+    height: 35px;
+    margin-top: 5px;
+    font-family: "Trebuchet MS";
+    width: 150px;
+}
+
+#DeleteLocationForm {
+    width: 300px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    margin: 0px auto;
+}
+
+#LocationTypeDetails {
+    width: 400px;
+}
+

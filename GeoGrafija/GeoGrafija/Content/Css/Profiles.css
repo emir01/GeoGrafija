@@ -1,0 +1,686 @@
+﻿/*  ==== ------------------------------------------------------------------------
+    ==== Styles specific to the user profile pages of the diferent user types
+            - Admin
+            - Teacher
+            - Student
+    ==== ------------------------------------------------------------------------
+*/        
+
+
+/*  ==== ------------------------------------------------------------------------
+    ==== General Profile  Styles 
+    ==== ------------------------------------------------------------------------
+*/        
+
+    #infoMessageMissingProfile{
+        margin-left:30px;
+        font-size:18px;
+        text-align:center !important;
+        margin-bottom:10px;
+    }
+
+    #EmailAdminFromMissingProfile{
+        margin-left:30px;
+        width:200px;
+    }
+    .profileMainMenuActions{
+        width:1000px !important;
+        margin:0px auto;
+
+        margin-bottom:20px;
+    }
+
+    .profileMainCanvasWrapper{
+        width:1000px !important;
+        margin:0px auto;
+    }
+
+
+    .profileNameWrapper {
+            
+    }
+        .profileNameWrapper .padding {
+            
+        }
+
+    .profileActionBoxesWrapper {
+        margin: 20px auto;
+        display: table;
+    }
+
+    .profileActionBoxList {
+        list-style: none;
+        margin: 0px auto;
+    }
+    
+        .profileActionBoxList > .padding {
+            
+        }
+    
+        .profileActionBoxItem 
+        {
+            float: left;
+            margin-left: 30px;
+            background-color: #538c40;
+            position: relative;
+        }
+        
+        .selectedActionBoxItem {
+            background-color: #8c4440;
+        }
+        
+                .profileActionBoxText {
+                    color: #FFF;
+                    padding: 10px;
+                    text-align: center;
+                    
+                }
+        
+    
+    .profileCanvasElement {
+        min-height: 300px;
+    }
+    
+        .profileCanvasElement  > .padding {
+            
+        }
+
+/*  ==== ------------------------------------------------------------------------
+    ==== Student Home Page / Profile Styles 
+    ==== ------------------------------------------------------------------------
+*/
+    
+    /*  ==== ------------------------------------------------------------------------
+        ==== Quiz Results 
+        ==== ------------------------------------------------------------------------
+    */    
+    
+    
+    #QuizResultWrapper {
+        padding-bottom: 20px;
+    }
+    .quizResultUList {
+        list-style: none;
+        margin: 5px;
+        text-align:center;
+    }
+        .quizResultUList > .padding {
+            
+        }
+        
+        .quizResultListItem 
+        {
+            text-align: center;
+            margin-top: 10px;
+            clear:both;
+            display: inline-block;
+           
+            border : 1px solid #989898;
+            background-color: #f7f7f7;
+            
+            -webkit-border-radius:5px;
+            -moz-border-radius:5px;
+            border-radius:5px;
+        }
+        
+        .quizResultListItem:last-child {
+            
+        }
+            .quizResultListItem > .padding {
+                padding: 5px;       
+            }
+        
+            .quizResultListItem .globalInfoContainer 
+            {
+                display: table;
+                margin: 0px auto;
+            }
+            
+            .quizResultListItem .formFieldWrapper {
+                float: left;
+                margin-left: 5px;
+                margin-right: 5px;
+            }
+            
+            .takenQuizName {
+                
+            }
+            
+                .takenQuizName .label {
+                    color: #1860A6;
+                    font-size: 14px;
+                    font-weight: bold;
+                }
+            
+            .takenQuizScoredPoints {
+                
+            }
+            
+                 .takenQuizScoredPoints .label {
+                    color: #1860A6;
+                    font-size: 14px;
+                    font-weight: bold;
+                }
+            
+            
+            
+            .getMoreQuizResult {
+                margin-top:10px;
+                font-size:10px !important;
+                padding:4px !important;
+            }
+    
+
+    #GlobalRankAccent{
+
+    }
+
+    #SolvedQuizesAccent{
+        
+    }
+
+    #TotalPointsAccent{
+        
+    }
+
+    #GlobalRankAccent{
+        
+    }
+
+    #GlobalRankAccent{
+        
+    }
+
+    /* 
+    ==== ------------------------------------------------------------------------
+    ==== Quiz Ranks 
+    ==== ------------------------------------------------------------------------
+    */ 
+    
+        #QuizRankWrapper {
+            margin: 5px;
+        }       
+        
+            #QuizRankWrapper > .padding {
+                padding: 15px;
+            }
+
+
+                #QuizRankGeneralInfoWrapper {
+                    height: 400px;
+                    overflow: hidden;
+                }
+                    #QuizRankGeneralInfoWrapper > .padding {
+                        padding-left: 20px;    
+                    }
+                    
+                #RankLoadingBar {
+                    width: 400px;
+                    height:100%;
+                    height:20px;
+                    background-color: #a9a9a9;
+                    background-image:url('/Content/StudentProfileNewImages/progressBackGrad.png');
+                    background-position:left;
+                    background-repeat:repeat-x;
+                    border: 2px solid #000;
+                    text-align: center;
+                    position: relative;
+                    color: #FFFFFF;
+                    z-index: 0;
+                    -webkit-border-radius: 5px;
+                    -moz-border-radius: 5px;
+                    border-radius: 5px;
+                    margin:0px auto;
+                    
+
+                    box-shadow: 2px 5px 15px rgba(0, 0, 0, 0.80);
+                    -moz-box-shadow: 2px 5px 15px rgba(0, 0, 0, 0.80);
+                    -webkit-box-shadow: 2px 5px 15px rgba(0, 0, 0, 0.80);
+                }
+                
+                   #RankLoadingBar span {
+                        color: #FFFFFF;
+                        width: 100%;
+                        height: 100%;
+                        z-index: 1;
+                        
+                    }
+
+                    #RankLoadingBar span .padding {
+                        font-size: 12px;
+                    }
+                    
+                    #RankProgress {
+                        height: 19px;
+                        position: absolute;
+                        width:1%;
+                        border-right:2px solid #000;
+                        background-image:url('/Content/StudentProfileNewImages/ProgressBarGrad.png');
+                        background-position:top;
+                        background-repeat:repeat-x;
+                        
+                        z-index: -1;
+                    }
+                    
+                #GeneralInfoBars {
+                    
+                }
+
+                .infoRibbon{
+
+                }
+
+                #StudentRankStrip{
+                    background-image:url('/Content/StudentProfileNewImages/RankRibbon.png');
+                    background-position:top;
+                    background-repeat:no-repeat;
+
+                    width:410px;
+                    height:80px;
+                    margin:10px auto 0px auto;
+                    z-index:50000;
+                    text-align:center;
+                }
+
+                #RankStripWrapper
+                {
+                    width: 410px;
+                    height:52px;
+                    position: relative;
+                }
+
+                .rankStar{
+                    background-image:url('/Content/StudentProfileNewImages/starTrans.png');
+                    background-position:top;
+                    background-repeat:no-repeat;
+
+                    display: inline-block;
+
+                    width:24px;
+                    height:24px;
+
+                    position: relative;
+
+                    margin-top:15px;
+                }
+
+                #StarsLeft{
+                        
+                    height:50px;
+                    
+                    position: absolute;
+                    left:23px;
+                    top:0px;
+
+                    
+
+                    overflow: visible;
+                }
+
+                 #StarsLeft .rankStar{
+                        float:left !important;
+                 }
+
+                #StarsRight{
+
+                    height:50px;
+                    
+                    position: absolute;
+                    right:23px;
+                    top:0px;
+
+                    overflow: visible;
+                }
+
+                #StarsRight .rankStar{
+                        float:right !important;
+                 }
+
+
+                    #StudentRankStrip #RankName{
+                        color:#283e11;
+                        font-size:14px;
+                        height:26px;
+                        margin-top: 15px;
+                        
+                        font-weight:bold;
+
+                        display: inline-block;
+
+                        z-index:1005;
+                    }
+
+                #StudentGlobalRank{
+                    width:193px;
+                    height:267px;
+
+                    position: absolute;
+
+                    left:50%;
+
+                    margin-top:-32px;
+
+                    margin-left:-96px;
+
+                    z-index:0;
+
+                    background-image:url('/Content/StudentProfileNewImages/LightGreenRibbon.png');
+                    background-position:top;
+                    background-repeat:no-repeat;
+                }
+
+                    #StudentGlobalRank .label{
+                            text-align:center;
+                            margin-top:25px;
+                            font-size:18px;
+                            font-weight:bold;
+                            color:#000;
+                        }
+
+                    #StudentGlobalRank .value{
+                            text-align:center;
+                            margin-top:20px;   
+                            font-size: 15px;
+                            color: #000;
+                        }
+
+                #StudentPointsRibbon{
+                    width:160px;
+                    height:242px;
+
+                    position: absolute;
+                    left:50%;
+
+                    margin-left:-280px;
+                    margin-top:30px;
+
+                    background-image:url('/Content/StudentProfileNewImages/lightBlueRibbon.png');
+                    background-position:top;
+                    background-repeat:no-repeat;
+                }
+
+                      #StudentPointsRibbon .label{
+                            text-align:center;
+                            margin-top:25px;
+                            
+                            color:#000;
+                        }
+
+                    #StudentPointsRibbon .value{
+                            text-align:center;
+                            margin-top:20px;   
+                            color: #000;
+                        }
+
+                #StudentLocationsRibbon{
+                    width:177px;
+                    height:255px;
+
+                    position: absolute;
+
+                    margin-left:-10px;
+                    margin-top:-20px;
+                    
+                    background-image:url('/Content/StudentProfileNewImages/PurpleRibbon.png');
+                    background-position:top;
+                    background-repeat:no-repeat;
+                }
+
+
+                      #StudentLocationsRibbon .label{
+                            text-align:center;
+                            margin-top:25px;
+                            
+                            color:#FFF;
+                        }
+
+                    #StudentLocationsRibbon .value{
+                            text-align:center;
+                            margin-top:20px;   
+                            color: #FFF;
+                        }
+
+
+              #StudentQuizesRibbon{
+                    width:175px;
+                    height:253px;
+
+                    position: absolute;
+
+                    left:60%;
+
+                    margin-left:15px;
+                    margin-top:10px;
+                    
+                    background-image:url('/Content/StudentProfileNewImages/LightRedRibbon.png');
+                    background-position:top;
+                    background-repeat:no-repeat;
+                }
+                      #StudentQuizesRibbon .label{
+                            text-align:center;
+                            margin-top:25px;
+                            
+                            color:#000;
+                        }
+
+                        #StudentQuizesRibbon .value{
+                            text-align:center;
+                            margin-top:20px;   
+                            color: #000;
+                        }
+
+
+
+            #StudentResourcesRibbon{
+                width:154px;
+                height:218px;
+
+                position: absolute;
+
+                left:80%;
+
+                margin-left:15px;
+                margin-top:40px;
+                
+                background-image:url('/Content/StudentProfileNewImages/DarkRedRibbon.png');
+                background-position:top;
+                background-repeat:no-repeat;
+                }
+
+                      #StudentResourcesRibbon .label{
+                            text-align:center;
+                            margin-top:25px;
+                            
+                            color:#FFF;
+                        }
+
+                        #StudentResourcesRibbon .value{
+                            text-align:center;
+                            margin-top:20px;   
+                            color: #FFF;
+                        }
+
+
+                                
+    /* 
+    ==== ------------------------------------------------------------------------
+    ==== Pick Teacher 
+    ==== ------------------------------------------------------------------------
+    */             
+    #PickTeacherWrapper {
+        padding: 20px;
+        min-height: 300px;
+    }
+    
+    #PickTeacherWrapper .label {
+        font-size: 15px;
+        color: #1860a6;
+        margin-bottom: 10px;
+    }
+    
+    #PickTeacherWrapper .value {
+        
+    }
+    
+        #CurrentTeacherInformation {
+            float: left;
+            width: 300px;
+        }
+        
+        #CurrentTeacherInformation .label {}
+
+        #CurrentTeacherInformation .value {
+            font-size:20px;
+        }
+        
+        #AvailableTeachersInformation {
+            margin-left: 30px;
+            float: left;
+        }
+            
+
+/*  ==== ------------------------------------------------------------------------
+    ==== Teacher Home Page / Profile Styles 
+    ==== ------------------------------------------------------------------------
+*/        
+/* 
+        ==== ------------------------------------------------------------------------
+        ==== My students
+        ==== ------------------------------------------------------------------------
+        */             
+    
+        #Teacher_PickStudentsWrapper {
+            margin: 30px;   
+        }
+    
+        #Teacher_PickStudentsWrapper table {
+            
+        }
+        
+            .studentResultsActions {
+                
+            }
+        
+        #StudentQuizResults {
+            display: none;
+        }
+        
+            #StudentQuizResults .studentResultsDialog {
+                
+            }
+            
+        .teacherNoResultForStudent {
+            text-align: center;
+                font-size: 18px;
+        }
+
+/*  ==== ------------------------------------------------------------------------
+    ==== Admin Home Page / Profile Styles 
+    ==== ------------------------------------------------------------------------
+*/        
+
+    #AdminStatisticsWrapper {
+        margin-bottom: 50px;
+    }
+    
+    .adminStatSection {
+        text-align: center;
+    }
+    
+        .adminStatSection .padding 
+        {
+            
+        }
+    
+        .adminStatSection .header {
+            font-size: 20px;
+            color: #1860A6;
+            clear: both;
+            margin: 10px;
+            margin-left: 30px;
+            margin-right: 30px;
+            font-family: Arial;
+            border-top: 1px solid #CCC;
+            padding-top: 20px;
+            margin-bottom: 20px !important;
+        }
+        
+        .adminStatSection:first-child .header 
+        {
+            border: none;
+            margin-top: 0px;
+            padding-top: 0px;
+        }
+        
+        .adminStatSection .statSectionIcon {
+            width: 64px;
+            height: 64px;
+            position: absolute;
+            border-bottom: 1px solid black;
+            padding-top: 10px;
+            top: -20px;
+            left: -128px;
+            background-position: top;
+            background-repeat: no-repeat;
+        }
+        
+    .adminStatBox {
+        margin-left: 20px;
+        width: 200px;
+        font-size: 12px;
+        display: inline-block;
+        position: relative;
+        border: 1px solid #CCC;
+        padding: 10px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+    }
+    
+    
+    .adminStatBox .label {
+            
+    }
+    
+    .adminStatBox .value {
+        margin-top: 5px; 
+    }
+    
+    #QuizStats {
+        
+    }
+    
+    #QuizStats .adminStatBox {
+        background-color: #336e44;
+        color: #FFF;
+    }
+    
+    #QuizStats .statSectionIcon {
+        background-image: url('/Content/images/adminQuizes.png');
+    }
+    
+    #LocationStats {
+            
+    }
+    
+    #LocationStats .adminStatBox {
+        background-color: #3a528c;
+        color: #FFF;
+    }
+    
+    #LocationStats .statSectionIcon {
+        background-image: url('/Content/images/adminLocations.png');
+    }
+    
+    #UsersStats {
+        
+    }
+    
+    #UsersStats .adminStatBox {
+        background-color: #894730;
+        color: #FFF;
+    }
+    
+    #UsersStats .statSectionIcon {
+        background-image: url('/Content/images/adminUsers.png');
+    }

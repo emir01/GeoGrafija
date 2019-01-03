@@ -1,0 +1,45 @@
+﻿@using Model
+@model Role
+
+@{
+	ViewBag.Title = "RoleDetails";
+}
+
+<div class="formBackground generalFormLayout">
+
+<div class="padding">
+
+<h2 class="formHeader">Детали за Улога</h2>
+
+
+
+	<div class="display-label">         
+		<b> @Html.LabelFor(model => model.RoleDescription) : </b>
+	</div>
+	<div class="display-field">
+		@Html.DisplayFor(model => model.RoleDescription)
+	</div>
+
+	<div class="display-label">         
+		<b> @Html.LabelFor(model => model.RoleName) : </b>
+	</div>
+	<div class="display-field">
+		@Html.DisplayFor(model => model.RoleName)
+	</div>
+
+	<div class="display-label">         
+		<b> @Html.Label("Привилегии") : </b>
+	</div>
+	@foreach (var privilege in Model.Privileges){
+	
+		<div class="display-field">
+			@privilege.PrivilegeName
+		</div>
+	}
+
+<p>
+	@Html.ActionLink("Назад кон Листа", "Roles")
+</p>
+</div>
+
+<input type="hidden" id="SelectedPage" value="Улоги"/></div>

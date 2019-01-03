@@ -1,0 +1,43 @@
+﻿@using GeoGrafija.Extensions
+@using GeoGrafija.ViewModels
+@using GeoGrafija.ViewModels.LocationViewModels
+@model LocationFormViewModel
+@{
+    ViewBag.Title = "Промени";
+}
+
+<div class="formBackground goleft">
+    <div class="padding">
+        <div class="formHeader">
+            <h2>
+                Промени :
+            </h2>
+        </div>
+        <div id="addForm">
+            <div class="goleft">
+                @using (Html.BeginForm("Edit", "Locations", FormMethod.Post, new { id = "form" }))
+                {
+                    @Html.ValidationSummary(true)
+                    @Html.Partial("LocationCreateEditForm", Model)
+                }
+            </div>
+        </div>
+    </div>
+</div>
+<div class="formBackground generalFormLayout goleft">
+    @Html.Partial("MapLocationPicker")
+</div>
+<div class="clear">
+</div>
+
+<div class="global">
+</div>
+<div>
+    @Html.ActionLink("Назад кон Листа", "Index")
+</div>
+<script type="text/javascript" >
+    EditLocationScript.Initialize();
+</script>
+<link href="@Url.CssDropKick()" rel="stylesheet"/>
+
+<input type="hidden" id="SelectedPage" value="Локации!"/>

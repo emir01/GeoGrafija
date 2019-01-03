@@ -1,0 +1,34 @@
+﻿/*  ==== ------------------------------------------------------------------------
+    ==== Styles specific to the page that handles leraning with given materials
+    ==== ------------------------------------------------------------------------
+*/        
+
+
+/*  ==== ------------------------------------------------------------------------
+    ==== General Learning Styles 
+    ==== ------------------------------------------------------------------------
+*/  
+    #LearnMoreResourceContainer {
+        
+    }
+    
+    #LearnMoreLocations {
+        
+    }
+    
+    .resourcePerLocationTypeWrapper {
+        
+    }
+    
+    .pickExplanation {
+        text-align: center;
+        padding-top: 10px;
+        border-top: 2px solid #CCC;
+    }
+    
+    h3.formHeader {
+        font-size: 18px !important;
+    }
+    
+    
+    

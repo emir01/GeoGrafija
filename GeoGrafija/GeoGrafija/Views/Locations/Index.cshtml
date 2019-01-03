@@ -1,0 +1,59 @@
+﻿@using Model
+@model IEnumerable<Location>
+@{
+    ViewBag.Title = "Локации";
+}
+<div class="formBackground generalFormLayout" id="LocationsListForm">
+    <h2 class="formHeader">
+        Вашите креирани Локации :
+    </h2>
+    <p>
+        @Html.ActionLink("Креирај Ново", "Create",null, new {@class="button green fixA"})
+    </p>
+    <table class="dataTablesEnabled display">
+        @if (Model != null)
+        {
+            <thead>
+                <tr>
+                    <th>
+                        @Html.LabelFor(model => model.FirstOrDefault().Name)
+                    </th>
+                    <th>
+                        @Html.LabelFor(model => model.FirstOrDefault().LocationTypeObject.TypeName)
+                    </th>
+                    <th>
+                        Команди
+                    </th>
+                </tr>
+            </thead>
+        }
+        @if (Model != null)
+        {
+            <tbody>
+                @foreach (var item in Model) {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.LocationTypeObject.TypeName)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Промени", "Edit", new { id = item.ID }) |
+                        @Html.ActionLink("Детали", "Details", new { id = item.ID }) |
+                        @Html.ActionLink("Избриши", "Delete", new { id = item.ID }) |
+                        @Html.ActionLink("Ресурси", "Index", "ResourcesCreation", new { locationId = item.ID }, null)
+                    </td>
+                </tr>
+                }
+            </tbody>
+        }
+
+        else
+        {
+            <h2>
+                Вие немате креирано ни една локцаија</h2>
+        }
+    </table>
+</div>
+<input type="hidden" id="SelectedPage" value="Локации!"/>

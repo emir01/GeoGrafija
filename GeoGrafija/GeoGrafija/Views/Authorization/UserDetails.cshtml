@@ -1,0 +1,40 @@
+﻿@using Model
+@model User
+@{
+    ViewBag.Title = "Детали за Корисник";
+}
+<div class="formBackground" id="AdminUserDetails">
+    <div class="padding">
+        <h2 class="formHeader">
+            Детали за Корисник</h2>
+        
+            <div class="display-label">
+                <b>@Html.LabelFor(model => model.UserName) : </b>
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.UserName)
+            </div>
+            <div class="display-label">
+                <b>@Html.LabelFor(model => model.Email) : </b>
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.Email)
+            </div>
+            <div class="display-label">
+                <b>@Html.Label("Улоги") : </b>
+            </div>
+            @foreach (var role in Model.Roles)
+            {
+    
+                <div class="display-field">
+                    @role.RoleName
+                </div>
+            }
+        <p>
+            <br />
+            @Html.ActionLink("Назад кон Листа", "Users",null, new { @class = "button blue fixA" } ) |
+            @Html.ActionLink("Промени Улоги", "AddRolesToUser", new { id = Model.UserID }, new { @class = "button green fixA" })
+        </p>
+    </div>
+</div>
+<input type="hidden" id="SelectedPage" value="Корисници"/>

@@ -1,0 +1,241 @@
+﻿@using GeoGrafija.ViewModels.Profiles
+@model ProfileViewModel
+<div class="profileCanvasElement" data-uid="1">@Html.Partial(Url.PartialStudentQuizRank(), Model)</div>
+<div class="profileCanvasElement" data-uid="2">@Html.Partial(Url.PartialStudentQuizes(), Model)</div>
+
+<div class="profileCanvasElement" data-uid="3">@Html.Partial(Url.PartialStudentPickTeacher(), Model)</div>
+
+<div class="profileCanvasElement" data-uid="4">@Html.Partial(Url.PartialStudentClassroom(), Model)</div>
+
+<div id="StudentProfileHelpWrapper" class="pageHelpDialog hidden">
+	<h2>Како да го користите вашиот студентски профил!</h2>
+
+	<h3 class="explanationSectionHeader">Содржина :</h3>
+	<ul class="dialogExplanationContentsList">
+		    <li>
+                <a scroll="225" href="#introductionToMap">Ранк - Почеток</a>
+            </li>
+
+            <li>
+                <a scroll="1013" href="#introductionToMap">Ранк - Достапни Информации</a>
+            </li>
+
+            <li>
+                <a scroll="2885" href="#introductionToMap">Резултати од Квизови</a>
+            </li>
+
+            <li>
+                <a scroll="4133" href="#introductionToMap">Избор на професор</a>
+            </li>
+
+            <li>
+                <a scroll="5141" href="#introductionToMap">Училница - Основи</a>
+            </li>
+
+            <li>
+                <a scroll="6125" href="#introductionToMap">Училница - Локации</a>
+            </li>
+
+            <li>
+                <a scroll="6976" href="#introductionToMap">Училница - Дискусии/Теми</a>
+            </li>
+	</ul>
+
+	<div class="explanationBreak"></div>
+
+	<h3 Id="#" class="explanationSectionHeader">Ранк - Почеток :</h3>
+
+	<p class="explanation">
+		Кога ќе го отвориш твојот профил првиот видлив екран е екранот на кој може да ги погледнеш твоите податоци поврзани со твојот ранк.
+	</p>
+
+	<div class="dialogExplanationImage">
+		<img src= "/Content/studentProfileHelpImages/rankGlobal.png" alt="Поглед на твој ранк и информации"></div>
+
+	<p class="explanation">
+		Со решавање на квизови, добиваш поени, кои допринесуваат кон твоето напредување и зголемувањето на твојот ранк.
+	</p>
+
+	<div class="dialogExplanationImage">
+		<img src= "/Content/studentProfileHelpImages/rankAdvances.png" alt="Напредување на ранк."></div>
+
+	<p class="explanation">
+		Почетниот ранк е Кадет и визуелно е представен со две звезди, додека крајниот и највисок ранк е Адмирал и е преставен со 12 звезди.
+	</p>
+
+	<div class="dialogExplanationScrollTop">
+		<a href="#">Содржина!</a>
+	</div>
+	<div class="explanationBreak"></div>
+
+	<h3 Id="#" class="explanationSectionHeader">Ранк - Достапни информации :</h3>
+
+	<p class="explanation">
+		Во погледот на твојот ранк достапни ти се неколку основни информации околу твојата активност во апликацијата представени преку петте знаменца:
+	</p>
+
+	<p class="explanation">
+		<span id="GlobalRankAccent" class="explanationAccent">Глобалниот ранк</span>
+		ја означува твојата позиција во однос на сите други студенти во апликацијата базирана врз бројот на освоени поени. Глобалниот ранк е представен на централното зелено знаменце.
+	</p>
+
+	<div class="dialogExplanationImage">
+		<img src= "/Content/studentProfileHelpImages/globalRankFlag.png" alt="Глобален ранк - знаменце"></div>
+
+	<p class="explanation">
+		<span id="SolvedQuizesAccent" class="explanationAccent">Решени квизови</span>
+		знаменцето со светло-црвена боја  се наоѓа не десната страна од глобалниот ранк и го прикажува твојот број на решени квизови.
+	</p>
+
+	<div class="dialogExplanationImage">
+		<img src= "/Content/studentProfileHelpImages/solvedQuizesFlag.png" alt="Решени квизови - знаменце"></div>
+
+	<p class="explanation">
+		<span id="TotalPointsAccent" class="explanationAccent">Освоени поени</span>
+		го прикажува вкупниот број на освоени поени и максималниот број на освноени поени кои си можел/а да ги имаш ако точно си одговорел/а на сите прашања од сите квизови.
+	</p>
+
+	<div class="dialogExplanationImage">
+		<img src= "/Content/studentProfileHelpImages/wonPointsFlag.png" alt="Освоени поени - знаменце"></div>
+
+	<p class="explanation">
+		<span id="OpenResourcessAccent" class="explanationAccent">Отворени ресурси</span>
+		е темно-црвеното знаменце на најдесната позиција. Тука е прикажано колку пати си отворил/а било кој од ресурсите за било која локација.
+	</p>
+
+	<div class="dialogExplanationImage">
+		<img src= "/Content/studentProfileHelpImages/openedResources.png" alt="Отворени ресурси - знамценце"></div>
+
+	<p class="explanation">
+		<span id="OpenLocationsAccent" class="explanationAccent">Отворени локации</span>
+		е светло-синото знаменце на крајната лева страна. Тука е прикажано колку пати си ја отворил/а страната за детали за било која локација.
+	</p>
+
+	<div class="dialogExplanationImage">
+		<img src= "/Content/studentProfileHelpImages/opennedLocationsFlag.png" alt="Отворени локации - знаменце"></div>
+
+	<div class="dialogExplanationScrollTop">
+		<a href="#">Содржина!</a>
+	</div>
+	<div class="explanationBreak"></div>
+
+	<h3 Id="basicsOfMap" class="explanationSectionHeader">Резултати од квизови :</h3>
+
+	<p class="explanation">
+		Во овој дел може да ги погледнете основните и деталните резултати за секој ваш решен квиз/тест.
+	</p>
+
+	<div class="dialogExplanationImage">
+		<img src= "/Content/studentProfileHelpImages/quizResultsGlobal.png" alt="Решени квизови - глобален поглед"></div>
+
+	<p class="explanation">
+		За да ги погледнеш деталите и твоите одговори за некој од кивзовите искористи го  копчето "Повеќе информации".
+	</p>
+
+	<div class="dialogExplanationImage">
+		<img src= "/Content/studentProfileHelpImages/quizMoreInfo.png" alt="Повеќе информации за квиз"></div>
+
+	<p class="explanation">
+		Во новиот прозорец кој ќе се отвори може да ги видите вашите одговори, споредено со точните одговори за сите прашања од квизот.
+	</p>
+
+	<div class="dialogExplanationImage">
+		<img src= "/Content/studentProfileHelpImages/quizResultDetails.png" alt="Детални резултати за квиз"></div>
+
+	<div class="dialogExplanationScrollTop">
+		<a href="#">Содржина!</a>
+	</div>
+	<div class="explanationBreak"></div>
+
+	<h3 Id="basicsOfMap" class="explanationSectionHeader">Избор на професор :</h3>
+
+	<p class="explanation">
+		Во делот “Избери Професор“ може да погледнеш кај кој професор си моментално најавен/а. Исто така може да се направи промена или на почетокот да се направи првичниот избор на професор.
+	</p>
+
+	<div class="dialogExplanationImage">
+		<img src= "/Content/studentProfileHelpImages/pickProfGlobal.png" alt="Избери професор - глбобален поглед"></div>
+
+	<p class="explanation">
+		Нов професор може да изберете со користење на менито кое се спушта. По избирање на професорот со кликање на “Промени Професор!“ го зачувуваш твојот избор.
+	</p>
+
+	<div class="dialogExplanationImage">
+		<img src= "/Content/studentProfileHelpImages/newProfDropdown.png" alt="Избор на нов професор - мени кое се спушта"></div>
+
+
+	<div class="dialogExplanationImage">
+		<img src= "/Content/studentProfileHelpImages/newTeacherConfirm.png" alt="Потврда за избор на нов професор"></div>
+
+	<p class="explanation">
+		Изборот на професор влијае врз твојот поглед врз делот од профилот опфатен во следниот дел од ова објаснување
+	</p>
+
+	<div class="dialogExplanationScrollTop">
+		<a href="#">Содржина!</a>
+	</div>
+	<div class="explanationBreak"></div>
+
+	<h3 Id="basicsOfMap" class="explanationSectionHeader">Училница - Основи :</h3>
+	<p class="explanation">
+		Училницата е делот од твојот профил кој е целосно определен од твојот професор. Училницата се состои од неколку делови, и може да се користи за дефинирање на теми и локации за кои може да се дискутира, или за кои треба да се дознае нешто повеќе во временскиот период одреден од твојот наставник.
+	</p>
+
+	<div class="dialogExplanationImage">
+		<img src= "/Content/studentProfileHelpImages/classroomGeneral.png" alt="Училницеа општ поглед"></div>
+
+	<p class="explanation">
+		Училницата се состои од неколку главни делови кои се опишани во следните неколку делови од ова објаснување.
+	</p>
+
+	<p class="explanation">
+		Еден од заедничките делови  моменталниот наслов на училницата како и датумот кога твојот професор последен прат ја променил.
+	</p>
+
+	<div class="dialogExplanationImage">
+		<img src= "/Content/studentProfileHelpImages/classroomTitleDate.png" alt="Училница насов и последна промена"></div>
+
+	<div class="dialogExplanationScrollTop">
+		<a href="#">Содржина!</a>
+	</div>
+	<div class="explanationBreak"></div>
+	<h3 Id="basicsOfMap" class="explanationSectionHeader">Училница - Локации:</h3>
+
+	<p class="explanation">
+		Избраните локации за разгледување се дадени во левата страна на училницата. Постои една главна локација кој е локацијата на  која твојот професор би сакал да се посвети најмногу време во истражување.
+	</p>
+
+	<p class="explanation">
+		Исто така  твојот професор може да дефинира и секундарни споредни локации, кои најчесто припаѓаат на главната локација или на одреден начин се поврзани со неа или со главната тема на дискусија.
+	</p>
+
+	<p class="explanation">
+		Со користење на копчето “Оди на Локација!“ може да ги отвориш деталите за таа локација и да дознаеш нешто повеќе.
+	</p>
+
+	<div class="dialogExplanationImage">
+		<img src= "/Content/studentProfileHelpImages/classroomLocations.png" alt="Училница - локации"></div>
+
+	
+	<div class="dialogExplanationScrollTop">
+		<a href="#">Содржина!</a>
+	</div>
+	<div class="explanationBreak"></div>
+
+	<h3 Id="basicsOfMap" class="explanationSectionHeader">Училница - Дискусии/Теми:</h3>
+
+	<p class="explanation">
+		Професорот исто така може да дефинира одредена тема, или дискусија за која треба да обрнете повеќе вниманије додека ја истражувате главната локација или  споредните локации.
+	</p>
+
+	<div class="dialogExplanationImage">
+		<img src= "/Content/studentProfileHelpImages/discussions.png" alt="Училница - дискусии"></div>
+
+	<p class="explanation">	
+		Во исто време како и кај споредните локации професорот може да дефинира и споредни, или секундарни дискусии кои смета дека се важни за разгледување заедно со главната дискусија или локација.
+	</p>
+
+	<div class="dialogExplanationScrollTop">
+		<a href="#">Содржина!</a>
+	</div>
+</div>

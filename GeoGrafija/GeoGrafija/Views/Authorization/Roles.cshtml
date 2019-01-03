@@ -1,0 +1,45 @@
+﻿@using Model
+@model IEnumerable<Role>
+@{
+    ViewBag.Title = "Улоги";
+}
+<div class="formBackground generalFormLayout">
+    <div class="padding">
+        <h2 class="formHeader">
+            Улоги : </h2>
+            @Html.ActionLink("Креирај!", "CreateRole",null, new {@class="button green fixA fixMargin"})
+        <table class="dataTablesEnabled display">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.LabelFor(model => model.FirstOrDefault().RoleDescription)
+                    </th>
+                    <th>
+                        @Html.LabelFor(model => model.FirstOrDefault().RoleName)
+                    </th>
+                    <th>
+                        Операции
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.RoleDescription)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.RoleName)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Детали", "RoleDetails", new { RoleName = item.RoleName })
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<input type="hidden" id="SelectedPage" value="Улоги"/>

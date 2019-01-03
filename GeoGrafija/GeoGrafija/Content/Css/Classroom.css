@@ -1,0 +1,311 @@
+
+
+.editable {}
+
+.edit-multi{}
+
+.edit-loc{}
+
+.editable-input{
+	padding:20px;
+}
+
+	.editable-input input[type="text"]{
+		width:100%;
+	}
+
+	.editable-input .save{
+		margin:5px;	
+		padding:5px;
+	}
+
+	.editable-input .cancel{
+		margin:5px;		
+		padding:5px;
+	}
+
+
+.editable-multi-input{
+	padding:20px;
+}
+
+	.editable-multi-input textarea{
+		height:300px;
+		width:100%;
+	}
+
+
+	.editable-multi-input .save{
+		margin:5px;	
+		padding:5px;
+	}
+
+	.editable-multi-input .cancel{
+		margin:5px;		
+		padding:5px;
+	}
+
+.editable-location-pointer{
+	padding:20px;
+}
+
+	.editable-location-pointer .cancel{
+		margin:5px;		
+		padding:5px;
+	}
+
+.edit-button{
+	width:23px;
+	height:23px;
+	background-image: url("/Content/images/edit.png");
+	background-repeat: no-repeat;
+	background-position: top;
+	position: absolute;
+	right:-30px;
+}
+
+.removeItemButton{
+    width:23px;
+    height:23px;
+    background-image: url("/Content/images/close.png");
+    background-repeat: no-repeat;
+    background-position: top;
+    position: absolute;
+    right:10px;
+    top:-5px;
+}
+
+/*Used to select closest items when deleting secondary objects*/
+.template-item{}
+
+
+#ClassroomTitle{
+	text-align: center;
+	font-size:22px;
+	position: relative;
+}
+
+.classroomLastEdit{
+    text-align:center;
+    margin-top:-10px;
+    margin-bottom:35px;
+    font-size:12px;
+}
+
+    .classroomLastEdit .label{
+        text-align:center;
+    }
+
+    .classroomLastEdit .value{
+        text-align:center;
+    }
+
+/*Wrapper classes under which the elements below are defined diferently*/
+#TeacherClassroomWrapper {}
+
+    #SaveClassroomButton {
+        padding: 10px;
+        width: 200px;
+    }
+
+    #TeacherClassroomWrapper  .formButtonContainer{
+    	border-top:1px solid #CCC;
+    	padding-top:15px;
+    }
+
+#StudentClassroomWrapper {}
+
+/*Classes that describe thee vairous elements making up the classroom*/
+
+ /*======= Locations : */
+
+	.classroom-location{
+		margin:5px;
+	}
+
+ 	.classroom-location-title{
+ 		text-align:center;
+ 		margin-bottom:5px;
+ 		font-size:14px;
+ 		color:#378dd3;
+ 		position: relative;
+    }
+
+ 	.classroom-location-text{
+ 		font-size:12px;
+ 		text-align:justify;
+ 		position: relative;
+ 		min-height:50px;
+ 		border-top:1px solid #CCC;
+ 		border-bottom:1px solid #CCC;
+ 		padding:5px;
+ 		
+ 	}
+ 	
+ 	.classroom-location-button{
+ 		text-align:center;
+ 		position: relative;
+ 		margin-top:10px;
+ 	}
+
+ 		.classroom-location-button a{
+ 			padding:5px !important;
+ 			display:inline-block;
+ 			
+	 	}
+
+.classroom-locations-wrapper {
+    width: 450px;
+    margin: 10px;
+    margin-top: 0px;
+    float: left;
+}
+
+    .classroom-locations-wrapper h2 {
+        font-size: 17px;
+        text-align:center;
+        
+    }
+
+    .classroom-main-location {
+    	border:2px solid #CCC;
+    	padding:5px;
+    	-webkit-border-radius:5px;
+    	-moz-border-radius:5px;
+    	border-radius:5px;
+    }
+    .classroom-main-location h2  {
+        font-size: 16px;
+        text-align: center;
+    }
+
+    .classroom-secondary-locations{
+    	margin-top:20px;
+    	padding-top:10px;
+
+    	border-top:1px solid #CCC;
+    }
+    	.classroom-secondary-locations h2{
+    		font-size: 14px;
+        	text-align: center;
+    	}
+
+        
+
+    .classroom-secondary-locations .classroom-location
+    {
+        border:1px solid #CCC !important;
+        -webkit-border-radius:5px;
+        -moz-border-radius:5px;
+        border-radius:5px;
+        padding-top:10px;
+        padding-bottom:10px;
+        font-size:9px !important;
+    }
+
+        .classroom-secondary-locations .classroom-location-title{
+            font-size:12px;
+        }
+
+        .classroom-secondary-locations .classroom-location-text{
+            font-size:10px;
+        }
+
+    .classroom-secondary-topics .classroom-topic{
+        border:1px solid #CCC !important;
+        -webkit-border-radius:5px;
+        -moz-border-radius:5px;
+        border-radius:5px;
+        padding-top:10px;
+        padding-bottom:10px;
+        font-size:9px !important;
+    }
+
+        .classroom-secondary-topics .classroom-topic-title{
+            font-size:12px;
+        }
+
+        .classroom-secondary-topics .classroom-topic-text{
+            font-size:10px;
+        }
+
+/*======= Topics :  */
+
+.classroom-topic{
+	margin:5px;
+}
+
+	.classroom-topic-title{
+		text-align:center;
+ 		margin-bottom:5px;
+ 		font-size:14px;
+ 		color:#378dd3;
+
+ 		position: relative;
+ 	}
+
+ 	.classroom-topic-text{
+ 		font-size:12px;
+ 		text-align:justify;
+ 		position: relative;
+ 		min-height:50px;
+ 		border-top:1px solid #CCC;
+ 		border-bottom:1px solid #CCC;
+ 		padding:5px;
+ 	    margin-bottom: 10px;
+	}
+ 	
+ 	.classroom-topic-button{
+ 		text-align:center;
+ 		margin-top:10px;
+ 		position: relative;
+	}
+
+		.classroom-topic-button a{
+ 			padding:5px !important;
+ 			display:inline-block;
+	 	}
+
+.classroom-topics-wrapper {
+    width: 450px;
+    margin: 10px;
+    margin-top: 0px;
+    float: left;
+}
+
+    .classroom-topics-wrapper h2 {
+        font-size: 17px;
+        text-align:center;
+    }
+
+    .classroom-main-topic{
+    	border:2px solid #CCC;
+    	padding:5px;
+    	-webkit-border-radius:5px;
+    	-moz-border-radius:5px;
+    	border-radius:5px;
+    }
+    
+    .classroom-main-topic h2 {
+        font-size: 16px;
+        text-align: center;
+    }
+    
+    .classroom-secondary-topics{
+    	margin-top:20px;
+    	padding-top:10px;
+
+    	border-top:1px solid #CCC;
+    }
+
+    	.classroom-secondary-topics h2{
+    		font-size: 14px;
+        	text-align: center;
+    	}
+
+.studentMissingClassroomMessage
+{
+    text-align:center;
+    margin:10px;   
+    margin-top:60px;
+}

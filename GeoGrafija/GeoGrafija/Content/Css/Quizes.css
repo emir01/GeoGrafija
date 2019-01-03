@@ -1,0 +1,589 @@
+﻿/*  ==== ------------------------------------------------------------------------
+    ==== Specific Quiz Styles 
+    ==== ------------------------------------------------------------------------
+*/        
+
+/*  ==== ------------------------------------------------------------------------
+    ==== Quiz Styles  concerning the questions for the quiz --- CREATION
+    ==== ------------------------------------------------------------------------
+*/        
+.questionContainer 
+{
+    width: 100%;
+    min-height: 50px;
+    
+}
+
+    #CreateQuizParagraph{ text-align: center;}
+    .questionContainer > .padding
+    {
+    }
+
+    .addQuestionButton
+    {
+        font-size: 12px;
+        padding: 5px;
+    }
+    
+    .addQuestionButton:hover 
+    {
+        background-color: #ded8bd;
+        cursor: pointer;
+    }
+    
+        .addQuestionButton > .padding
+        {
+            padding-top: 5px;
+        }
+        
+    .questionsList 
+    {
+        list-style: none;
+        margin: 0px;
+        padding: 0px;
+    }
+    
+        .questionsList > .padding {
+        
+        }
+    
+        .questionsList .questionForm
+        {
+            margin: 0px;
+            padding: 0px;
+            position: relative;
+            width: 95%;
+            margin: 10px auto;
+            height: 95px;
+            border: 1px solid #d0d0d0;
+            background-color: #f6f6f6;
+
+            display: none;
+
+            font-size: 12px;
+            
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            border-radius: 5px;
+        }
+        
+          .questionsList  .selectedQuestionForm {
+            background-color: #d3d3d3;
+        }
+        
+        .questionsList .questionForm  > .padding {
+            padding-left: 10px;
+        }
+        
+        .questionsList .questionForm .closeQuestionForm {
+            position: absolute;
+            right: 2px;
+            top: 2px;
+            width: 20px;
+            height: 20px;
+            background-image: url('/Content/images/close.png');
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        
+            .questionsList .questionForm .closeQuestionForm:hover 
+            {
+                background-color: #985050;
+                cursor: pointer;
+            }
+        
+
+        .questionsList .questionForm .questionFormAnswers
+        {
+            width: 200px;
+            height: 25px;
+            background-color: #818181;
+            text-align: center;
+            margin: 5px auto;
+            color: #FFFFFF;
+        }        
+        
+            .questionsList .questionForm .questionFormAnswers .padding {
+                padding-top: 3px;   
+            }
+        
+            .questionsList .questionForm .questionFormAnswers:hover {
+                background-color: #6c6c6c;
+                cursor: pointer;
+            }
+        
+        
+        .questionsList .questionForm .editor-label
+        {
+            font-size: 13px;
+            margin: 2px !important;
+        }   
+        
+        .questionsList .questionForm .editor-field
+        {
+            
+        }   
+        
+             .questionsList .questionForm .questionText {
+                 
+             }
+             
+            .questionsList .questionForm .editor-field  input {
+                float: left;
+                font-size: 13px !important;
+                height: 20px !important;
+            }
+        
+            .questionsList .questionForm .editor-field .visualQuestionMark
+            {
+                margin-left: 5px;
+                width: 10px;
+                float: left;
+            }   
+            
+
+
+/*  ==== ------------------------------------------------------------------------
+    ==== Quiz Styles  concerning the Answers to each question for the quiz --- CREATION
+    ==== ------------------------------------------------------------------------
+*/                    
+            
+.answersContainer {
+
+    width: 100%;
+    min-height: 50px;
+}
+
+    .answersContainer > .padding
+    {
+        
+    }
+    
+    .answerList 
+    {
+        list-style: none;
+        margin: 0px;
+        padding: 0px;
+    }
+    
+        .answerList > .padding {}
+        
+        .answerList .answerForm
+        {
+            margin: 0px;
+            padding: 0px;
+            position: relative;
+            width: 95%;
+            margin: 10px auto;
+            
+            border: 1px solid #d0d0d0;
+            background-color: #f6f6f6;
+
+            display: none;
+            
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            border-radius: 5px;
+        }
+        
+        .answerList .answerForm > .padding {
+            padding-left: 10px;
+            padding-bottom: 10px;
+        }
+        
+        
+         .answerList .answerForm .closeAnswerForm {
+            position: absolute;
+            right: 2px;
+            top: 2px;
+            width: 20px;
+            height: 20px;
+            background-image: url('/Content/images/close.png');
+        }
+        
+            .answerList .answerForm .closeAnswerForm:hover 
+            {
+                background-color: #985050;
+                cursor: pointer;
+            }
+        
+        
+        /*======= */
+        
+        .answerList .answerForm .answerIsTrueWrapper
+        {
+            width: 200px;
+            height: 25px;
+            background-color: #9897b3;
+            text-align: center;
+            margin: 5px auto;
+            color: #FFFFFF;
+        }        
+        
+            .answerList .answerForm .answerIsTrueWrapper .padding {
+                padding-top: 2px;   
+            }
+        
+        
+        .answerList .answerForm .editor-label
+        {
+            font-size: 12px;
+            margin: 3px !important;
+        }   
+        
+        .answerList .answerForm .editor-field
+        {
+            font-size: 12px;
+            margin: 0px;
+        }   
+        
+        
+         .answerList .answerForm .editor-field input[type=text]
+        {
+                font-size: 12px !important;
+                height: 15px !important; 
+        }   
+        
+        .answerList .answerForm .answerText {
+        }
+        
+        .answerList .answerForm .editor-field .checkboxLabel {
+            float: left;
+            width: 40px;
+        }
+        
+         .answerList .answerForm .answerIsTrue {
+            
+        }
+        
+        .answerList .answerForm .editor-field  input[type=checkbox]
+        {
+                
+        }
+
+/*  ==== ------------------------------------------------------------------------
+    ==== Quiz Styles  concerning the picking of predefined quizes --- TAKING QUIZES
+    ==== All of these fall under the class defined in Forms.css (.availableDefinedQuizesForm)
+    ==== ------------------------------------------------------------------------
+*/      
+
+        /* A small form to more effectivly search and filter quizes */
+        .searchQuizesOptions {
+            text-align: center;
+        }
+        
+        
+        .noPredefQuizMessage {
+            text-align: center;
+            font-size: 17px;
+            color: #345023;
+        }
+        
+        #SearchByQuizNameOption {
+            float: left !important;
+        }
+        
+            #searchByQuizName {
+                float: left !important;
+            }
+        
+        #SearchByQuizTypeOption {
+            float: right !important;
+        }
+        
+            #searchByQuizType {
+                float: right !important;
+            }
+        
+            .searchQuizesOptions .formHeader 
+            {
+                font-size: 17px !important;   
+            }
+        
+            .searchQuizesOptions .searchOption {
+                float: left;
+                margin: 5px;
+            }
+
+        /* Global Predef Quiz Container */
+        .predefQuizesContainer {
+            
+        }
+            .predefQuizesContainer .padding {
+            
+            }
+            
+            /* The unordered list that contains the quizes */
+            .predefQuizList {
+                list-style: none;
+                width: 500px;
+                margin: 0px auto;
+            }
+                .predefQuizList .padding {
+                
+                }
+            
+                /*  A list item that containing the info for a quiz  */    
+                .predefQuizListItem {
+                    margin: 5px;
+                    border: 1px solid #000000;
+                    background-color: #eeeeee;
+                    
+                    -webkit-border-radius: 5px;
+                    -moz-border-radius: 5px;
+                    border-radius: 5px;
+
+                    color: #767676;
+                }
+                
+                .hiddenQuizId {
+                    
+                }
+                
+                .predefQuizListItem:hover {
+                    background-color:#cfcfcf;
+                    cursor: pointer;
+                    color: #707070;
+                }
+                
+                    .predefQuizListItem .padding {
+                        padding: 5px;
+                    }
+                    
+                    .quizNameWrapper {
+                        text-align: center;
+                        margin: 10px;
+                    }
+                        .quizNameWrapper .label
+                        {
+                            font-weight: bold;
+                            color: rgb(69, 111, 159);
+                        }
+                        
+                         .quizNameWrapper .value
+                        {
+                            font-weight: bold;
+                        }
+                        
+                        
+                    .quizTypeWrapper {
+                        text-align: center;   
+                        margin: 10px;
+                    }
+                    
+                        .quizTypeWrapper .label
+                        {
+                            font-weight: bold;
+                            color: rgb(82, 82, 134);
+                        }
+                        
+                        .quizTypeWrapper .value
+                        {
+                            font-weight: bold;
+                        }
+                    
+                    .questionsCountWrapper {
+                        text-align: center;   
+                        margin: 10px;
+                    }
+                    
+                        .questionsCountWrapper .label
+                        {
+                            font-weight: bold;
+                            color: rgb(61, 122, 61);
+                        }
+                        
+                        .questionsCountWrapper .value
+                        {
+                            font-weight: bold;
+                        }
+                    
+                    
+                /* There must be a way to tell which quiz the user has picked */
+                .predefSelectedQuiz {
+                    background-color: #d8dae7;
+                }
+/*  ==== ------------------------------------------------------------------------
+    ==== Quiz Styles  concerning the questions for the quiz --- TAKING QUIZES
+    ==== ------------------------------------------------------------------------
+*/                
+
+    #TakingQuizHelpDialogStudent{
+        font-size:10px;
+        width:50px;
+        margin:5px auto;
+        display:block;
+    }
+
+    #TakeQuizWrapper {
+        width: 700px;
+        margin: 0px auto !important;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+    }
+
+    #TakeQuizWrapper > .padding {
+        padding: 20px;
+    }
+    
+    #QuizShortHelp {
+        text-align: center;    
+    }
+    
+    #QuizShortHelp .explanation {}
+    
+    .explanationImage {
+        height: 30px;
+        width: 30px;
+    }
+    
+    #SubmitTestAnswers {
+        width: 200px !important;
+        height: 50px !important;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 40px;
+        display: block;
+        position: relative;
+    }
+        
+        .takeQuizName {
+            border-bottom: 1px solid #CCC;
+            padding-bottom: 10px;
+        }
+        
+        .questionNavButton {
+            background-color: #4480a6;
+            color: #FFF;
+            border: 1px solid #a88261;
+            font-size: 10px !important;
+        }
+        
+        .disabledNavButton {
+            background-color: #858c8f !important;
+        }
+        
+        .disabledNavButton :hover {
+            background-color: #858c8f !important;
+            cursor: auto !important;
+        }
+        
+        #PreviousQiestion.questionNavButton {
+            float: left;
+        }
+        
+        #NextQiestion.questionNavButton {
+
+            float: right;
+        }
+        
+            .questionNavButton:hover {
+                background-color: #345367;
+                cursor: pointer;
+            }
+        
+        #QuestionFormsWrapper {}
+
+        .questionBoxesWrapper {}
+            
+            .questionBoxesWrapper  >  .padding {}
+        
+                .questionBoxesList {
+                    list-style-type: none !important;
+                    list-style: none !important;
+                }
+                
+                    .selectedQuestionNumber {
+                        background-color: #d46363 !important;
+                    }
+                
+                    .questionBoxListItem {
+                        float: left;
+                        margin-left: 10px;
+                        background-color: #63a2d4;
+                        width: 30px;
+                        height: 30px;
+                        border:1px solid #444;
+                    }   
+
+                    .showAllQuestionsListItem {
+                        width: 150px !important;
+
+                    }
+                
+                    .showAllQuestionsListItem  >  .padding {
+                        padding-top: 5px !important;
+                    }
+                
+                        .questionBoxListItem:hover {
+                            cursor: pointer;                
+                        }
+                    
+                        .questionBoxListItemHover 
+                        {
+                            background-color: #539d5e;    
+                        }
+                
+                        .questionBoxListItem  >  .padding {
+                            width: 100%;
+                            height: 100%;
+                        }   
+        
+                        .questionNumber {
+                            color: #FFFFFF;
+                            width: 100%;
+                            height: 100%;
+                            cursor: pointer;
+                            text-align: center;
+                        }
+                    
+                            .questionNumber  >  .padding 
+                            {
+                                padding-top: 5px;    
+                            }
+    
+        .takeAnswersHeader {
+            font-size: 15px;
+            color: #7e8dcc;
+            text-decoration: underline;
+        }
+        
+        .takeAnswersWrapper {
+            margin: 5px;
+            margin-top: 10px;
+        }
+    
+        .takeAnswersWrapper   > .padding {}
+    
+            .takeSingleAnswerWrapper {
+                margin-top: 10px;
+                text-align: center;
+                width: 100%;
+                border-bottom: 1px solid rgb(144, 144, 144);
+
+                color: #000;
+                
+                background-size: contain;
+                background-image: url("/Content/QuizImages/false.png");
+                background-position: right;
+                background-repeat: no-repeat;
+            }
+            .takeSingleAnswerWrapper:hover {
+                cursor: pointer;
+            }
+        
+            .takeSingleAnswerWrapperHoverBackground {
+                background-color: #e4e4e4;
+            }
+        
+            .selectedAnswer {
+                background-image: url("/Content/QuizImages/true.png") !important;
+                background-color: #ccddc0;
+            }
+        
+                .takeSingleAnswerWrapper  >  .padding {
+                    padding: 10px;    
+                }
+        
+                .takeSingleAnswerWrapper .label {}

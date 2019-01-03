@@ -1,0 +1,15 @@
+﻿@using GeoGrafija.ViewModels.Profiles
+@using SquishIt.Framework
+@model ProfileViewModel
+<div class="formBackground profileMainMenuActions">
+    @Html.Profile_RenderName(Model)
+    @Html.Profile_RenderActionBoxes(Model, "Admin")
+    <div class="clear">
+    </div>
+</div>
+<div class="formBackground profileMainCanvasWrapper">
+    @Html.Profile_RenderCanvases(Model, "Admin")
+</div>
+
+
+<script type="text/javascript" src="@Url.ProfileAdminScript()"></script>

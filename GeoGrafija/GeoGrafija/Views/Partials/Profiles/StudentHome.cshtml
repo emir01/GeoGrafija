@@ -1,0 +1,13 @@
+﻿@using GeoGrafija.ViewModels.Profiles
+@model ProfileViewModel
+<div class="formBackground profileMainMenuActions">
+    @Html.Profile_RenderName(Model)
+    @Html.Profile_RenderActionBoxes(Model, "Student")
+    <div class="clear">
+    </div>
+</div>
+<div class="formBackground profileMainCanvasWrapper">
+    @Html.Profile_RenderCanvases(Model, "Student")
+</div>
+
+<script type="text/javascript" src="@Url.ProfileStudentScript()"></script>

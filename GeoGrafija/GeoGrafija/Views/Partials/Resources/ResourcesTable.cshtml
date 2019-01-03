@@ -1,0 +1,47 @@
+﻿@using GeoGrafija.Extensions
+@using GeoGrafija.ViewModels.ResourcesViewModels
+@model IEnumerable<ResourceViewModel>
+<div class="resourceTableWrapper">
+    <div class="padding">
+        <table class="display dataTablesEnabled resourcesDisplayTable">
+            <thead>
+                <tr>
+                    <td>
+                        Име на ресурс
+                    </td>
+                    <td>
+                        Податок
+                    </td>
+                    <td>
+                        Тип
+                    </td>
+                    <td>
+                        Локација
+                    </td>
+                    <td>
+                        Команди
+                    </td>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var resource in Model)
+                {
+                    <tr>
+                        <td>@resource.Name
+                        </td>
+                        <td>@resource.Text.ShortenString(200, '.')
+                        </td>
+                        <td>@resource.TypeName
+                        </td>
+                        <td>@resource.LocationName
+                        </td>
+                        <td>
+                            <a href="#" class="resourceDetails" data-id = "@resource.Id">Детали</a> | <a href="#" class="resourceDelete" data-id = "@resource.Id">
+                                Бриши</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

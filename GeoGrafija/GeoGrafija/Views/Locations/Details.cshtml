@@ -1,0 +1,70 @@
+﻿@using GeoGrafija.ViewModels.LocationViewModels
+@model DisplayLocationViewModel
+@{
+    ViewBag.Title = "Детали";
+}
+<div class="formBackground goleft generalFormLayout" id="LocationDetailsForm">
+    <h2 class="formHeader">
+        Детали за локација :
+    </h2>
+    <div>
+        <div class="display-label">
+            <b>@Html.LabelFor(model => model.Name) : </b>
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Name)
+        </div>
+        <div class="display-label">
+            <b>@Html.LabelFor(model => model.Description) : </b>
+        </div>
+        <div class="display-field richDisplayField revetMe detailDescription">
+            <div class="padding">
+                @Html.Raw(Model.Description)
+            </div>
+        </div>
+        <div class="display-label">
+            <b>@Html.LabelFor(model => model.TypeName) : </b>
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.TypeName)
+        </div>
+        <div class="display-label">
+            <b>@Html.LabelFor(model => model.DisplayName) : </b>
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.DisplayName)
+        </div>
+        @Html.HiddenFor(model => model.Name)
+        @Html.HiddenFor(model => model.Description)
+        @Html.HiddenFor(model => model.Lat)
+        @Html.HiddenFor(model => model.Lng)
+        @Html.HiddenFor(model => model.MapType)
+        @Html.HiddenFor(model => model.RenderControls)
+        @Html.HiddenFor(model => model.Zoom)
+        @Html.HiddenFor(model => model.Icon)
+        @Html.HiddenFor(model => model.TypeName)
+        @Html.HiddenFor(model => model.TypeDescription)
+    </div>
+    
+    <div class="clear">
+    </div>
+    <p class="displayButtonContainer">
+        @Html.ActionLink("Промени", "Edit", new { id = Model.ID }, new { @class = "button blue fixA" })
+        |
+        @Html.ActionLink("Назад кон Листа", "Index", null, new { @class = "button green fixA" })
+        |
+        @Html.ActionLink("Ресурси", "Index", "ResourcesCreation", new { locationId = Model.ID }, new { @class = "button red fixA" })
+    </p>
+</div>
+<div class="formBackground generalFormLayout" id="LocationDetailsMapForm">
+<h2 class="formHeader central" >Поглед на мапа :</h2>
+    <div id="mapContainer" class="detailsViewMapContainer">
+        <div class="padding">
+            <div id="map">
+            </div>
+        </div>
+    </div>
+</div>
+<input type="hidden" id="SelectedPage" value="Локации!" />
+
+<script type= "text/javascript" src =  "@Url.PageScript("LocationDetails.js")"></script>

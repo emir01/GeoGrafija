@@ -1,0 +1,32 @@
+﻿@using Model
+@model Privilege
+
+@{
+	ViewBag.Title = "Детали за Привилегија";
+}
+
+<h2>Детали за Привилегија</h2>
+@Html.Partial("_AdminNavigation")
+
+<fieldset>
+	<legend>Привилегија</legend>
+
+	<div class="display-label">         
+		<b> @Html.LabelFor(model => model.PrivilegeName) : </b>
+	</div>
+	<div class="display-field">
+		@Html.DisplayFor(model => model.PrivilegeName)
+	</div>
+
+	<div class="display-label">         
+		<b> @Html.LabelFor(model => model.PrivilegeDescription) : </b>
+	</div>
+	<div class="display-field">
+		@Html.DisplayFor(model => model.PrivilegeDescription)
+	</div>
+</fieldset>
+<p>
+	@Html.ActionLink("Промени", "Edit", new { id=Model.PrivilegeID }) |
+	@Html.ActionLink("Назад кон Листа", "Privileges")
+</p>
+<input type="hidden" id="SelectedPage" value="Улоги"/>
