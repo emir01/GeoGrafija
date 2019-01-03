@@ -2,7 +2,7 @@
 
 ## Personal Archives "Project"
 
-This is a very old repository containg code written about 7 years ago! So I don't remember  much about  it :)
+This is a very old repository containg code written about 7 years ago! So I don't remember  much about  it!
 
 It was written as part of my graduation paper and here are some points:
 
